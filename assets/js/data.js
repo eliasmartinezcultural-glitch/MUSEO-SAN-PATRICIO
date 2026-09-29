@@ -6,16 +6,7 @@ schemaVersion:"2.1",
 researchStatus:"investigación inicial: fuentes contrastadas, contenido ampliable",
 principles:["documentar antes de publicar","distinguir fuente, testimonio e interpretación","no inventar patrimonio","conservar procedencia y contexto","relacionar cada pieza con su contexto","hacer visible qué está verificado y qué está pendiente"]
 },
-rooms:[
-{id:"territorio",number:"01",title:"Territorio",intro:"Paisaje, agua, viento y transformaciones del lugar.",color:"earth",keywords:["paisaje","agua","viento","territorio"],mode:"exploracion"},
-{id:"memorias",number:"02",title:"Memorias",intro:"Recuerdos, relatos y fotografías de la comunidad.",color:"memory",keywords:["memoria","recuerdos","familias","fotografías"],mode:"archivo"},
-{id:"personas",number:"03",title:"Personas",intro:"Familias, oficios, escuelas, clubes y protagonistas cotidianos.",color:"people",keywords:["personas","familias","oficios","escuelas","clubes"],mode:"biografias"},
-{id:"colecciones",number:"04",title:"Colecciones",intro:"Objetos, documentos y materiales con procedencia.",color:"objects",keywords:["objetos","documentos","colecciones","procedencia"],mode:"catalogo"},
-{id:"tiempo",number:"05",title:"Línea del tiempo",intro:"Momentos y cambios documentados, conectados entre sí.",color:"time",keywords:["tiempo","cronología","acontecimientos"],mode:"cronologia"},
-{id:"lugares",number:"06",title:"Lugares",intro:"Un mapa narrativo para recorrer el territorio.",color:"places",keywords:["lugares","mapa","territorio"],mode:"mapa"},
-{id:"hoy",number:"07",title:"Chañar hoy",intro:"Patrimonio vivo que también se está construyendo.",color:"today",keywords:["presente","patrimonio vivo","comunidad"],mode:"patrimonio_vivo"},
-{id:"futuro",number:"08",title:"Futuro",intro:"Preguntas sobre qué queremos conservar y transmitir.",color:"future",keywords:["futuro","conservar","transmitir"],mode:"participacion"}
-],
+rooms:[{id:"origen",number:"01",title:"Antes del pueblo",intro:"Territorio, Tratayen, caminos, fortines y primeras huellas documentadas.",keywords:["territorio","Tratayen","fortín","1881","1902","1913"],mode:"mundo"},{id:"agua",number:"02",title:"Agua y transformación",intro:"El río Neuquén, el riego y la transformación productiva que preparó el nacimiento de la localidad.",keywords:["agua","riego","bocatoma","1966","1968","1969","1971","1973"],mode:"mundo"},{id:"comunidad",number:"03",title:"Personas y comunidad",intro:"Trabajo, familias, escuela, instituciones y vida comunitaria.",keywords:["personas","familias","escuela","club","comunidad","1974","1975","1976"],mode:"mundo"},{id:"memoria",number:"04",title:"Memoria viva",intro:"Fotografías, documentos, voces, objetos y recuerdos reales de la comunidad.",keywords:["memoria","fotografías","documentos","testimonios","archivo"],mode:"mundo"}]
 schema:{
 piece:{required:["id","title","type","status","verification"],optional:["catalogCode","date","datePrecision","description","historicalContext","interpretation","condition","provenance","custodian","material","dimensions","peopleIds","placeIds","eventIds","collectionIds","sourceIds","media","rights","credit","curatorialNotes"]},
 source:{required:["id","type","title"],optional:["author","date","repository","reference","note","rights","url","accessedAt","reliabilityNote"]},
