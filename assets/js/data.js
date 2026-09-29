@@ -1,9 +1,5 @@
 export const museumData={
-meta:{
-version:"0.3.0",
-status:"motor museológico ampliado",
-principles:["documentar antes de publicar","distinguir fuente, testimonio e interpretación","no inventar patrimonio","conservar procedencia y contexto"]
-},
+meta:{version:"0.4.0",status:"motor museológico relacional",schemaVersion:"1.0",principles:["documentar antes de publicar","distinguir fuente, testimonio e interpretación","no inventar patrimonio","conservar procedencia y contexto","relacionar cada pieza con su contexto"]},
 rooms:[
 {id:"territorio",number:"01",title:"Territorio",intro:"Paisaje, agua, viento y transformaciones del lugar.",color:"earth",keywords:["paisaje","agua","viento","territorio"]},
 {id:"memorias",number:"02",title:"Memorias",intro:"Recuerdos, relatos y fotografías de la comunidad.",color:"memory",keywords:["memoria","recuerdos","familias","fotografías"]},
