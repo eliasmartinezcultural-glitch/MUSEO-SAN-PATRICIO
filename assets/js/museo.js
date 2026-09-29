@@ -27,14 +27,10 @@ function renderRooms(query=""){
  searchCount.textContent=query?`${matches.length} sala${matches.length===1?"":"s"} encontrada${matches.length===1?"":"s"}`:"";
 }
 
-const journey=[
- ["01","DESCUBRIR","Entrar sin necesitar saber nada."],
- ["02","EXPLORAR","Elegir una puerta y seguir una curiosidad."],
- ["03","INTERACTUAR","Tocar, comparar, escuchar, encontrar."],
- ["04","APRENDER","Comprender el contexto detrás de cada pieza."],
- ["05","RECORDAR","Relacionar lo visto con una historia propia."]
-];
-$("#timeline").innerHTML=journey.map(x=>`<div class="timeline-item"><small>${x[0]}</small><strong>${x[1]}</strong><small>${x[2]}</small></div>`).join("");
+function renderTimeline(){const events=[...museumData.events].sort((a,b)=>(a.year||0)-(b.year||0));const el=$("#timeline");if(!events.length){el.innerHTML="<div class=\"timeline-empty\"><strong>La línea del tiempo está preparada.</strong><span>Aquí aparecerán acontecimientos documentados, con fecha, contexto, fuentes y piezas relacionadas.</span></div>";return;}el.innerHTML=events.map(e=>"<button class=\"timeline-item\" data-event=\""+e.id+"\"><small>"+(e.year||"s/f")+"</small><strong>"+e.title+"</strong><small>"+(e.summary||"")+"</small></button>").join("");el.querySelectorAll("[data-event]").forEach(b=>b.addEventListener("click",()=>showEvent(b.dataset.event)));showEvent(events[0].id);}
+function showEvent(id){const e=byId(museumData.events,id);if(!e)return;document.querySelectorAll(".timeline-item").forEach(x=>x.classList.toggle("active",x.dataset.event===id));$("#timelineDetail").innerHTML="<p class=\"eyebrow\">ACONTECIMIENTO</p><h3>"+e.title+"</h3><p>"+(e.description||e.summary||"")+"</p><div class=\"relation-chips\">"+renderRelations(e).join("")+"</div>";}
+
+renderTimeline();
 
 function renderCatalogStatus(){
  const stats=[
@@ -75,6 +71,8 @@ function openRoom(id){
 renderRooms();
 renderCatalogStatus();
 renderCollections();
+
+$("#mapEngine").addEventListener("click",e=>{const b=e.target.closest("[data-place]");if(!b)return;const p=byId(museumData.places,b.dataset.place);if(!p)return;$("#relationPanel").innerHTML="<p class=\"eyebrow\">LUGAR</p><h3>"+p.title+"</h3><p>"+(p.description||"")+"</p><div class=\"relation-chips\">"+renderRelations(p).join("")+"</div>";});
 
 $(".collection-tools")?.addEventListener("click",e=>{
  const b=e.target.closest(".filter");if(!b)return;
