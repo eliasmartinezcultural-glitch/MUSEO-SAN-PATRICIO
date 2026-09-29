@@ -1,9 +1,6 @@
 # Museo Virtual de San Patricio del Chañar
 
-Proyecto reiniciado desde cero el 29 de septiembre de 2026.
+## Versión 0.1.0
+Reconstrucción completa desde cero.
 
-No se conserva la arquitectura, interfaz ni corpus de la etapa anterior.
-
-## Estado
-
-Nueva construcción — versión 0.1.0
+Principio rector: máxima potencia interna, mínima complejidad visible.
