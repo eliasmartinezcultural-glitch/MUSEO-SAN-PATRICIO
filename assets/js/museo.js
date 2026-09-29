@@ -1,109 +1,49 @@
 import {museumData} from "./data.js";
-
-const $=s=>document.querySelector(s);
-const rooms=museumData.rooms;
-const byId=(arr,id)=>arr.find(x=>x.id===id);
-const pieceTypes={photo:"Fotografías",document:"Documentos",object:"Objetos",audio:"Audios"};
-
-const stage=$("#pieceStage");
-const breadcrumb=$("#pieceBreadcrumb");
-const search=$("#museumSearch");
-const searchCount=$("#searchCount");
-
-function normalize(value=""){
- return value.toLocaleLowerCase("es").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");
-}
-
-function roomMatches(room,q){
- const hay=normalize([room.title,room.intro,...(room.keywords||[])].join(" "));
- return !q||hay.includes(normalize(q));
-}
-
-function renderRooms(query=""){
- const matches=rooms.filter(r=>roomMatches(r,query));
- $("#roomGrid").innerHTML=matches.map(r=>`<article class="room-card" tabindex="0" data-room="${r.id}">
- <span class="number">${r.number}</span><h3>${r.title}</h3><p>${r.intro}</p><span class="room-arrow">Explorar →</span></article>`).join("")||
- `<div class="room-empty"><strong>No encontramos esa puerta.</strong><span>Probá con otra palabra.</span></div>`;
- searchCount.textContent=query?`${matches.length} sala${matches.length===1?"":"s"} encontrada${matches.length===1?"":"s"}`:"";
-}
-
-function renderTimeline(){const events=[...museumData.events].sort((a,b)=>(a.year||0)-(b.year||0));const el=$("#timeline");if(!events.length){el.innerHTML="<div class=\"timeline-empty\"><strong>La línea del tiempo está preparada.</strong><span>Aquí aparecerán acontecimientos documentados, con fecha, contexto, fuentes y piezas relacionadas.</span></div>";return;}el.innerHTML=events.map(e=>"<button class=\"timeline-item\" data-event=\""+e.id+"\"><small>"+(e.year||"s/f")+"</small><strong>"+e.title+"</strong><small>"+(e.summary||"")+"</small></button>").join("");el.querySelectorAll("[data-event]").forEach(b=>b.addEventListener("click",()=>showEvent(b.dataset.event)));showEvent(events[0].id);}
-function showEvent(id){const e=byId(museumData.events,id);if(!e)return;document.querySelectorAll(".timeline-item").forEach(x=>x.classList.toggle("active",x.dataset.event===id));$("#timelineDetail").innerHTML="<p class=\"eyebrow\">ACONTECIMIENTO</p><h3>"+e.title+"</h3><p>"+(e.description||e.summary||"")+"</p><div class=\"relation-chips\">"+renderRelations(e).join("")+"</div>";}
-
-renderTimeline();
-
-function renderCatalogStatus(){
- const stats=[
-  ["Salas",rooms.length],
-  ["Piezas",museumData.pieces.length],
-  ["Lugares",museumData.places.length],
-  ["Fuentes",museumData.sources.length]
- ];
- $("#catalogStatus").innerHTML=`<div><span>ESTADO DEL CATÁLOGO</span><strong>Motor ${museumData.meta.version}</strong></div>${stats.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join("")}`;
-}
-
-function renderMap(){const el=$("#mapEngine");if(!museumData.places.length){$("#mapEmpty").style.display="block";return;}$("#mapEmpty").style.display="none";museumData.places.forEach((p,i)=>{const a=i/museumData.places.length*Math.PI*2;const x=50+Math.cos(a)*32,y=50+Math.sin(a)*32;el.insertAdjacentHTML("beforeend","<button class=\"map-place\" style=\"left:"+x+"%;top:"+y+"%\" data-place=\""+p.id+"\"><span>"+p.title+"</span></button>");});}
-function renderRelations(entity){const out=[];for(const rel of museumData.relations.filter(r=>r.from===entity.id||r.to===entity.id)){const otherId=rel.from===entity.id?rel.to:rel.from;const other=[...museumData.pieces,...museumData.people,...museumData.places,...museumData.events,...museumData.collections].find(x=>x.id===otherId);if(other)out.push("<span>"+(rel.label||"Relacionado")+" · "+(other.title||other.name)+"</span>");}return out.length?out:["<span>Sin relaciones documentadas todavía</span>"];}
-renderMap();
-function renderCollections(filter="all"){
- const pieces=museumData.pieces.filter(p=>filter==="all"||p.type===filter);
- $("#collectionGrid").innerHTML=pieces.length?pieces.map(pieceCard).join(""):`<div class="collection-empty"><span>◇</span><strong>La colección está abierta.</strong><p>Todavía no hay piezas publicadas. El motor ya está preparado para recibir materiales documentados sin rehacer la interfaz.</p></div>`;
-}
-
-function pieceCard(p){
- return `<article class="piece-card"><div class="piece-placeholder">${pieceTypes[p.type]||"Pieza"}</div><div class="piece-body"><small>${p.status||"Pendiente de catalogación"}</small><h3>${p.title}</h3><p>${p.description||""}</p><button class="text-link" data-piece="${p.id}">Abrir ficha →</button></div></article>`;
-}
-
-function showStage(title,intro,meta=""){
- breadcrumb.textContent=`Museo / ${title}`;
- stage.querySelector(".empty-piece")?.remove();
- const old=stage.querySelector(".dynamic-stage"); if(old)old.remove();
- stage.insertAdjacentHTML("beforeend",`<div class="empty-piece dynamic-stage"><span class="piece-icon">◇</span>${meta}<h2>${title}</h2><p>${intro}</p></div>`);
- stage.scrollIntoView({behavior:"smooth",block:"center"});
-}
-
-function openRoom(id){
- const r=rooms.find(x=>x.id===id);if(!r)return;
- showStage(r.title,r.intro,`<p class="eyebrow">SALA ${r.number}</p>`);
- history.replaceState(null,"",`#sala-${r.id}`);
-}
-
-renderRooms();
-renderCatalogStatus();
-renderCollections();
-
-$("#mapEngine").addEventListener("click",e=>{const b=e.target.closest("[data-place]");if(!b)return;const p=byId(museumData.places,b.dataset.place);if(!p)return;$("#relationPanel").innerHTML="<p class=\"eyebrow\">LUGAR</p><h3>"+p.title+"</h3><p>"+(p.description||"")+"</p><div class=\"relation-chips\">"+renderRelations(p).join("")+"</div>";});
-
-$(".collection-tools")?.addEventListener("click",e=>{
- const b=e.target.closest(".filter");if(!b)return;
- document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
- b.classList.add("active");renderCollections(b.dataset.filter);
-});
-
+const $=s=>document.querySelector(s),rooms=museumData.rooms,byId=(a,id)=>a.find(x=>x.id===id);
+const pieceTypes={photo:"Fotografía",document:"Documento",object:"Objeto",audio:"Audio",video:"Video",map:"Mapa",text:"Texto"};
+const sourceTypes={fotografia_documentada:"Fotografía documentada",testimonio_oral:"Testimonio oral",documento_archivo:"Documento de archivo",prensa:"Prensa",registro_institucional:"Registro institucional",coleccion_familiar:"Colección familiar",bibliografia:"Bibliografía",otra:"Otra fuente"};
+const stage=$("#pieceStage"),breadcrumb=$("#pieceBreadcrumb"),search=$("#museumSearch"),searchCount=$("#searchCount");
+const allEntities=()=>[...museumData.pieces,...museumData.people,...museumData.places,...museumData.events,...museumData.collections,...museumData.journeys];
+const normalize=(v="")=>v.toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+function roomMatches(r,q){return !q||normalize([r.title,r.intro,...(r.keywords||[])].join(" ")).includes(normalize(q))}
+function renderRooms(q=""){const m=rooms.filter(r=>roomMatches(r,q));$("#roomGrid").innerHTML=m.map(r=>\`<article class="room-card" tabindex="0" data-room="${r.id}"><span class="number">${r.number}</span><h3>${r.title}</h3><p>${r.intro}</p><span class="room-arrow">Explorar →</span></article>\`).join("")||\`<div class="room-empty"><strong>No encontramos esa puerta.</strong><span>Probá con otra palabra.</span></div>\`;searchCount.textContent=q?${m.length}+" sala"+(m.length===1?"":"s")+" encontrada"+(m.length===1?"":"s"):""}
+function entity(id){return allEntities().find(x=>x.id===id)}
+function renderRelations(e){const rs=museumData.relations.filter(r=>r.from===e.id||r.to===e.id);return rs.length?rs.map(r=>{const o=entity(r.from===e.id?r.to:r.from);return o?\`<button class="relation-chip" data-entity="${o.id}"><span>${r.label||r.type||"Relacionado"}</span><b>${o.title||o.name}</b></button>\`:""}).join(""):\`<span class="relation-none">Sin relaciones documentadas todavía.</span>\`}
+function linked(list,ids){return (ids||[]).map(id=>byId(list,id)).filter(Boolean)}
+function recordSection(title,body){return \`<section class="record-section"><p class="eyebrow">${title}</p>${body}</section>\`}
+function sourceCard(s){return \`<article class="source-card"><small>${sourceTypes[s.type]||"Fuente"}</small><strong>${s.title||"Fuente sin título"}</strong>${s.author?\`<span>Autoría / informante: ${s.author}</span>\`:""}${s.date?\`<span>Fecha: ${s.date}</span>\`:""}${s.repository?\`<span>Repositorio / custodio: ${s.repository}</span>\`:""}${s.reference?\`<span>Referencia: ${s.reference}</span>\`:""}${s.note?\`<p>${s.note}</p>\`:""}</article>\`}
+function showPiece(id){const p=byId(museumData.pieces,id);if(!p)return;
+ const people=linked(museumData.people,p.peopleIds),places=linked(museumData.places,p.placeIds),events=linked(museumData.events,p.eventIds),collections=linked(museumData.collections,p.collectionIds),sources=linked(museumData.sources,p.sourceIds);
+ breadcrumb.textContent="Museo / Ficha / "+p.title;stage.querySelector(".dynamic-stage")?.remove();
+ stage.insertAdjacentHTML("beforeend",\`<article class="record-card dynamic-stage">
+<div class="record-hero"><div><p class="eyebrow">${pieceTypes[p.type]||"PIEZA"} · ${p.catalogCode||"SIN CÓDIGO"}</p><h2>${p.title}</h2><p class="record-summary">${p.description||"Descripción pendiente de documentación."}</p></div><div class="record-badges"><span class="badge status-${p.status||"borrador"}">${(p.status||"borrador").replace("_"," ")}</span><span class="badge verify-${p.verification||"pendiente"}">${p.verification||"pendiente"}</span></div></div>
+${recordSection("IDENTIFICACIÓN",\`<div class="record-grid"><div><b>Tipo</b><span>${pieceTypes[p.type]||"No especificado"}</span></div><div><b>Fecha</b><span>${p.date||"Pendiente"} ${p.datePrecision?"· "+p.datePrecision:""}</span></div><div><b>Colección</b><span>${collections.map(x=>x.title).join(", ")||"Pendiente"}</span></div><div><b>Estado físico</b><span>${p.condition||"No registrado"}</span></div></div>\`)}
+${recordSection("DESCRIPCIÓN Y CONTEXTO",\`<p>${p.description||"Pendiente."}</p>${p.historicalContext?\`<p><b>Contexto histórico:</b> ${p.historicalContext}</p>\`:""}${p.interpretation?\`<p><b>Interpretación:</b> ${p.interpretation}</p>\`:""})}
+${recordSection("PROCEDENCIA Y CARACTERÍSTICAS",\`<div class="record-grid"><div><b>Procedencia</b><span>${p.provenance||"Pendiente"}</span></div><div><b>Custodia</b><span>${p.custodian||"Pendiente"}</span></div><div><b>Material</b><span>${p.material||"No registrado"}</span></div><div><b>Dimensiones</b><span>${p.dimensions||"No registradas"}</span></div></div>\`)}
+${recordSection("PERSONAS",people.length?people.map(x=>\`<button class="entity-link" data-entity="${x.id}">${x.name||x.title}</button>\`).join(""):"<span>Pendiente de vinculación.</span>")}
+${recordSection("LUGARES",places.length?places.map(x=>\`<button class="entity-link" data-entity="${x.id}">${x.title}</button>\`).join(""):"<span>Pendiente de vinculación.</span>")}
+${recordSection("ACONTECIMIENTOS",events.length?events.map(x=>\`<button class="entity-link" data-entity="${x.id}">${x.title}</button>\`).join(""):"<span>Pendiente de vinculación.</span>")}
+${recordSection("FUENTES Y TRAZABILIDAD",sources.length?sources.map(sourceCard).join(""):\`<div class="warning-box">Esta pieza no puede considerarse documentada hasta incorporar una o más fuentes.</div>\`)}
+${recordSection("RELACIONES",\`<div class="relation-chips">${renderRelations(p)}</div>\`)}
+${recordSection("DERECHOS Y PUBLICACIÓN",\`<div class="record-grid"><div><b>Derechos</b><span>${p.rights||"Pendiente"}</span></div><div><b>Créditos</b><span>${p.credit||"Pendiente"}</span></div><div><b>Verificación</b><span>${p.verification||"pendiente"}</span></div><div><b>Notas curatoriales</b><span>${p.curatorialNotes||"Sin notas"}</span></div></div>\`)}
+</article>\`);stage.scrollIntoView({behavior:"smooth",block:"center"})}
+function showEntity(id){const e=entity(id);if(!e)return;showStage(e.title||e.name,e.description||e.summary||"Entidad del catálogo",\`<p class="eyebrow">ENTIDAD RELACIONADA</p><div class="relation-chips">${renderRelations(e)}</div>\`)}
+function showStage(title,intro="",meta=""){breadcrumb.textContent="Museo / "+title;stage.querySelector(".dynamic-stage")?.remove();stage.insertAdjacentHTML("beforeend",\`<div class="empty-piece dynamic-stage">${meta}<span class="piece-icon">◇</span><h2>${title}</h2><p>${intro}</p></div>\`);stage.scrollIntoView({behavior:"smooth",block:"center"})}
+function renderCollections(filter="all"){const pieces=museumData.pieces.filter(p=>filter==="all"||p.type===filter);$("#collectionGrid").innerHTML=pieces.length?pieces.map(pieceCard).join(""):\`<div class="collection-empty"><span>◇</span><strong>La colección está abierta.</strong><p>Todavía no hay piezas publicadas. El motor ya está preparado para recibir materiales documentados sin rehacer la interfaz.</p></div>\`}
+function pieceCard(p){return \`<article class="piece-card"><div class="piece-placeholder">${pieceTypes[p.type]||"Pieza"}</div><div class="piece-body"><small>${p.status||"Pendiente"} · ${p.verification||"pendiente"}</small><h3>${p.title}</h3><p>${p.description||""}</p><button class="text-link" data-piece="${p.id}">Abrir ficha →</button></div></article>\`}
+function integrity(){const issues=[];const sets={piece:museumData.pieces,person:museumData.people,place:museumData.places,event:museumData.events,collection:museumData.collections,source:museumData.sources};for(const [type,arr] of Object.entries(sets)){const seen=new Set();arr.forEach(x=>{if(!x.id)issues.push(type+" sin ID");if(seen.has(x.id))issues.push("ID duplicado: "+x.id);seen.add(x.id)})}museumData.relations.forEach(r=>{if(!entity(r.from)||!entity(r.to))issues.push("Relación rota: "+r.from+" → "+r.to)});museumData.pieces.forEach(p=>{if((p.status==="publicada"||p.verification==="verificada")&&!p.sourceIds?.length)issues.push("Pieza sin fuente: "+p.id)});return issues}
+function renderCatalogStatus(){const issues=integrity();const stats=[["Salas",rooms.length],["Piezas",museumData.pieces.length],["Fuentes",museumData.sources.length],["Incidencias",issues.length]];$("#catalogStatus").innerHTML=\`<div><span>ESTADO DEL CATÁLOGO</span><strong>Motor ${museumData.meta.version}</strong></div>${stats.map(s=>\`<div><small>${s[0]}</small><b>${s[1]}</b></div>\`).join("")}${issues.length?\`<div class="catalog-warning"><small>CONTROL DE INTEGRIDAD</small><span>${issues.slice(0,3).join(" · ")}</span></div>\`:""}\`}
+function renderTimeline(){const events=[...museumData.events].sort((a,b)=>(a.year||0)-(b.year||0));const el=$("#timeline");if(!events.length){el.innerHTML='<div class="timeline-empty"><strong>La línea del tiempo está preparada.</strong><span>Aquí aparecerán acontecimientos documentados, con fecha, contexto, fuentes y piezas relacionadas.</span></div>';return}el.innerHTML=events.map(e=>\`<button class="timeline-item" data-event="${e.id}"><small>${e.year||"s/f"}</small><strong>${e.title}</strong><small>${e.summary||""}</small></button>\`).join("");el.querySelectorAll("[data-event]").forEach(b=>b.addEventListener("click",()=>showEvent(b.dataset.event)));showEvent(events[0].id)}
+function showEvent(id){const e=byId(museumData.events,id);if(!e)return;document.querySelectorAll(".timeline-item").forEach(x=>x.classList.toggle("active",x.dataset.event===id));$("#timelineDetail").innerHTML=\`<p class="eyebrow">ACONTECIMIENTO</p><h3>${e.title}</h3><p>${e.description||e.summary||""}</p><div class="relation-chips">${renderRelations(e)}</div>\`}
+function renderMap(){const el=$("#mapEngine");el.querySelectorAll(".map-place").forEach(x=>x.remove());if(!museumData.places.length){$("#mapEmpty").style.display="block";return}$("#mapEmpty").style.display="none";museumData.places.forEach((p,i)=>{const a=i/museumData.places.length*Math.PI*2,x=50+Math.cos(a)*32,y=50+Math.sin(a)*32;el.insertAdjacentHTML("beforeend",\`<button class="map-place" style="left:${x}%;top:${y}%" data-place="${p.id}" aria-label="Abrir ${p.title}"><span>${p.title}</span></button>\`)})}
+renderTimeline();renderMap();renderRooms();renderCatalogStatus();renderCollections();
+function openRoom(id){const r=rooms.find(x=>x.id===id);if(r){showStage(r.title,r.intro,\`<p class="eyebrow">SALA ${r.number}</p>\`);history.replaceState(null,"","#sala-"+r.id)}}
+$("#mapEngine").addEventListener("click",e=>{const b=e.target.closest("[data-place]");if(b)showEntity(b.dataset.place)});
+$(".collection-tools")?.addEventListener("click",e=>{const b=e.target.closest(".filter");if(!b)return;document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderCollections(b.dataset.filter)});
 $("#roomGrid").addEventListener("click",e=>{const c=e.target.closest("[data-room]");if(c)openRoom(c.dataset.room)});
 $("#roomGrid").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.closest("[data-room]")){e.preventDefault();openRoom(e.target.closest("[data-room]").dataset.room)}});
-
+document.addEventListener("click",e=>{const p=e.target.closest("[data-piece]");if(p)showPiece(p.dataset.piece);const ent=e.target.closest("[data-entity]");if(ent)showEntity(ent.dataset.entity)});
 search.addEventListener("input",e=>renderRooms(e.target.value.trim()));
-
-const menu=$("#menuButton"),nav=$("#mainNav");
-menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
-nav.addEventListener("click",e=>{if(e.target.matches("a")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}});
-
-const modal=$("#contributeModal");
-function closeModal(){modal.hidden=true}
-$("#contributeButton").addEventListener("click",()=>modal.hidden=false);
-modal.addEventListener("click",e=>{if(e.target.hasAttribute("data-close"))closeModal()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-
-document.addEventListener("click",e=>{
- const b=e.target.closest("[data-piece]");if(!b)return;
- const p=museumData.pieces.find(x=>x.id===b.dataset.piece);if(!p)return;
- showStage(p.title,p.description||"",`<p class="eyebrow">${pieceTypes[p.type]||"PIEZA"}</p><div class="record-meta"><span>Estado: ${p.status||"pendiente"}</span><span>Fuente: ${p.source||"pendiente de documentación"}</span></div>`);
-});
-
-function routeFromHash(){
- const hash=location.hash.replace("#","");
- if(hash.startsWith("sala-"))openRoom(hash.slice(5));
-}
-window.addEventListener("hashchange",routeFromHash);
-routeFromHash();
+const menu=$("#menuButton"),nav=$("#mainNav");menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});nav.addEventListener("click",e=>{if(e.target.matches("a")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}});
+const modal=$("#contributeModal");function closeModal(){modal.hidden=true}$("#contributeButton").addEventListener("click",()=>modal.hidden=false);modal.addEventListener("click",e=>{if(e.target.hasAttribute("data-close"))closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+function routeFromHash(){const h=location.hash.replace("#","");if(h.startsWith("sala-"))openRoom(h.slice(5))}window.addEventListener("hashchange",routeFromHash);routeFromHash();
