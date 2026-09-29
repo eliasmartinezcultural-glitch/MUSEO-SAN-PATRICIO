@@ -2,6 +2,7 @@ import {museumData} from "./data.js";
 
 const $=s=>document.querySelector(s);
 const rooms=museumData.rooms;
+const byId=(arr,id)=>arr.find(x=>x.id===id);
 const pieceTypes={photo:"Fotografías",document:"Documentos",object:"Objetos",audio:"Audios"};
 
 const stage=$("#pieceStage");
@@ -45,6 +46,9 @@ function renderCatalogStatus(){
  $("#catalogStatus").innerHTML=`<div><span>ESTADO DEL CATÁLOGO</span><strong>Motor ${museumData.meta.version}</strong></div>${stats.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join("")}`;
 }
 
+function renderMap(){const el=$("#mapEngine");if(!museumData.places.length){$("#mapEmpty").style.display="block";return;}$("#mapEmpty").style.display="none";museumData.places.forEach((p,i)=>{const a=i/museumData.places.length*Math.PI*2;const x=50+Math.cos(a)*32,y=50+Math.sin(a)*32;el.insertAdjacentHTML("beforeend","<button class=\"map-place\" style=\"left:"+x+"%;top:"+y+"%\" data-place=\""+p.id+"\"><span>"+p.title+"</span></button>");});}
+function renderRelations(entity){const out=[];for(const rel of museumData.relations.filter(r=>r.from===entity.id||r.to===entity.id)){const otherId=rel.from===entity.id?rel.to:rel.from;const other=[...museumData.pieces,...museumData.people,...museumData.places,...museumData.events,...museumData.collections].find(x=>x.id===otherId);if(other)out.push("<span>"+(rel.label||"Relacionado")+" · "+(other.title||other.name)+"</span>");}return out.length?out:["<span>Sin relaciones documentadas todavía</span>"];}
+renderMap();
 function renderCollections(filter="all"){
  const pieces=museumData.pieces.filter(p=>filter==="all"||p.type===filter);
  $("#collectionGrid").innerHTML=pieces.length?pieces.map(pieceCard).join(""):`<div class="collection-empty"><span>◇</span><strong>La colección está abierta.</strong><p>Todavía no hay piezas publicadas. El motor ya está preparado para recibir materiales documentados sin rehacer la interfaz.</p></div>`;
