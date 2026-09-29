@@ -1,7 +1,7 @@
 export const museumData={
 meta:{
-version:"0.6.1",
-status:"corpus histórico ampliado: período previo a 1973 + base para exposición inmersiva",
+version:"0.6.2",
+status:"corpus histórico ampliado + relaciones documentales + base para exposición inmersiva",
 schemaVersion:"2.1",
 researchStatus:"investigación inicial: fuentes contrastadas, contenido ampliable",
 principles:["documentar antes de publicar","distinguir fuente, testimonio e interpretación","no inventar patrimonio","conservar procedencia y contexto","relacionar cada pieza con su contexto","hacer visible qué está verificado y qué está pendiente"]
@@ -91,7 +91,14 @@ sources:{id:"src-encina-moreno-conicet",type:"bibliografia",title:"El álbum de 
 journeys:[
 {id:"journey-origen-del-chanar",title:"Cómo se construyó El Chañar",intro:"Un primer recorrido histórico desde los antecedentes documentados de Tratayen hasta la fundación de la localidad y sus primeras instituciones.",curatorialNote:"Recorrido preparado para convertirse en futura sala inmersiva: paisaje → agua → producción → territorio → fundación → comunidad.",steps:[{id:"evt-mensura-tratayen-1913",order:1,label:"Tratayen y la mensura de 1913"},{id:"evt-concesion-riego-1966",order:2,label:"El agua como posibilidad"},{id:"evt-adquisicion-1968",order:3,label:"La transformación de El Chañar"},{id:"evt-sistematizacion-1969",order:4,label:"Primeras tierras bajo riego"},{id:"evt-limite-1969",order:5,label:"El territorio y sus límites"},{id:"evt-primera-bocatoma-1971",order:6,label:"La primera bocatoma"},{id:"evt-fundacion-1973",order:7,label:"Nace San Patricio del Chañar"},{id:"evt-comision-fomento-1974",order:8,label:"Las primeras autoridades"},{id:"evt-primeras-frutas-1975",order:9,label:"La producción crece"},{id:"evt-escuela-273-1975",order:10,label:"La primera escuela"},{id:"evt-club-san-patricio-1976",order:11,label:"El club como espacio de comunidad"}]}
 ],
-relations:[
+relations:{id:"rel-encina-mensura",from:"persona-encina-moreno",to:"evt-mensura-encina-moreno-1881",type:"documenta",label:"mensura y relevamiento",sourceIds:["src-encina-moreno-conicet","src-mensura-encina-moreno"]},
+{id:"rel-mangrullo-fortin",from:"lugar-mangrullo-chanar",to:"evt-fortin-chanar-1881",type:"referencia",label:"topónimo documentado",sourceIds:["src-municipio-identidad","src-raone-fortines"]},
+{id:"rel-basilio-tratayen",from:"persona-basilio-toro",to:"evt-carrasco-tratayen-1902",type:"aparece_en",label:"residente y encargado de correspondencia",sourceIds:["src-carrasco-1902"]},
+{id:"rel-chanares-carrasco",from:"lugar-chanares-chicos",to:"evt-carrasco-tratayen-1902",type:"descrito_en",label:"paraje recorrido en 1902",sourceIds:["src-carrasco-1902"]},
+{id:"rel-tratayen-carrasco",from:"lugar-colonia-tratayen",to:"evt-carrasco-tratayen-1902",type:"descrito_en",label:"puesto visitado en 1902",sourceIds:["src-carrasco-1902"]},
+{id:"rel-tratayen-mensura",from:"lugar-colonia-tratayen",to:"evt-mensura-tratayen-1913",type:"mensurado_en",label:"colonia documentada por mensura",sourceIds:["src-municipio-identidad","src-cfi-ordenamiento"]},
+{id:"rel-propiedad-remate",from:"lugar-el-chanar",to:"evt-remate-1943",type:"contexto_de",label:"cadena dominial pendiente de reconstrucción",sourceIds:["src-municipio-identidad"]},
+{id:"rel-remate-adquisicion-1966",from:"evt-remate-1943",to:"evt-adquisicion-cinco-saltos-1966",type:"precede",label:"cambio posterior de titularidad",sourceIds:["src-municipio-identidad"]},
 {id:"rel-gasparri-adquisicion",from:"persona-roberto-gasparri",to:"evt-adquisicion-1968",type:"participa_en",label:"protagonista asociado al proceso",sourceIds:["src-legislatura-neuquen-2019","src-diputados-2023"]},
 {id:"rel-gasparri-riego",from:"persona-roberto-gasparri",to:"evt-primera-bocatoma-1971",type:"participa_en",label:"desarrollo productivo y riego",sourceIds:["src-municipio-identidad"]},
 {id:"rel-salvatori-fundacion",from:"persona-pedro-salvatori",to:"evt-fundacion-1973",type:"protagoniza",label:"gobernador durante la creación de la localidad",sourceIds:["src-neuquen-informa-2016","src-legislatura-neuquen-2019"]},
