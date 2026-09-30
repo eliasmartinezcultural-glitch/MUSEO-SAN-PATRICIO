@@ -1,0 +1,13 @@
+{
+  "version":"1.0.0",
+  "description":"Registro explícito de relaciones históricas verificadas o documentadas entre piezas. No sustituye la evidencia de cada pieza.",
+  "relationTypes":["PRECEDES","FOLLOWS","RELATED_TO","CONNECTED_TO","DOCUMENTS","CONTEXTUALIZES"],
+  "relations":[
+    {"from":"TD-006","type":"PRECEDES","to":"TD-007","basis":"Ambos registros corresponden a mensuras históricas locales; 1881–1882 antecede a la mensura de 1913.","status":"DOCUMENTED"},
+    {"from":"TD-008","type":"PRECEDES","to":"TD-010","basis":"La transformación productiva e infraestructura de 1966–1971 antecede al decreto de fundación de 1973.","status":"DOCUMENTED"},
+    {"from":"TD-009","type":"RELATED_TO","to":"TD-008","basis":"El registro de primeras cosechas y riego forma parte de la etapa de transformación productiva 1969–1971.","status":"DOCUMENTED"},
+    {"from":"TD-005","type":"CONNECTED_TO","to":"TD-009","basis":"El río Neuquén es la fuente de agua de los primeros procesos de riego documentados.","status":"DOCUMENTED"},
+    {"from":"TD-005","type":"CONNECTED_TO","to":"TD-008","basis":"La transformación territorial documentada depende de la infraestructura y disponibilidad de agua del río.","status":"DOCUMENTED"},
+    {"from":"TD-009","type":"CONNECTED_TO","to":"TD-010","basis":"La transformación productiva e hídrica precede y contextualiza el nacimiento formal de la localidad.","status":"DOCUMENTED"}
+  ]
+}
