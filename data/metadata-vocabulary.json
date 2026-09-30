@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "0.3.0",
+  "vocabularies": {
+    "pieceTypes": [
+      "objeto",
+      "fotografia",
+      "documento",
+      "mapa",
+      "audio",
+      "video",
+      "persona",
+      "lugar",
+      "institucion",
+      "evento",
+      "testimonio",
+      "publicacion",
+      "coleccion"
+    ],
+    "evidenceStatus": [
+      "EVIDENCIA_LOCAL",
+      "FUENTE_HISTORICA",
+      "CONTEXTO_REGIONAL",
+      "MEMORIA_ORAL",
+      "FUENTE_INSTITUCIONAL",
+      "EN_INVESTIGACION",
+      "IDENTIFICACION_PENDIENTE",
+      "DISPUTADO",
+      "NO_VERIFICADO"
+    ],
+    "editorialStatus": [
+      "BORRADOR",
+      "EN_REVISION",
+      "PUBLICABLE",
+      "PUBLICADO",
+      "REVISAR"
+    ],
+    "rightsStatus": [
+      "DERECHOS_RESERVADOS",
+      "DOMINIO_PUBLICO",
+      "CC0",
+      "CC_BY",
+      "CC_BY_SA",
+      "USO_AUTORIZADO",
+      "SOLO_ENLACE",
+      "DERECHOS_DESCONOCIDOS",
+      "NO_PUBLICAR"
+    ],
+    "relationTypes": [
+      "LOCATED_IN",
+      "PART_OF",
+      "PRECEDES",
+      "FOLLOWS",
+      "RELATED_TO",
+      "DOCUMENTS",
+      "MENTIONS",
+      "REMEMBERS",
+      "CONNECTED_TO",
+      "CONTEXTUALIZES",
+      "CREATED_BY",
+      "HELD_BY",
+      "OCCURRED_AT",
+      "DEPENDS_ON",
+      "CONTRADICTS",
+      "DERIVED_FROM"
+    ]
+  }
+}
