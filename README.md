@@ -46,3 +46,8 @@ El siguiente salto será ampliar colecciones, mapa narrativo, archivo visual rea
 Ver `MUSEUM-ARCHITECTURE.md` para la arquitectura bloqueada.
 
 Tecnología desarrollada por Elías Martínez / Ocarina Producciones.
+
+
+## 0.3.0 — Arquitectura profesional bloqueada
+
+La estructura museológica y documental queda congelada. Se incorporan el estándar profesional, el modelo maestro de entidades, vocabularios controlados, plan de colecciones, esquema de ingreso de archivos y política editorial. El museo se desarrolla como sistema de documentación e interpretación, no como una página de contenido estático.
