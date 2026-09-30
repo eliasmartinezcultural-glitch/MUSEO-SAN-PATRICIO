@@ -1,12 +1,26 @@
 {
-  "museum":"Museo San Patricio del Chañar",
-  "version":"0.5.0",
-  "status":"LOCKED_ARCHITECTURE_EXPANDED",
-  "architecture":"CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
-  "locked":true,
-  "stage":"deep-research-and-archive",
-  "newSystems":["source_registry","research_agenda","multimedia_map","archive_growth_plan"],
-  "rules":["No inventar patrimonio","No convertir contexto regional en evidencia local","No publicar multimedia sin procedencia y derechos","No destruir entidades nucleares","Toda contradicción documental se conserva y atribuye"],
-  "next":"0.6 — Motor de fichas museológicas y visor documental/multimedia",
-  "credit":"Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
+  "museum": "Museo San Patricio del Chañar",
+  "version": "0.6.0",
+  "status": "LOCKED_ARCHITECTURE_VISUAL_EXPANDED",
+  "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
+  "locked": true,
+  "stage": "photography-first-design",
+  "newSystems": [
+    "source_registry",
+    "research_agenda",
+    "multimedia_map",
+    "archive_growth_plan",
+    "photo_archive_wall",
+    "photo_provenance_ui",
+    "editorial_visual_system"
+  ],
+  "rules": [
+    "No inventar patrimonio",
+    "No convertir contexto regional en evidencia local",
+    "No publicar multimedia sin procedencia y derechos",
+    "No destruir entidades nucleares",
+    "Toda contradicción documental se conserva y atribuye"
+  ],
+  "next": "0.7 — Fichas museológicas visuales, visor multimedia y relaciones navegables",
+  "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
 }
