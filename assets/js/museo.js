@@ -74,7 +74,29 @@ function bind(){
 }
 function openSource(id){const s=(state.data.sources||[]).find(x=>x.id===id);if(!s)return;$('#sourceReaderTitle').textContent=s.title;$('#sourceReaderType').textContent=(s.type||'FUENTE').replaceAll('_',' ');$('#sourceReaderMeta').textContent=(s.organization||'Archivo del museo')+' · '+(s.date||'Registro documental');$('#sourceReaderText').textContent=(s.description||'Esta fuente forma parte de la documentación que sustenta una o más piezas del museo.')+' El museo conserva aquí su función documental y deja el original externo como consulta opcional.';$('#sourceModal').classList.add('open');$('#sourceModal').setAttribute('aria-hidden','false');$('#sourceModal').querySelector('[data-source-original]').onclick=()=>window.open(s.url,'_blank','noopener');}
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
-async function boot(){try{const [d,c,m,t]=await Promise.all([fetch('data/territory-depth.json').then(r=>r.json()),fetch('data/collections.json').then(r=>r.json()),fetch('data/multimedia.json').then(r=>r.json()),fetch('data/research-threads.json').then(r=>r.json())]);state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind()}catch(e){console.error(e);toast('No se pudo cargar uno de los archivos del museo.');}}
+async function loadJson(path){
+ const res=await fetch(path,{cache:'no-cache'});
+ if(!res.ok)throw new Error(path+' · HTTP '+res.status);
+ const data=await res.json();
+ return data;
+}
+async function boot(){
+ try{
+  const [d,c,m,t]=await Promise.all([
+   loadJson('data/territory-depth.json'),
+   loadJson('data/collections.json'),
+   loadJson('data/multimedia.json'),
+   loadJson('data/research-threads.json')
+  ]);
+  if(!d||!Array.isArray(d.records)||!Array.isArray(d.layers))throw new Error('territory-depth.json: estructura inválida');
+  state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind();
+ }catch(e){
+  console.error('[Museo] boot error',e);
+  const grid=$('#pieceGrid');
+  if(grid)grid.innerHTML='<article class="museum-error"><b>EL MUSEO SIGUE ABIERTO</b><h3>Una capa de datos no pudo cargarse.</h3><p>La interfaz está disponible. Volvé a intentar o revisá la conexión.</p><button class="primary" onclick="location.reload()">Reintentar</button></article>';
+  toast('Una capa documental no pudo cargarse.');
+ }
+}
 boot();
 /* 0.8 — experiencia multidispositivo */
 function initExperience(){const root=document.documentElement, body=document.body; body.classList.add('experience-active'); $('#dockHome').onclick=()=>{window.scrollTo({top:0,behavior:'smooth'});toast('Volviste al inicio del museo')}; $('#dockExit').onclick=()=>{window.scrollTo({top:0,behavior:'smooth'});toast('El museo permanece abierto')}; $('#dockFullscreen').onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()}catch(e){toast('La pantalla completa no está disponible en este dispositivo')}}; $('#dockAdjust').onclick=()=>{$('#adjustPanel').classList.add('open');$('#adjustPanel').setAttribute('aria-hidden','false')}; $('#closeAdjust').onclick=()=>{$('#adjustPanel').classList.remove('open');$('#adjustPanel').setAttribute('aria-hidden','true')}; document.querySelectorAll('[data-font]').forEach(b=>b.onclick=()=>{const v=b.dataset.font; if(v==='0')root.style.removeProperty('--reading-scale'); else root.style.setProperty('--reading-scale',v==='1'?'1.12':'.94');localStorage.setItem('museum-font',v)}); $('#toggleMotion').onclick=()=>{body.classList.toggle('reduce-motion');localStorage.setItem('museum-motion',body.classList.contains('reduce-motion')?'1':'0')}; $('#toggleContrast').onclick=()=>{body.classList.toggle('high-contrast');localStorage.setItem('museum-contrast',body.classList.contains('high-contrast')?'1':'0')}; $('#toggleReading').onclick=()=>{body.classList.toggle('reading-mode');localStorage.setItem('museum-reading',body.classList.contains('reading-mode')?'1':'0')}; $('#resetExperience').onclick=()=>{localStorage.removeItem('museum-font');localStorage.removeItem('museum-motion');localStorage.removeItem('museum-contrast');localStorage.removeItem('museum-reading');root.style.removeProperty('--reading-scale');body.classList.remove('reduce-motion','high-contrast','reading-mode');toast('Ajustes restablecidos')}; const font=localStorage.getItem('museum-font');if(font==='1')root.style.setProperty('--reading-scale','1.12');if(font==='-1')root.style.setProperty('--reading-scale','.94');if(localStorage.getItem('museum-motion')==='1')body.classList.add('reduce-motion');if(localStorage.getItem('museum-contrast')==='1')body.classList.add('high-contrast');if(localStorage.getItem('museum-reading')==='1')body.classList.add('reading-mode'); const bar=$('#experienceProgressBar');let ticking=false; const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?(scrollY/max)*100:0)+'%';ticking=false};window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update();}
