@@ -1,0 +1,115 @@
+/* 1.2 — VISUAL CHAÑAR ENGINE
+   A local visual grammar: river / barda / chacra / alameda / pueblo / memory.
+   Decorative layers never replace documentary evidence. */
+:root{
+ --cha-dark:#0c120f;--cha-forest:#1c2a20;--cha-olive:#657153;--cha-sage:#9ba486;
+ --cha-earth:#8b6847;--cha-sand:#d7c49a;--cha-gold:#cdb574;--cha-river:#6f9090;
+ --cha-sky:#b8c8bd;--cha-paper:#efe7d6;--cha-red:#a24d36;
+ --cha-radius:18px;--reading-scale:1;
+}
+body{font-size:calc(16px * var(--reading-scale));background:
+ radial-gradient(circle at 12% 14%,#65715312 0 1px,transparent 1.5px) 0 0/23px 23px,
+ linear-gradient(90deg,#efe7d6,#f6f0e4 45%,#ebe2d0);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.09;background:
+ repeating-linear-gradient(0deg,transparent 0 3px,#3b33270b 4px),
+ repeating-linear-gradient(90deg,transparent 0 5px,#3b33270a 6px);mix-blend-mode:multiply}
+.topbar{backdrop-filter:blur(14px);background:#0c120ff2;border-bottom-color:#cdb57433}
+.brand-mark{border-color:#cdb57488;color:#cdb574}
+.hero{background:
+ radial-gradient(circle at 72% 25%,#cdb57438 0 3%,transparent 3.5%),
+ linear-gradient(145deg,#0c120f 0 54%,#17231b 55% 100%);
+}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:34%;opacity:.32;background:
+ repeating-linear-gradient(0deg,transparent 0 18px,#cdb57416 19px 20px),
+ repeating-linear-gradient(90deg,transparent 0 70px,#9ba48612 71px 72px);
+transform:skewY(-4deg);pointer-events:none}
+.hero-landscape{filter:saturate(.9)}
+.hero-landscape:after{content:"";position:absolute;left:5%;right:5%;bottom:13%;height:42%;background:
+ repeating-linear-gradient(92deg,transparent 0 34px,#9ba48635 35px 36px);
+clip-path:polygon(0 25%,100% 0,100% 100%,0 100%);opacity:.65}
+.hero h1 em{color:var(--cha-sand)}
+.hero-stats b{color:var(--cha-gold)}
+.chanar-identity{position:relative;padding:130px 7vw;background:
+ linear-gradient(#efe7d6e8,#efe7d6e8),repeating-linear-gradient(0deg,transparent 0 34px,#8b684711 35px 36px)}
+.identity-grid{position:relative}
+.identity-card{border-radius:var(--cha-radius);overflow:hidden;min-height:300px!important;border:1px solid #6c725d55!important;box-shadow:0 18px 50px #31271910}
+.identity-card:before{opacity:.9!important}
+.identity-river{background:linear-gradient(145deg,#29464a,#7d9b98 45%,#d0bd8d 46%,#334a36 100%)}
+.identity-barda{background:linear-gradient(165deg,#d5c29b,#a7875f 35%,#4e4938 36%,#242d24)}
+.identity-chacra{background:repeating-linear-gradient(90deg,#263c29 0 22px,#8c9a6e 23px 25px),linear-gradient(#d2bd87,#45543d)}
+.identity-wind{background:linear-gradient(145deg,#a9b9b0,#607264 48%,#c8b47d 49%,#253126)}
+.identity-card h3{font-size:clamp(26px,3vw,38px)!important}
+.identity-card b{letter-spacing:.16em}
+.museum-command{background:var(--cha-dark)!important;position:relative;overflow:hidden}
+.museum-command:before{content:"CHAÑAR";position:absolute;right:-3vw;bottom:-7vw;font:900 16vw/1 Manrope;color:#fff3;letter-spacing:-.08em}
+.command-box{border:1px solid #cdb57455!important;background:#17221b!important;border-radius:22px!important;box-shadow:0 20px 80px #0005}
+.command-box button:first-child{border-radius:14px!important;background:#0d1510!important}
+.command-suggestions button{border-radius:999px!important;border-color:#cdb57444!important}
+.visual-atlas{background:
+ linear-gradient(#d8d0bcaa,#d8d0bcaa),
+ repeating-linear-gradient(45deg,transparent 0 28px,#65715312 29px 30px),
+ repeating-linear-gradient(-45deg,transparent 0 38px,#a24d3610 39px 40px)!important}
+.atlas-map{border-radius:28px!important;background:#d7c49a!important;box-shadow:inset 0 0 0 1px #65715355,0 24px 70px #31271920}
+.map-river{background:#5f8787!important;filter:saturate(.8)}
+.map-barda{background:#987553!important}
+.map-chacras{background:repeating-linear-gradient(90deg,#687b56 0 19px,#c4b383 20px 22px)!important}
+.map-town{background:#a24d36!important;box-shadow:0 0 0 9px #a24d3622}
+.atlas-key{border-radius:14px!important}
+.welcome{background:#f4eddf}
+.entry{border-radius:16px!important;background:#f8f1e5!important;box-shadow:0 12px 30px #3027180d}
+.entry:hover{background:#fff9ed!important}
+.photo-archive{background:
+ linear-gradient(135deg,#0c120f,#17231b 55%,#26382b);
+}
+.photo-window{border-radius:14px 14px 0 0}
+.photo-rule{border-radius:14px!important;border-color:#cdb57444!important}
+.featured{background:#ded5c3!important}
+.piece,.place,.chapter,.collection-card,.media-card,.thread-card{border-radius:16px!important;box-shadow:0 10px 28px #3027180c}
+.piece:hover,.place:hover,.chapter:hover{box-shadow:0 24px 60px #30271820}
+.timeline-section{background:
+ radial-gradient(circle at 20% 20%,#cdb57412 0 2px,transparent 2.5px) 0 0/34px 34px,#101711}
+.time-dot{box-shadow:0 0 0 7px #cdb57418}
+.territory-section{background:
+ linear-gradient(#f6f0e4f2,#f6f0e4f2),repeating-linear-gradient(90deg,transparent 0 90px,#6571530b 91px 92px)}
+.place .place-visual{filter:saturate(.8)}
+.sources-section{background:#d7cbb7!important}
+.closing{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 50% 20%,#cdb57425,transparent 35%),#0c120f}
+.closing:before{content:"RÍO  ·  BARDA  ·  CHACRA  ·  PUEBLO  ·  MEMORIA";position:absolute;left:0;right:0;top:25px;text-align:center;color:#cdb57455;font:10px DM Mono;letter-spacing:.18em}
+.museum-school{padding:120px 7vw;background:#f0e6d3;position:relative;overflow:hidden}
+.museum-school:before{content:"ESCUELA";position:absolute;right:-2vw;top:35px;font:900 12vw/1 Manrope;color:#6571530b;letter-spacing:-.08em}
+.school-shell{max-width:1250px;margin:auto}
+.school-head{display:grid;grid-template-columns:1.15fr .85fr;gap:8vw;align-items:end}
+.school-head h2{font-size:clamp(42px,6vw,82px);line-height:.9;letter-spacing:-.06em;margin:12px 0 20px}
+.school-head p{color:#646357;line-height:1.8;max-width:520px}
+.school-badge{display:inline-flex;padding:8px 12px;border:1px solid #a24d3655;border-radius:999px;font:9px DM Mono;letter-spacing:.12em;color:#a24d36}
+.school-audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:60px}
+.school-audience{border:1px solid #7c806b66;border-radius:18px;padding:25px;min-height:210px;background:#f8f0df;display:flex;flex-direction:column;justify-content:space-between}
+.school-audience .num{font:10px DM Mono;color:#a24d36}
+.school-audience h3{font-size:24px;margin:12px 0 8px}
+.school-audience p{font-size:12px;line-height:1.6;color:#66655d}
+.school-audience button{border:0;background:none;text-align:left;padding:0;font:10px DM Mono;text-transform:uppercase;color:#a24d36;cursor:pointer}
+.school-route{margin-top:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid #7c806b66;border-radius:20px;overflow:hidden}
+.school-step{padding:22px;background:#f7efdf;border-right:1px solid #7c806b33;min-height:130px}
+.school-step:last-child{border-right:0}
+.school-step span{font:9px DM Mono;color:#a24d36}
+.school-step b{display:block;margin:12px 0 6px;font-size:16px}
+.school-step small{color:#77756c;line-height:1.4}
+.school-kit{margin-top:55px;background:#132019;color:#f2eadb;border-radius:24px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.school-kit h3{font-size:32px;margin:0 0 10px}
+.school-kit p{color:#aeb7aa;line-height:1.7}
+.school-kit ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.school-kit li{padding:13px 15px;border:1px solid #cdb57428;border-radius:10px;font-size:12px}
+.school-kit li:before{content:"→";color:#cdb574;margin-right:10px}
+.school-status{margin-top:35px;font:9px DM Mono;letter-spacing:.12em;color:#7c7a6e}
+.chanar-signature{padding:90px 7vw;background:#cdb574;color:#142019;overflow:hidden;position:relative}
+.chanar-signature .signature-inner{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.chanar-signature h2{font-size:clamp(34px,6vw,80px);line-height:.9;letter-spacing:-.06em;margin:0}
+.chanar-signature p{max-width:440px;line-height:1.7}
+@media(max-width:900px){.school-head{grid-template-columns:1fr}.school-audience-grid{grid-template-columns:1fr 1fr}.school-route{grid-template-columns:1fr 1fr}.school-step:nth-child(odd){border-right:1px solid #7c806b33}.school-kit{grid-template-columns:1fr}}
+@media(max-width:600px){.school-audience-grid{grid-template-columns:1fr}.school-route{grid-template-columns:1fr}.school-step{border-right:0!important;border-bottom:1px solid #7c806b33}.school-step:last-child{border-bottom:0}.school-kit{padding:25px}.chanar-signature .signature-inner{display:block}.chanar-signature p{margin-top:25px}}
+body.high-contrast{--cha-paper:#fff;--paper2:#fff;--paper:#fff;--ink:#000;--muted:#333}
+body.high-contrast .school-audience,body.high-contrast .school-step{background:#fff;border-color:#222}
+body.reduce-motion *,body.reduce-motion *:before,body.reduce-motion *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.reading-mode .hero-landscape,body.reading-mode .photo-archive:before,body.reading-mode .museum-command:before{opacity:.18}
