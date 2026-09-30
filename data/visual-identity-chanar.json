@@ -1,0 +1,108 @@
+{
+  "version": "0.9.1",
+  "title": "Gramática visual territorial — San Patricio del Chañar",
+  "principle": "La identidad visual del museo nace del territorio documentado y no de una estética patagónica genérica.",
+  "visualAxes": [
+    {
+      "id": "agua",
+      "name": "Río Neuquén",
+      "role": "estructura territorial",
+      "uses": [
+        "líneas de navegación",
+        "curvas de mapas",
+        "transiciones",
+        "capas cartográficas"
+      ]
+    },
+    {
+      "id": "barda",
+      "name": "Barda y valle",
+      "role": "contraste geomorfológico",
+      "uses": [
+        "fondos",
+        "bordes",
+        "separadores",
+        "composición fotográfica"
+      ]
+    },
+    {
+      "id": "chacra",
+      "name": "Trama de chacras",
+      "role": "matriz productiva",
+      "uses": [
+        "grillas",
+        "mosaicos",
+        "mapas",
+        "tarjetas de colección"
+      ]
+    },
+    {
+      "id": "alameda",
+      "name": "Alamedas y cortinas",
+      "role": "estructura vegetal del paisaje agrario",
+      "uses": [
+        "patrones",
+        "marcos",
+        "transiciones",
+        "microanimaciones"
+      ]
+    },
+    {
+      "id": "riego",
+      "name": "Canales y acequias",
+      "role": "infraestructura que transforma el territorio",
+      "uses": [
+        "diagramas",
+        "cronología",
+        "relaciones causa-efecto",
+        "mapas"
+      ]
+    },
+    {
+      "id": "arquitectura",
+      "name": "Arquitectura urbana",
+      "role": "memoria construida",
+      "uses": [
+        "fichas patrimoniales",
+        "fotografía",
+        "comparativas antes/ahora"
+      ]
+    }
+  ],
+  "evidenceBasis": [
+    {
+      "source": "Municipalidad de San Patricio del Chañar",
+      "topic": "lugares y paisaje local"
+    },
+    {
+      "source": "Finessi y Groch, Boletín Geográfico 34 (2012)",
+      "topic": "paisaje agrario, parcelas, caminos, alamedas, canales y transformación territorial"
+    },
+    {
+      "source": "Estadística Neuquén, Información Municipal Básica 1999-2000",
+      "topic": "cartografía municipal"
+    },
+    {
+      "source": "CONICET/COPADE, Plan de Ordenamiento Territorial",
+      "topic": "relación entre mancha urbana y chacras productivas"
+    },
+    {
+      "source": "Bases del concurso Parque Deportivo y Cultural / CAN",
+      "topic": "matriz productiva, mosaico de chacras y barreras cortaviento"
+    }
+  ],
+  "imagePolicy": {
+    "historicalEvidence": "Solo fotografías con procedencia, fecha aproximada, autor o custodio y derechos registrados.",
+    "contemporaryReference": "Las fotografías contemporáneas pueden contextualizar lugares actuales si se identifican correctamente.",
+    "generatedGraphics": "Las ilustraciones generadas por interfaz se etiquetan como interpretación visual y nunca como evidencia histórica.",
+    "externalCopyright": "No incorporar imágenes ajenas al archivo del museo sin revisar derechos y condiciones de uso."
+  },
+  "nextVisualBuild": [
+    "visor fotográfico interno con imagen principal, pie documental y procedencia",
+    "comparador antes/ahora para lugares con dos registros verificables",
+    "mapa interno de capas históricas y actuales",
+    "atlas visual de chacras, riego, bardas, río y trama urbana",
+    "fichas de arquitectura y patrimonio construido",
+    "archivo de fotografías aportadas por vecinos e instituciones"
+  ]
+}
