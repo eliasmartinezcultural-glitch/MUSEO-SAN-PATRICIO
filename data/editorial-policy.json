@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "0.3.0",
+  "principles": [
+    "La procedencia precede a la publicación.",
+    "La incertidumbre se muestra, no se oculta.",
+    "La memoria oral se atribuye a quien la cuenta.",
+    "El contexto regional no se presenta como evidencia local.",
+    "Las contradicciones documentales se conservan y se explican.",
+    "La comunidad puede aportar, corregir y ampliar registros.",
+    "Los derechos de reproducción se documentan por separado de la descripción histórica.",
+    "Cada pieza debe poder volver a su fuente."
+  ],
+  "reviewWorkflow": [
+    "registro",
+    "procedencia",
+    "identificación",
+    "fuentes",
+    "derechos",
+    "interpretación",
+    "accesibilidad",
+    "revisión",
+    "publicación"
+  ],
+  "communityNote": "Los aportes comunitarios pueden convertirse en parte del archivo y no se incorporan automáticamente como hechos históricos sin documentación y revisión."
+}

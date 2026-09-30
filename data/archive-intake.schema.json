@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.3.0",
+  "fields": [
+    "intakeId",
+    "receivedAt",
+    "contributor",
+    "contactPermission",
+    "itemTitle",
+    "itemType",
+    "approxDate",
+    "place",
+    "description",
+    "originalOwner",
+    "currentCustodian",
+    "sourceStory",
+    "physicalCondition",
+    "digitalFormat",
+    "filename",
+    "rightsStatus",
+    "consentStatus",
+    "preferredCredit",
+    "relatedPeople",
+    "relatedPlaces",
+    "relatedEvents",
+    "notes",
+    "reviewStatus"
+  ],
+  "statuses": [
+    "RECIBIDO",
+    "EN_CATALOGACION",
+    "FALTA_PROCEDENCIA",
+    "FALTA_DERECHOS",
+    "EN_REVISION",
+    "APROBADO",
+    "PUBLICADO",
+    "NO_PUBLICAR"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.2.0",
-  "status": "DEVELOPMENT_READY",
+  "version": "0.3.0",
+  "status": "LOCKED_ARCHITECTURE",
   "architecture": "CONTENIDO -> DATOS -> MOTOR -> EXPERIENCIA",
   "historicalLayers": [
     "tiempo_profundo",
@@ -25,7 +25,7 @@
   "contentRule": "No inventar patrimonio, fuentes, fotografías, testimonios ni relaciones locales.",
   "stabilityRule": "Las nuevas versiones amplían la base bloqueada y no destruyen funcionalidades consolidadas.",
   "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones",
-  "stage": "colecciones_archivo_multimedia",
+  "stage": "professional-museum-foundation",
   "additions": [
     "pieza_museologica",
     "timeline",
@@ -39,7 +39,17 @@
     "research_threads",
     "contemporary_history_records"
   ],
-  "next": "0.3 — ficha visual de museo, mapa narrativo y grafo de relaciones",
+  "next": "0.4 — ficha museológica, relaciones, mapa narrativo y visor multimedia",
   "lockedFoundation": "0.0.1",
-  "mediaRule": "Los materiales externos se enlazan con procedencia; los archivos propios se incorporarán con consentimiento o licencia documentada."
+  "mediaRule": "Los materiales externos se enlazan con procedencia; los archivos propios se incorporarán con consentimiento o licencia documentada.",
+  "locked": true,
+  "lockedAt": "2026-09-30",
+  "rules": [
+    "No romper entidades nucleares",
+    "No mezclar proyectos externos",
+    "No publicar multimedia sin procedencia y derechos",
+    "No convertir contexto regional en evidencia local",
+    "No inventar patrimonio",
+    "Cambios estructurales requieren nueva revisión de arquitectura"
+  ]
 }
