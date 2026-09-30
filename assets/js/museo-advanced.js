@@ -19,22 +19,32 @@
    const sig=document.createElement('section');sig.className='chanar-signature';sig.innerHTML='<div class="signature-inner"><h2>SAN PATRICIO<br>DEL CHAÑAR.</h2><p>RÍO · BARDA · AGUA · CHACRA · ALAMEDA · PUEBLO · MEMORIA<br><br>Una identidad visual común para que el museo pueda crecer sin perder el territorio.</p></div>';main.insertBefore(sig,closing||null);
    sec.querySelectorAll('[data-school-entry]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.schoolEntry;const target=id==='curioso'?'pieceGrid':id==='territorio'?'territorio':'explorar';document.getElementById(target)?.scrollIntoView({behavior:'smooth'});toast('Ruta educativa: '+b.closest('.school-audience').querySelector('h3').textContent)}));
  }
- function enhance(){
-   if(!window.stateReady)return;
-   const oldInput=document.querySelector('#searchInput'); if(!oldInput||oldInput.dataset.v12)return;
+ async function enhance(){
+   if(document.querySelector('#searchInput')?.dataset.v12)return;
+   const oldInput=document.querySelector('#searchInput'); if(!oldInput)return;
    oldInput.dataset.v12='1';
-   oldInput.addEventListener('input',()=>unifiedSearch(oldInput.value),true);
-   buildUnifiedIndex();
+   try{
+     const [d,c,m,t]=await Promise.all([
+       fetch('data/territory-depth.json').then(r=>r.json()),
+       fetch('data/collections.json').then(r=>r.json()),
+       fetch('data/multimedia.json').then(r=>r.json()),
+       fetch('data/research-threads.json').then(r=>r.json())
+     ]);
+     const src=d.sources||[];
+     window.__museumUnifiedData={records:d.records||[],collections:c.collections||[],multimedia:m.media||[],threads:t.threads||[],sources:src};
+     buildUnifiedIndex(window.__museumUnifiedData);
+     oldInput.addEventListener('input',()=>unifiedSearch(oldInput.value),true);
+   }catch(e){console.warn('unified-index',e)}
  }
  let index=[];
- function buildUnifiedIndex(){
-   const d=window.__museumState; if(!d)return;
+ function buildUnifiedIndex(d){
+   index=[];
    const add=(type,id,title,text,action)=>index.push({type,id,title,text:String(text||''),action});
-   (d.records||[]).forEach(r=>add('PIEZA',r.id,r.title,[r.evidence,r.notes,r.period,r.status,r.layer].join(' '),()=>openRecord(r.id)));
+   (d.records||[]).forEach(r=>add('PIEZA',r.id,r.title,[r.evidence,r.notes,r.period,r.status,r.layer].join(' '),()=>window.openRecord?.(r.id)));
    (d.collections||[]).forEach(c=>add('COLECCIÓN',c.id,c.title,[c.subtitle,c.description,c.kind].join(' '),()=>document.getElementById('colecciones')?.scrollIntoView({behavior:'smooth'})));
    (d.multimedia||[]).forEach(m=>add('ARCHIVO',m.id,m.title,[m.description,m.date,m.type].join(' '),()=>document.getElementById('archivo')?.scrollIntoView({behavior:'smooth'})));
    (d.threads||[]).forEach(t=>add('INVESTIGACIÓN',t.id,t.title,[t.title,(t.needs||[]).join(' ')].join(' '),()=>document.querySelector('.research-threads')?.scrollIntoView({behavior:'smooth'})));
-   (d.sources||[]).forEach(s=>add('FUENTE',s.id,s.title,[s.description,s.type,s.scope].join(' '),()=>openSource(s.id)));
+   (d.sources||[]).forEach(s=>add('FUENTE',s.id,s.title,[s.description,s.type,s.scope].join(' '),()=>window.openSource?.(s.id)));
    window.__museumUnifiedIndex=index;
  }
  function unifiedSearch(q){
@@ -46,14 +56,6 @@
    out.innerHTML=hits.length?hits.map((x,i)=>'<button class="result v12-result" data-v12-result="'+i+'"><small>'+esc(x.type)+' · '+esc(x.id)+'</small><b>'+esc(x.title)+'</b><span>'+esc(x.text.slice(0,170))+'…</span></button>').join(''):'<p style="color:#777;margin-top:30px">No encontramos una coincidencia todavía. Probá otra palabra o convertí la ausencia en una pregunta de investigación.</p>';
    out.querySelectorAll('[data-v12-result]').forEach(b=>b.onclick=()=>index[Number(b.dataset.v12Result)]?.action());
  }
- window.__museumState={records:[],collections:[],multimedia:[],threads:[],sources:[]};
- const originalFetch=window.fetch;
- const oldBoot=setInterval(()=>{
-   if(window.state && window.state.data){
-     clearInterval(oldBoot);
-     window.__museumState={records:window.state.data.records||[],collections:window.state.collections?.collections||[],multimedia:window.state.multimedia?.media||[],threads:window.state.threads?.threads||[],sources:window.state.data.sources||[]};
-     window.stateReady=true; buildUnifiedIndex(); enhance();
-   }
- },250);
  loadSchool();
+ enhance();
 })();
