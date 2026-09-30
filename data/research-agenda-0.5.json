@@ -1,0 +1,24 @@
+{
+  "version":"0.5.0",
+  "title":"Agenda profunda de investigación",
+  "priorityLines":[
+    {"id":"R-001","topic":"1881-1882 Mangrullo Chañar","goal":"Localizar plano/mensura y establecer qué documento sustenta la referencia.","sourcesToSeek":["Archivo General de la Nación","cartografía nacional","mensuras","bibliografía de Juan Mario Raone"],"status":"OPEN"},
+    {"id":"R-002","topic":"1913 Tratayen","goal":"Recuperar plano de Tressens y reconstruir el núcleo urbano.","sourcesToSeek":["Catastro","archivo provincial","mensuras","CFI"],"status":"OPEN"},
+    {"id":"R-003","topic":"Inundación y desaparición de Tratayen","goal":"Determinar si existe evidencia documental de la crecida que habría afectado la colonia.","sourcesToSeek":["hidrología histórica","prensa","catastro","testimonios","mapas"],"status":"OPEN"},
+    {"id":"R-004","topic":"Cadena dominial 1943-1968","goal":"Reconstruir propietarios y transferencias sin depender de una sola narración.","sourcesToSeek":["Registro de la Propiedad","catastro","Banco Nación","escrituras"],"status":"OPEN"},
+    {"id":"R-005","topic":"Riego 1966-1973","goal":"Documentar concesiones, bocatomas, bombas, canales, superficies y actores.","sourcesToSeek":["Departamento Provincial de Aguas/organismos de riego","expedientes","planos","CFI"],"status":"OPEN"},
+    {"id":"R-006","topic":"Fundación 1973","goal":"Obtener copia del Decreto 1339 y registrar texto, firma, fecha y contexto.","sourcesToSeek":["Boletín Oficial Neuquén","Archivo Histórico Provincial","Legislatura"],"status":"OPEN"},
+    {"id":"R-007","topic":"Comisión de Fomento 1974","goal":"Obtener documentación de autoridades y primeras obras.","sourcesToSeek":["Boletín Oficial","Municipalidad","Archivo Provincial"],"status":"OPEN"},
+    {"id":"R-008","topic":"Primeras familias","goal":"Construir un índice de familias, chacras, trabajadores y primeros residentes con fuentes.","sourcesToSeek":["registro civil","escuelas","parroquia","club","familias","prensa"],"status":"OPEN"},
+    {"id":"R-009","topic":"Pueblos originarios","goal":"Separar historia regional de evidencia específica del área y documentar fuentes mapuche con atribución.","sourcesToSeek":["CONICET","INAI","archivo provincial","historia oral","bibliografía especializada"],"status":"OPEN"},
+    {"id":"R-010","topic":"Arqueología local","goal":"Determinar qué sitios arqueológicos están documentados específicamente en el área.","sourcesToSeek":["CONICET","universidades","Dirección Provincial de Patrimonio"],"status":"OPEN"},
+    {"id":"R-011","topic":"Fiesta del Pelón","goal":"Construir archivo año por año con afiches, programas, reinas/soberanas, artistas, fotos y testimonios.","sourcesToSeek":["Municipalidad","familias","prensa","organización"],"status":"OPEN"},
+    {"id":"R-012","topic":"Radio Chañar","goal":"Crear archivo de la historia de la radio local desde 1992.","sourcesToSeek":["locutores","grabaciones","prensa","familias"],"status":"OPEN"},
+    {"id":"R-013","topic":"Escuelas","goal":"Reconstruir la historia institucional y archivo fotográfico de escuelas 273, 191 y CEPEM 31.","sourcesToSeek":["escuelas","exdocentes","familias","actas"],"status":"OPEN"},
+    {"id":"R-014","topic":"Club Atlético San Patricio","goal":"Resolver la diferencia de fechas 1975/1976 y construir archivo deportivo.","sourcesToSeek":["personería jurídica","club","familias","prensa"],"status":"OPEN"},
+    {"id":"R-015","topic":"Cartografía urbana","goal":"Comparar pueblo, chacras y riego en varias décadas mediante mapas y fotografías aéreas.","sourcesToSeek":["IGN","Catastro","Municipalidad","IDE Neuquén"],"status":"OPEN"},
+    {"id":"R-016","topic":"Paleontología","goal":"Reunir publicaciones científicas y registros institucionales sobre fósiles hallados en el área.","sourcesToSeek":["CONICET","SEGEMAR","repositorios universitarios","Museo Carmen Funes"],"status":"OPEN"},
+    {"id":"R-017","topic":"Vitivinicultura","goal":"Documentar la transformación desde fruticultura hacia el polo vitivinícola sin borrar la historia frutícola.","sourcesToSeek":["INTA","INV","bodegas","prensa","productores"],"status":"OPEN"},
+    {"id":"R-018","topic":"Memoria audiovisual","goal":"Crear protocolo para recibir, digitalizar, describir y devolver materiales familiares.","sourcesToSeek":["familias","instituciones","archivística digital"],"status":"OPEN"}
+  ]
+}

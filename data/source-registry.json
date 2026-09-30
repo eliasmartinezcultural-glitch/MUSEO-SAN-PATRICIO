@@ -1,0 +1,31 @@
+{
+  "version": "0.5.0",
+  "title": "Registro maestro de fuentes y archivos",
+  "purpose": "Separar evidencia local, contexto regional, memoria y líneas de investigación; registrar procedencia, acceso y derechos antes de publicar.",
+  "records": [
+    {"id":"SRC-001","title":"Municipalidad de San Patricio del Chañar — Nuestra Identidad","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://www.sanpatricio.gob.ar/identidad","status":"PUBLIC_SOURCE","notes":"Incluye referencias al Mangrullo Chañar, mensura de Tratayen, transformación productiva, riego y antecedentes territoriales."},
+    {"id":"SRC-002","title":"Municipalidad de San Patricio del Chañar — Nuestra Ciudad","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://sanpatricio.gob.ar/nuestra","status":"PUBLIC_SOURCE","notes":"Patrimonio, espacios públicos, parroquia, dique, estadio y otros lugares de la localidad."},
+    {"id":"SRC-003","title":"Legislatura del Neuquén — 46.º aniversario","type":"PDF_INSTITUTIONAL","scope":"LOCAL","url":"https://www.legislaturaneuquen.gob.ar/SVRFILES/hln/documentos/DiaSesio/XLVIII/DXLVIII_08.pdf","status":"PUBLIC_SOURCE","notes":"Fundación, toponimia y antecedentes productivos; requiere conservar copia/referencia archivística."},
+    {"id":"SRC-004","title":"Neuquén Informa — 41.º aniversario","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://www.neuqueninforma.gob.ar/noticias/2014/05/22/48785-jorge-sapag-asistira-al-41-aniversario-de-san-patricio-del-chanar","status":"PUBLIC_SOURCE","notes":"Fundación, Comisión de Fomento, primeras instituciones y producción frutícola."},
+    {"id":"SRC-005","title":"Familia Schroeder — Bodega y hallazgo paleontológico","type":"PRIVATE_INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://familiaschroeder.com/eng/the-winery/","status":"PUBLIC_SOURCE","rights":"LINK_ONLY_UNLESS_AUTHORIZED","notes":"Fuente local primaria para la historia de la bodega y relato del hallazgo; la identificación científica debe contrastarse con bibliografía especializada."},
+    {"id":"SRC-009","title":"Neuquén Informa — registro contemporáneo 2026","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://www.neuqueninforma.gob.ar/noticias/2026/05/22/258231-ministro-koenig-erradicar-todos-los-trailers-es-un-acto-de-justicia-para-los-estudiantes-neuquinos","status":"PUBLIC_SOURCE","notes":"Registro contemporáneo, no debe sustituir archivo comunitario."},
+    {"id":"SRC-017","title":"CONICET — Poblamiento humano del norte de Neuquén","type":"SCIENTIFIC_RESEARCH","scope":"REGIONAL","status":"PUBLIC_SOURCE","notes":"Contexto regional para poblamiento humano antiguo; no demuestra ocupación específica de San Patricio del Chañar."},
+    {"id":"SRC-036","title":"CFI / Argentina — Plan de ordenamiento territorial y ambiental","type":"GOVERNMENT_PDF","scope":"LOCAL_REGIONAL","url":"https://www.argentina.gob.ar/sites/default/files/plan_de_ordenamiento_territorial_y_ambiental_para_las_localidades_des_anelo_san_patricio_del_chanar_y_sauzal_bonito_0.pdf","status":"PUBLIC_SOURCE","notes":"Historia territorial, Tratayen, tierras, riego y transformaciones productivas."},
+    {"id":"SRC-000","title":"Más Neuquén — Efemérides: cronología de San Patricio del Chañar","type":"SECONDARY_WEB","scope":"LOCAL","url":"https://masneuquen.com/efemerides-cronologia-de-san-patricio-del-chanar-a-traves-de-los-anos/","status":"SECONDARY_SOURCE","notes":"Cronología útil para detectar fechas e instituciones; cada hito debe buscar documentación primaria cuando sea posible."},
+    {"id":"SRC-019","title":"Honorable Cámara de Diputados — Fiesta del Pelón 2014","type":"PARLIAMENTARY_DOCUMENT","scope":"LOCAL","url":"https://www.hcdn.gob.ar/comisiones/permanentes/cdhygarantias/proyecto.html?exp=9105-D-2014","status":"PUBLIC_SOURCE","notes":"Documenta la tradición de la Fiesta del Pelón, homenaje al trabajador rural y la bendición de los frutos."},
+    {"id":"SRC-020","title":"Honorable Cámara de Diputados — Fiesta del Pelón 2013","type":"PARLIAMENTARY_DOCUMENT","scope":"LOCAL","url":"https://www.hcdn.gob.ar/comisiones/permanentes/cdhygarantias/proyecto.html?exp=0039-D-2013","status":"PUBLIC_SOURCE","notes":"Documenta la 27.ª edición, fechas, bendición de frutos y programación cultural."},
+    {"id":"SRC-021","title":"Turismo Neuquén — regreso de la Fiesta del Pelón","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://turismo.neuquen.gob.ar/san-patricio-del-chanar-vuelve-a-realizar-la-fiesta-del-pelon/","status":"PUBLIC_SOURCE","notes":"Registro del regreso de la fiesta en 2024 y memoria comunitaria sobre su interrupción desde 2019."},
+    {"id":"SRC-022","title":"Neuquén Informa — Fiesta del Pelón 2026","type":"INSTITUTIONAL_WEB","scope":"LOCAL","url":"https://www.neuqueninforma.gob.ar/noticias/2026/02/10/255111-san-patricio-del-chanar-se-prepara-para-la-fiesta-del-pelon","status":"PUBLIC_SOURCE","notes":"Registro contemporáneo de la 36.ª edición."},
+    {"id":"SRC-023","title":"Más Neuquén — evolución de San Patricio del Chañar y Fiesta del Pelón","type":"SECONDARY_WEB","scope":"LOCAL","url":"https://masp.lmneuquen.com/fruticultura/de-desierto-la-fiesta-del-pelon-la-evolucion-san-patricio-del-chanar-y-sus-tradiciones-n1228109","status":"SECONDARY_SOURCE","notes":"Aporta nombres, fechas y contexto periodístico; conservar como fuente secundaria, no como sustituto de archivos primarios."},
+    {"id":"SRC-024","title":"Neuquén el Desafío — documento histórico sobre 8 de abril de 1974","type":"DIGITAL_ARCHIVE","scope":"LOCAL","url":"https://www.neuqueneldesafio.com.ar/blog/62-san-patricio-del-chanar/","status":"DIGITAL_ARCHIVE","notes":"Reproduce discurso y referencias al decreto 1339/1973 y al acto de designación de autoridades."}
+  ],
+  "sourcePriority": [
+    "DOCUMENTO_PRIMARIO",
+    "ARCHIVO_INSTITUCIONAL",
+    "PUBLICACION_CIENTIFICA",
+    "TESTIMONIO_IDENTIFICADO",
+    "FUENTE_SECUNDARIA",
+    "FUENTE_TERCIARIA"
+  ],
+  "publicationRule": "Una fuente secundaria puede abrir una línea de investigación, pero los hechos nucleares deben buscar documentación primaria o institucional cuando sea posible."
+}

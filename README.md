@@ -1,53 +1,30 @@
 # Museo San Patricio del Chañar
 
-## 0.2.0 — Colecciones, archivo multimedia e investigación
+Museo virtual y archivo histórico digital vivo de San Patricio del Chañar, Neuquén.
 
-Este proyecto es un museo digital vivo del territorio de San Patricio del Chañar.
+## Estado
+**0.5.0 — Investigación, fuentes y mapa multimedia en expansión**
 
-No comienza con la fundación de la localidad. Comienza con la profundidad del territorio: tiempo geológico, paleontología, primeras presencias humanas, pueblos originarios, territorio histórico, transformaciones productivas, nacimiento de la localidad e historia viva.
+La arquitectura 0.3 permanece bloqueada. Esta etapa amplía el contenido sin alterar las entidades nucleares.
 
-### Principio rector
+## Principio
+**Muchísima profundidad documental detrás. Experiencia sencilla delante.**
 
-**Mucha profundidad de fondo. Experiencia sencilla en lo visual y en el aprendizaje.**
+El museo separa:
+- evidencia local
+- contexto regional
+- memoria
+- investigación pendiente
 
-La arquitectura queda organizada como:
+## Nuevas capas 0.5
+- Registro maestro de fuentes.
+- Agenda profunda de investigación.
+- Mapa de multimedia.
+- Fotografía, documentos, cartografía, audio, video y objetos como patrimonio documental.
+- Política explícita contra imágenes sin procedencia o derechos claros.
 
-**CONTENIDO → DATOS → MOTOR → EXPERIENCIA**
+## Fuentes prioritarias
+Se priorizan documentos primarios, archivos institucionales, publicaciones científicas y testimonios identificados; las fuentes secundarias sirven para abrir líneas de investigación.
 
-La interfaz pública debe ser fácil de recorrer. La complejidad debe vivir detrás: datos estructurados, fuentes, relaciones, estados de evidencia, colecciones, recorridos y piezas.
-
-### Reglas editoriales
-
-- No inventar patrimonio.
-- No inventar fotografías, documentos, testimonios o fuentes.
-- Diferenciar evidencia local de contexto regional.
-- Diferenciar hechos documentados, interpretación y memoria oral.
-- Mantener preguntas abiertas cuando la investigación todavía no está resuelta.
-- Cada nueva versión debe ampliar el sistema sin romper lo consolidado.
-
-### Estado actual
-
-**0.0.1 — FUNDACIÓN BLOQUEADA · 0.1.0 EN CONSTRUCCIÓN**
-
-Ahora suma un motor inicial de piezas museológicas, recorridos de entrada, piezas destacadas, línea temporal, lugares, preguntas abiertas, fuentes rastreables y fichas progresivas. La profundidad crece detrás de una experiencia visual simple.
-
-### Lo que agrega 0.2
-
-- Colecciones temáticas separadas de la cronología.
-- Archivo multimedia con procedencia y estado de incorporación.
-- Hilos de investigación para organizar búsquedas futuras.
-- Nuevas piezas de historia contemporánea, incluyendo el registro del 50.º aniversario de 2023 y un registro documental de 2026.
-- Separación explícita entre material externo y archivos que todavía deben ser localizados, digitalizados o incorporados con autorización.
-
-### Próxima expansión
-
-El siguiente salto será ampliar colecciones, mapa narrativo, archivo visual real, personas, instituciones, memoria oral y conexiones entre piezas.
-
-Ver `MUSEUM-ARCHITECTURE.md` para la arquitectura bloqueada.
-
+## Crédito
 Tecnología desarrollada por Elías Martínez / Ocarina Producciones.
-
-
-## 0.3.0 — Arquitectura profesional bloqueada
-
-La estructura museológica y documental queda congelada. Se incorporan el estándar profesional, el modelo maestro de entidades, vocabularios controlados, plan de colecciones, esquema de ingreso de archivos y política editorial. El museo se desarrolla como sistema de documentación e interpretación, no como una página de contenido estático.
