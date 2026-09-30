@@ -91,3 +91,13 @@ function initAtlas(){
  });
 }
 initAtlas();
+
+/* 1.1 — navegación semántica */
+function museumSearch(query){
+ const q=(query||'').trim();if(!q)return;
+ const panel=$('#searchPanel');const input=$('#searchInput');panel.classList.add('open');panel.setAttribute('aria-hidden','false');input.value=q;input.dispatchEvent(new Event('input'));setTimeout(()=>input.focus(),60);
+}
+document.addEventListener('click',e=>{
+ const q=e.target.closest('[data-query]');if(q){museumSearch(q.dataset.query);return}
+ if(e.target.closest('#commandSearch')){museumSearch('');return}
+});
