@@ -1,6 +1,6 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "status": "LOCKED_MULTIDEVICE_EXPERIENCE",
   "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
   "locked": true,
