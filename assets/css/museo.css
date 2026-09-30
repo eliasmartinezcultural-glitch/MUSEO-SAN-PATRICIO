@@ -58,3 +58,40 @@
 .object-context p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
 @media(max-width:900px){.identity-grid{grid-template-columns:repeat(2,1fr)}.hero-signature{top:auto;bottom:8%;right:7vw}.object-meta{grid-template-columns:1fr}.object-meta span{border-right:0;border-bottom:1px solid var(--line)}.object-meta span:last-child{border-bottom:0}}
 @media(max-width:600px){.identity-grid{grid-template-columns:1fr}.identity-card{min-height:290px}.chanar-identity{padding-left:5vw;padding-right:5vw}.hero-signature small{display:none}.hero-signature{right:5vw}.museum-object-head{grid-template-columns:1fr 58px}.object-stamp span{font-size:16px}}
+
+/* 1.0 — ATLAS VISUAL TERRITORIAL */
+.visual-atlas{background:#111713;color:#f5f0e5;padding:clamp(90px,10vw,150px) 7vw;position:relative;overflow:hidden}
+.visual-atlas:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#c6a76808 1px,transparent 1px),linear-gradient(#c6a76808 1px,transparent 1px);background-size:80px 80px;opacity:.6}
+.atlas-head,.atlas-stage,.atlas-reading{position:relative;z-index:1;max-width:1280px;margin-left:auto;margin-right:auto}
+.atlas-head{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;margin-bottom:55px}
+.atlas-head h2{font-size:clamp(42px,6vw,84px);line-height:.92;letter-spacing:-.06em;margin:12px 0 0;max-width:800px}
+.atlas-head p{color:#bfc3b7;line-height:1.8;font-size:14px;max-width:510px}
+.atlas-stage{display:grid;grid-template-columns:1fr 280px;min-height:570px;border:1px solid #c6a76838;background:#171e19}
+.atlas-map{position:relative;min-height:570px;overflow:hidden;background:#d8d1bd}
+.atlas-map:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,#59644b28 1px,transparent 1px),linear-gradient(#59644b28 1px,transparent 1px);background-size:36px 36px;opacity:.5}
+.map-barda{position:absolute;left:-10%;top:-5%;width:120%;height:44%;background:#b6a184;clip-path:polygon(0 40%,12% 31%,25% 45%,40% 22%,56% 38%,72% 18%,86% 32%,100% 12%,100% 0,0 0);opacity:.75}
+.map-river{position:absolute;left:39%;top:-10%;width:19%;height:125%;background:#70828a;clip-path:polygon(35% 0,65% 0,55% 14%,72% 26%,45% 40%,63% 52%,35% 67%,50% 81%,25% 100%,0 100%,18% 82%,5% 68%,25% 51%,8% 38%,30% 24%,17% 12%);opacity:.75}
+.map-chacras{position:absolute;right:-5%;bottom:0;width:75%;height:67%;background:repeating-linear-gradient(96deg,transparent 0 29px,#59644b55 30px 32px),repeating-linear-gradient(4deg,transparent 0 42px,#59644b35 43px 45px);transform:skewX(-10deg)}
+.map-town{position:absolute;left:49%;bottom:29%;width:20%;height:18%;background:#8b755f;clip-path:polygon(7% 20%,28% 8%,55% 17%,82% 5%,96% 30%,89% 72%,63% 88%,35% 79%,12% 92%,0 58%);box-shadow:0 0 0 5px #e9e1d044}
+.map-road{position:absolute;height:5px;background:#f1e9d6;box-shadow:0 0 0 1px #786e5e55;transform-origin:left center;opacity:.8}
+.map-road.r1{left:4%;bottom:17%;width:94%;transform:rotate(-4deg)}
+.map-road.r2{left:10%;top:58%;width:74%;transform:rotate(18deg)}
+.map-water{position:absolute;height:3px;background:#70828a;opacity:.8}
+.map-water.w1{left:18%;bottom:32%;width:30%;transform:rotate(8deg)}
+.map-water.w2{left:55%;bottom:18%;width:30%;transform:rotate(-9deg)}
+.map-label{position:absolute;z-index:4;font:9px "DM Mono";letter-spacing:.12em;color:#273127;background:#f5f0e5dd;padding:7px 9px;border:1px solid #59644b44}
+.label-rio{left:61%;top:31%;transform:rotate(76deg);background:#d7e0dfcc}
+.label-barda{left:8%;top:17%}
+.label-chacra{right:7%;bottom:11%}
+.label-town{left:51%;bottom:33%}
+.label-riego{left:23%;bottom:28%}
+.atlas-legend{border-left:1px solid #c6a76838;padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.atlas-key{display:flex;align-items:center;gap:14px;background:transparent;border:1px solid transparent;color:#f5f0e5;padding:17px 14px;text-align:left;cursor:pointer}
+.atlas-key:hover,.atlas-key.active{border-color:#c6a76855;background:#c6a7680d}
+.atlas-key i{width:18px;height:18px;border:1px solid #c6a76888;border-radius:50%;position:relative}
+.atlas-key i:after{content:"";position:absolute;inset:4px;background:#c6a768;border-radius:50%;opacity:.65}
+.atlas-key span{display:block}.atlas-key b{display:block;font-size:14px}.atlas-key small{display:block;color:#899086;font:9px "DM Mono";margin-top:4px}
+.atlas-reading{display:grid;grid-template-columns:45px 1fr 45px 1fr 45px 1fr;gap:15px;border-top:1px solid #c6a76838;margin-top:28px;padding-top:28px}
+.atlas-reading>span{font:11px "DM Mono";color:#c6a768;padding-top:3px}.atlas-reading b{font-size:14px}.atlas-reading p{color:#92998e;line-height:1.65;font-size:12px;margin:7px 0 0}
+@media(max-width:900px){.atlas-head{grid-template-columns:1fr;gap:18px}.atlas-stage{grid-template-columns:1fr}.atlas-legend{border-left:0;border-top:1px solid #c6a76838;display:grid;grid-template-columns:repeat(2,1fr)}.atlas-map{min-height:480px}.atlas-reading{grid-template-columns:35px 1fr}}
+@media(max-width:600px){.visual-atlas{padding-left:5vw;padding-right:5vw}.atlas-map{min-height:390px}.atlas-legend{grid-template-columns:1fr}.map-label{font-size:7px;padding:5px 6px}.label-rio{left:63%}.atlas-reading{grid-template-columns:28px 1fr}.atlas-reading>span:nth-of-type(2),.atlas-reading>span:nth-of-type(3){margin-top:22px}}
