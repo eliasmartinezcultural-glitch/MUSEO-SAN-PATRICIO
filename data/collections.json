@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "0.2.0",
+  "collections": [
+    {
+      "id": "COL-001",
+      "title": "Tiempo profundo",
+      "subtitle": "Antes de la historia humana",
+      "description": "Geología, ambientes antiguos y procesos que explican el territorio.",
+      "recordIds": [
+        "TD-001"
+      ],
+      "kind": "tiempo"
+    },
+    {
+      "id": "COL-002",
+      "title": "Fósiles del territorio",
+      "subtitle": "El pasado que quedó en la roca",
+      "description": "Hallazgos paleontológicos vinculados al entorno local y su contexto científico.",
+      "recordIds": [
+        "TD-002"
+      ],
+      "kind": "paleontologia"
+    },
+    {
+      "id": "COL-003",
+      "title": "Primeras presencias",
+      "subtitle": "Personas antes de la localidad",
+      "description": "Evidencia arqueológica y contexto regional, siempre diferenciados de las afirmaciones específicamente locales.",
+      "recordIds": [
+        "TD-003"
+      ],
+      "kind": "arqueologia"
+    },
+    {
+      "id": "COL-004",
+      "title": "Pueblos originarios",
+      "subtitle": "Territorio, memoria y presente",
+      "description": "Historia y territorialidad indígena, con especial cuidado en distinguir contexto regional de evidencia local.",
+      "recordIds": [
+        "TD-004"
+      ],
+      "kind": "pueblos"
+    },
+    {
+      "id": "COL-005",
+      "title": "Cartografía y territorio",
+      "subtitle": "Mapas, mensuras y nombres",
+      "description": "Mensuras, caminos, parajes, límites y transformaciones espaciales.",
+      "recordIds": [
+        "TD-006",
+        "TD-007",
+        "TD-019"
+      ],
+      "kind": "cartografia"
+    },
+    {
+      "id": "COL-006",
+      "title": "Agua y riego",
+      "subtitle": "El río que transformó el paisaje",
+      "description": "Río Neuquén, obras de captación, riego y producción.",
+      "recordIds": [
+        "TD-005",
+        "TD-009",
+        "TD-016"
+      ],
+      "kind": "agua"
+    },
+    {
+      "id": "COL-007",
+      "title": "Producción y trabajo",
+      "subtitle": "De la tierra seca a las chacras",
+      "description": "Agricultura, fruta, horticultura y vitivinicultura como procesos territoriales.",
+      "recordIds": [
+        "TD-008",
+        "TD-009",
+        "TD-012",
+        "TD-017",
+        "TD-018"
+      ],
+      "kind": "produccion"
+    },
+    {
+      "id": "COL-008",
+      "title": "Nacimiento de la localidad",
+      "subtitle": "1973 y la construcción institucional",
+      "description": "Fundación, Comisión de Fomento y primeras instituciones.",
+      "recordIds": [
+        "TD-010",
+        "TD-011"
+      ],
+      "kind": "localidad"
+    },
+    {
+      "id": "COL-009",
+      "title": "Vida comunitaria",
+      "subtitle": "Fiestas, deporte, religión y espacios comunes",
+      "description": "Instituciones y prácticas que construyeron identidad cotidiana.",
+      "recordIds": [
+        "TD-013",
+        "TD-014",
+        "TD-015"
+      ],
+      "kind": "comunidad"
+    },
+    {
+      "id": "COL-010",
+      "title": "Memoria viva",
+      "subtitle": "Lo que todavía puede contarse",
+      "description": "Testimonios, fotografías familiares, relatos, voces y objetos que aún necesitan ser incorporados.",
+      "recordIds": [
+        "TD-012",
+        "TD-013"
+      ],
+      "kind": "memoria"
+    }
+  ]
+}

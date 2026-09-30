@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "title": "Mapa de profundidad histórica del territorio",
   "scope": {
     "primary": "territorio de San Patricio del Chañar",
@@ -353,6 +353,34 @@
         "SRC-002"
       ],
       "visual": "landscape"
+    },
+    {
+      "id": "TD-020",
+      "layer": "historia_viva",
+      "title": "Los 50 años: una localidad que mira hacia atrás y hacia adelante",
+      "period": "21 de mayo de 2023",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Provincia registró la celebración del 50.º aniversario de San Patricio del Chañar, con una placa conmemorativa, desfile y discursos sobre educación, producción, turismo, infraestructura y futuro local.",
+      "relation": "LOCAL",
+      "notes": "La celebración funciona como documento de memoria pública: permite estudiar qué pasado se eligió recordar y qué imagen de futuro se construyó en el aniversario.",
+      "sourceIds": [
+        "SRC-008"
+      ],
+      "visual": "date"
+    },
+    {
+      "id": "TD-021",
+      "layer": "historia_viva",
+      "title": "Una localidad en expansión: registro contemporáneo",
+      "period": "2026",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "Una comunicación provincial de mayo de 2026 registra obras y proyectos vinculados con educación, energía, viviendas, urbanización y espacios comunitarios en San Patricio del Chañar.",
+      "relation": "LOCAL",
+      "notes": "Esta pieza debe leerse como fotografía documental de una etapa contemporánea, no como cierre de la historia. Puede crecer con fotografías, planos y testimonios vecinales.",
+      "sourceIds": [
+        "SRC-009"
+      ],
+      "visual": "land"
     }
   ],
   "sources": [
@@ -397,6 +425,18 @@
       "title": "Neuquén Informa — discurso aniversario 2010",
       "type": "FUENTE_INSTITUCIONAL",
       "url": "https://www.neuqueninforma.gob.ar/noticias/2010/05/21/8271-discurso-del-gobernador-jorge-sapag-en-el-37-aniversario-de-san-patricio-del-chanar"
+    },
+    {
+      "id": "SRC-008",
+      "title": "Neuquén Informa — 50.º aniversario de San Patricio del Chañar",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2023/05/21/215945-gutierrez-acompano-los-festejos-por-el-50-aniversario-de-san-patricio-del-chanar"
+    },
+    {
+      "id": "SRC-009",
+      "title": "Neuquén Informa — 53.º aniversario de San Patricio del Chañar",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2026/05/22/258231-ministro-koenig-erradicar-todos-los-trailers-es-un-acto-de-justicia-para-los-estudiantes-neuquinos"
     }
   ],
   "pieces": [
@@ -462,6 +502,20 @@
       "title": "Viñedos sobre el valle",
       "label": "2001 →",
       "visual": "vine"
+    },
+    {
+      "id": "P-010",
+      "recordId": "TD-020",
+      "title": "50 años: qué elegimos recordar",
+      "label": "MEMORIA PÚBLICA · 2023",
+      "visual": "date"
+    },
+    {
+      "id": "P-011",
+      "recordId": "TD-021",
+      "title": "El Chañar contemporáneo",
+      "label": "REGISTRO · 2026",
+      "visual": "land"
     }
   ],
   "places": [

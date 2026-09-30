@@ -1,4 +1,4 @@
-const state={data:null};
+const state={data:null,collections:null,multimedia:null,threads:null};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const visual=(kind,label='ARCHIVO')=>'<div class="piece-visual visual-'+esc(kind||'archive')+'"><span class="visual-label">'+esc(label)+'</span></div>';
@@ -24,6 +24,7 @@ function openRecordData(r){
 function render(){
  const d=state.data;
  $('#visibleCount').textContent=d.layers.length;
+ $('#pieceStat').textContent=(d.pieces||[]).length;
  $('#depthMap').innerHTML=d.layers.map((l,i)=>'<article class="depth-node" data-layer="'+esc(l.key)+'"><div class="node-dot">'+String(i+1).padStart(2,'0')+'</div><div class="node-card"><div><h3>'+esc(l.title)+'</h3><p>'+esc(l.focus.join(' · '))+'</p></div><span class="node-arrow">↗</span></div></article>').join('');
  $('#chapterGrid').innerHTML=d.layers.map((l,i)=>{const rec=d.records.find(r=>r.layer===l.key);return '<article class="chapter" data-layer="'+esc(l.key)+'"><div><span class="chapter-index">CAPA '+String(i+1).padStart(2,'0')+'</span><h3>'+esc(l.title)+'</h3><p>'+esc(rec?.evidence||l.focus.join(' · '))+'</p></div><span class="open">Abrir investigación →</span></article>'}).join('');
  const featured=(d.pieces||[]).slice(0,9);
@@ -33,6 +34,22 @@ function render(){
  $('#placeGrid').innerHTML=(d.places||[]).map(p=>'<article class="place" data-record="'+esc(p.recordId)+'"><div class="place-visual visual-'+esc(p.visual)+'"></div><div class="place-content"><span class="place-kind">'+esc(p.kind.toUpperCase())+'</span><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div></article>').join('');
  $('#evidenceBoard').innerHTML=(d.questions||[]).map(q=>'<article class="question" data-record="'+esc(q.recordId)+'"><span>'+esc(q.status.replaceAll('_',' '))+'</span><b>'+esc(q.title)+'</b></article>').join('');
  $('#sourceList').innerHTML=(d.sources||[]).map((s,i)=>'<article class="source"><span class="source-num">'+String(i+1).padStart(2,'0')+'</span><div><b>'+esc(s.title)+'</b><small>'+esc(s.type.replaceAll('_',' '))+'</small></div><a href="'+esc(s.url)+'" target="_blank" rel="noopener">Abrir fuente ↗</a></article>').join('');
+ renderCollections();
+ renderMultimedia();
+ renderThreads();
+}
+function renderCollections(){
+ const cs=state.collections?.collections||[];
+ $('#collectionGrid').innerHTML=cs.map((c,i)=>'<article class="collection-card"><div><span class="collection-number">COLECCIÓN '+String(i+1).padStart(2,'0')+' · '+esc(c.kind)+'</span><h3>'+esc(c.title)+'</h3><p>'+esc(c.description)+'</p></div><div class="collection-meta"><span>'+esc(c.subtitle)+'</span><span>'+c.recordIds.length+' piezas vinculadas</span></div></article>').join('');
+}
+function mediaIcon(type){const m={'pagina-con-audio':'◉','documento-pdf':'▤','pagina-historica':'◌','pagina-paleontologia':'✦','archivo-fotografico-pendiente':'▧','archivo-oral-pendiente':'◉','archivo-afiches-pendiente':'▤','cartografia-pendiente':'⌖'};return m[type]||'□'}
+function renderMultimedia(){
+ const ms=state.multimedia?.media||[];
+ $('#mediaGrid').innerHTML=ms.map(m=>'<article class="media-card"><div><div class="media-icon">'+mediaIcon(m.type)+'</div><span class="media-type">'+esc(m.type.replaceAll('-',' '))+'</span><h3>'+esc(m.title)+'</h3><p>'+esc(m.description)+'</p></div><div><div class="media-status">'+esc(m.status.replaceAll('_',' '))+(m.date?' · '+esc(m.date):'')+'</div>'+(m.sourceUrl?'<a href="'+esc(m.sourceUrl)+'" target="_blank" rel="noopener">Abrir material / fuente ↗</a>':'<span class="media-status">Material pendiente de localizar</span>')+'</div></article>').join('');
+}
+function renderThreads(){
+ const ts=state.threads?.threads||[];
+ $('#threadGrid').innerHTML=ts.map(t=>'<article class="thread-card"><div><span class="thread-priority">PRIORIDAD '+esc(t.priority)+'</span><h3>'+esc(t.title)+'</h3><p>Registros vinculados: '+esc(t.recordIds.join(', '))+'</p><div class="thread-needs">'+t.needs.map(n=>'<span>'+esc(n)+'</span>').join('')+'</div></div></article>').join('');
 }
 function bind(){
  document.addEventListener('click',e=>{
@@ -55,5 +72,5 @@ function bind(){
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.open').forEach(x=>x.classList.remove('open'));$('#searchPanel').classList.remove('open')}});
 }
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
-async function boot(){try{state.data=await fetch('data/territory-depth.json').then(r=>r.json());render();bind()}catch(e){console.error(e);toast('No se pudo cargar el archivo del museo.');}}
+async function boot(){try{const [d,c,m,t]=await Promise.all([fetch('data/territory-depth.json').then(r=>r.json()),fetch('data/collections.json').then(r=>r.json()),fetch('data/multimedia.json').then(r=>r.json()),fetch('data/research-threads.json').then(r=>r.json())]);state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind()}catch(e){console.error(e);toast('No se pudo cargar uno de los archivos del museo.');}}
 boot();
