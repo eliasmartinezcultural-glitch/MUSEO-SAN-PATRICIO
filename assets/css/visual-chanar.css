@@ -113,3 +113,27 @@ body.high-contrast{--cha-paper:#fff;--paper2:#fff;--paper:#fff;--ink:#000;--mute
 body.high-contrast .school-audience,body.high-contrast .school-step{background:#fff;border-color:#222}
 body.reduce-motion *,body.reduce-motion *:before,body.reduce-motion *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 body.reading-mode .hero-landscape,body.reading-mode .photo-archive:before,body.reading-mode .museum-command:before{opacity:.18}
+
+
+/* 1.3 — MISSION + SYSTEM HARDENING */
+.museum-mission{position:relative;padding:clamp(78px,9vw,135px) 7vw;background:#f6f0e4;border-bottom:1px solid #59644b22;overflow:hidden}
+.museum-mission:before{content:"MISIÓN";position:absolute;right:-2vw;top:20px;font:900 13vw/1 Manrope;color:#59644b08;letter-spacing:-.09em;pointer-events:none}
+.mission-shell{max-width:1280px;margin:auto;position:relative;z-index:1}
+.mission-shell>div:first-child{max-width:780px}
+.mission-shell h2{font-size:clamp(42px,6vw,82px);line-height:.92;letter-spacing:-.06em;margin:12px 0 18px}
+.mission-lead{font-size:clamp(17px,2vw,23px);line-height:1.55;color:#4f5149;max-width:720px}
+.mission-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:55px}
+.mission-grid article{padding:24px;border:1px solid #59644b33;background:#fffaf0;min-height:170px}
+.mission-grid b{font:9px DM Mono;color:#a24d36;letter-spacing:.12em}
+.mission-grid p{font-size:12px;line-height:1.65;color:#65655d;margin:20px 0 0}
+.mission-sequence{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px;padding-top:24px;border-top:1px solid #59644b33;font:10px DM Mono;letter-spacing:.1em;color:#3e4c40}
+.mission-sequence i{color:#a24d36;font-style:normal}
+@media(max-width:900px){.mission-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.museum-mission{padding-left:5vw;padding-right:5vw}.mission-grid{grid-template-columns:1fr}.mission-grid article{min-height:auto}.mission-sequence{gap:8px;line-height:1.8}}
+/* Touch and mobile safety */
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible{outline:3px solid #cdb574;outline-offset:3px}
+main{padding-bottom:max(92px,env(safe-area-inset-bottom))}
+.experience-dock{padding-bottom:max(5px,env(safe-area-inset-bottom))}
+@media(max-width:700px){.experience-dock{bottom:max(8px,env(safe-area-inset-bottom));min-height:58px}.experience-dock button{min-height:46px}.search-panel{overscroll-behavior:contain}.modal{padding:10px}.modal-card{max-height:calc(100dvh - 20px);overflow:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.experience-dock,.modal,.search-panel,.adjust-panel{transition:none!important}}
