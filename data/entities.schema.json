@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "0.0.1",
+  "entities": [
+    "territory",
+    "period",
+    "site",
+    "place",
+    "people",
+    "community",
+    "event",
+    "object",
+    "document",
+    "photograph",
+    "audio",
+    "video",
+    "testimony",
+    "source",
+    "collection"
+  ],
+  "mandatoryForEveryRecord": [
+    "id",
+    "title",
+    "entityType",
+    "status",
+    "relationToTerritory",
+    "sources"
+  ],
+  "evidenceStatuses": [
+    "EVIDENCIA_LOCAL",
+    "CONTEXTO_REGIONAL",
+    "FUENTE_HISTORICA",
+    "MEMORIA_ORAL",
+    "EN_INVESTIGACION",
+    "IDENTIFICACION_PENDIENTE"
+  ],
+  "relationTypes": [
+    "LOCATED_IN",
+    "PART_OF",
+    "PRECEDES",
+    "FOLLOWS",
+    "RELATED_TO",
+    "DOCUMENTS",
+    "MENTIONS",
+    "REMEMBERS",
+    "CONNECTED_TO",
+    "CONTEXTUALIZES"
+  ]
+}
