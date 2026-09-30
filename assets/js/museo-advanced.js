@@ -33,7 +33,7 @@
      const src=d.sources||[];
      window.__museumUnifiedData={records:d.records||[],collections:c.collections||[],multimedia:m.media||[],threads:t.threads||[],sources:src};
      buildUnifiedIndex(window.__museumUnifiedData);
-     oldInput.addEventListener('input',()=>unifiedSearch(oldInput.value),true);
+     oldInput.addEventListener('input',(ev)=>{ev.stopImmediatePropagation();unifiedSearch(oldInput.value)},true);
    }catch(e){console.warn('unified-index',e)}
  }
  let index=[];
