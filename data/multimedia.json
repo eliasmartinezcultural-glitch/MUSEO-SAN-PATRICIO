@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "0.2.0",
+  "rule": "Solo se incorporan archivos propios, cedidos, públicos o enlazados a una fuente autorizada. Nunca se inventan fotografías, audios o videos.",
+  "media": [
+    {
+      "id": "MED-001",
+      "type": "pagina-con-audio",
+      "title": "50 años de San Patricio del Chañar",
+      "date": "2023",
+      "recordIds": [
+        "TD-010",
+        "TD-012"
+      ],
+      "sourceId": "SRC-008",
+      "sourceUrl": "https://www.neuqueninforma.gob.ar/noticias/2023/05/21/215945-gutierrez-acompano-los-festejos-por-el-50-aniversario-de-san-patricio-del-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "La publicación oficial provincial incluye audios de la celebración del 50.º aniversario."
+    },
+    {
+      "id": "MED-002",
+      "type": "documento-pdf",
+      "title": "46.º aniversario — documento legislativo",
+      "date": "2019",
+      "recordIds": [
+        "TD-010"
+      ],
+      "sourceId": "SRC-003",
+      "sourceUrl": "https://www.legislaturaneuquen.gob.ar/SVRFILES/hln/documentos/DiaSesio/XLVIII/DXLVIII_08.pdf",
+      "status": "FUENTE_EXTERNA",
+      "description": "Documento legislativo útil para contextualizar la fundación y la historia institucional."
+    },
+    {
+      "id": "MED-003",
+      "type": "pagina-historica",
+      "title": "41.º aniversario — memoria institucional",
+      "date": "2014",
+      "recordIds": [
+        "TD-010",
+        "TD-011",
+        "TD-012"
+      ],
+      "sourceId": "SRC-004",
+      "sourceUrl": "https://www.neuqueninforma.gob.ar/noticias/2014/05/22/48785-jorge-sapag-asistira-al-41-aniversario-de-san-patricio-del-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "Fuente provincial con una reseña histórica que reúne fundación, Comisión de Fomento, riego y primeras producciones industriales."
+    },
+    {
+      "id": "MED-004",
+      "type": "pagina-paleontologia",
+      "title": "Bodega y hallazgo paleontológico",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-002",
+        "TD-018"
+      ],
+      "sourceId": "SRC-005",
+      "sourceUrl": "https://familiaschroeder.com/eng/the-winery/",
+      "status": "FUENTE_EXTERNA",
+      "description": "La bodega documenta su proyecto, los viñedos y el hallazgo de restos fósiles durante la construcción."
+    },
+    {
+      "id": "MED-005",
+      "type": "archivo-fotografico-pendiente",
+      "title": "Fotografías históricas del riego",
+      "date": "por investigar",
+      "recordIds": [
+        "TD-009"
+      ],
+      "status": "BUSQUEDA_ABIERTA",
+      "description": "Colección prevista para incorporar fotografías originales de bocatomas, canales, bombas, chacras y trabajadores."
+    },
+    {
+      "id": "MED-006",
+      "type": "archivo-oral-pendiente",
+      "title": "Voces de las primeras familias",
+      "date": "por investigar",
+      "recordIds": [
+        "TD-011",
+        "TD-012"
+      ],
+      "status": "BUSQUEDA_ABIERTA",
+      "description": "Registro futuro de entrevistas, con consentimiento y ficha de procedencia."
+    },
+    {
+      "id": "MED-007",
+      "type": "archivo-afiches-pendiente",
+      "title": "Fiesta Provincial del Pelón",
+      "date": "desde 1985",
+      "recordIds": [
+        "TD-013"
+      ],
+      "status": "BUSQUEDA_ABIERTA",
+      "description": "Afiches, programas, entradas, fotografías y relatos de distintas ediciones."
+    },
+    {
+      "id": "MED-008",
+      "type": "cartografia-pendiente",
+      "title": "Mensura 1913 / Tratayen",
+      "date": "1913",
+      "recordIds": [
+        "TD-007"
+      ],
+      "status": "BUSQUEDA_ABIERTA",
+      "description": "Reproducción o fotografía de la mensura, si se localiza en un archivo habilitado para su consulta."
+    },
+    {
+      "id": "MED-009",
+      "type": "cartografia-pendiente",
+      "title": "Mensura 1881–1882 / Mangrullo Chañar",
+      "date": "1881–1882",
+      "recordIds": [
+        "TD-006"
+      ],
+      "status": "BUSQUEDA_ABIERTA",
+      "description": "Documento cartográfico prioritario para investigar la localización histórica del Mangrullo Chañar."
+    }
+  ]
+}
