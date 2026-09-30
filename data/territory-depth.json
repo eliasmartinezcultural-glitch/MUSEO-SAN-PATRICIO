@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "0.0.1",
+  "title": "Mapa de profundidad histórica del territorio",
+  "scope": {
+    "primary": "territorio de San Patricio del Chañar",
+    "regionalContext": "valle del río Neuquén y norte de Patagonia",
+    "rule": "El contexto regional no se presenta como evidencia local."
+  },
+  "layers": [
+    {
+      "id": "L01",
+      "order": 1,
+      "key": "tiempo_profundo",
+      "title": "Tiempo profundo",
+      "focus": ["geologia", "geomorfologia", "clima_paleoambiental"]
+    },
+    {
+      "id": "L02",
+      "order": 2,
+      "key": "paleontologia",
+      "title": "Paleontología",
+      "focus": ["fossiles", "formaciones", "yacimientos", "fauna_extinta"]
+    },
+    {
+      "id": "L03",
+      "order": 3,
+      "key": "primeras_presencias_humanas",
+      "title": "Primeras presencias humanas",
+      "focus": ["poblamiento", "arqueologia", "tecnologia", "ambiente"]
+    },
+    {
+      "id": "L04",
+      "order": 4,
+      "key": "pueblos_originarios",
+      "title": "Pueblos originarios",
+      "focus": ["mapuche", "territorialidad", "lengua", "memoria", "continuidades"]
+    },
+    {
+      "id": "L05",
+      "order": 5,
+      "key": "territorio_historico",
+      "title": "Territorio histórico",
+      "focus": ["rios", "parajes", "caminos", "puestos", "mensuras", "cartografia"]
+    },
+    {
+      "id": "L06",
+      "order": 6,
+      "key": "transformaciones",
+      "title": "Transformaciones del territorio",
+      "focus": ["riego", "agricultura", "colonizacion", "infraestructura"]
+    },
+    {
+      "id": "L07",
+      "order": 7,
+      "key": "nacimiento_localidad",
+      "title": "Nacimiento de la localidad",
+      "focus": ["El_Chanar", "fundacion", "instituciones", "poblacion"]
+    },
+    {
+      "id": "L08",
+      "order": 8,
+      "key": "historia_viva",
+      "title": "Historia viva",
+      "focus": ["familias", "barrios", "trabajo", "cultura", "memoria_oral"]
+    }
+  ],
+  "records": [
+    {
+      "id": "TD-001",
+      "layer": "tiempo_profundo",
+      "title": "Formación geológica y paisaje",
+      "period": "mesozoico-a-cuaternario",
+      "status": "EN_INVESTIGACION",
+      "evidence": "Debe reconstruirse con bibliografía geológica específica del área y cartografía oficial.",
+      "relation": "LOCAL_A_DETERMINAR",
+      "notes": "No completar con datos generales de Neuquén sin demostrar relación con el área."
+    },
+    {
+      "id": "TD-002",
+      "layer": "paleontologia",
+      "title": "Registro paleontológico regional",
+      "period": "mesozoico",
+      "status": "CONTEXTO_REGIONAL",
+      "evidence": "Neuquén posee un registro paleontológico excepcional. Los registros del museo deberán separar hallazgos del ejido/entorno inmediato de hallazgos regionales.",
+      "relation": "CONTEXTO_REGIONAL",
+      "notes": "La proximidad geográfica no convierte automáticamente un hallazgo en patrimonio local."
+    },
+    {
+      "id": "TD-003",
+      "layer": "primeras_presencias_humanas",
+      "title": "Poblamiento humano temprano de Neuquén",
+      "period": "Pleistoceno final-Holoceno",
+      "status": "CONTEXTO_REGIONAL",
+      "evidence": "La investigación arqueológica de Neuquén documenta presencia humana desde aproximadamente 12.000 años atrás, con conocimiento espacial todavía fragmentario.",
+      "relation": "CONTEXTO_REGIONAL",
+      "notes": "Se incorporará como marco hasta localizar evidencia específica del valle del río Neuquén y del área de Chañar."
+    },
+    {
+      "id": "TD-004",
+      "layer": "pueblos_originarios",
+      "title": "Pueblo Mapuche y territorialidad",
+      "period": "historico-y-contemporaneo",
+      "status": "CONTEXTO_REGIONAL",
+      "evidence": "Las fuentes oficiales argentinas reconocen procesos de relevamiento territorial de comunidades mapuche en Neuquén y registran cartografía de ocupación actual, tradicional y pública.",
+      "relation": "REGIONAL_A_CONTRASTAR",
+      "notes": "No atribuir una comunidad concreta al ejido sin fuente específica. Priorizar fuentes y testimonios indígenas."
+    },
+    {
+      "id": "TD-005",
+      "layer": "territorio_historico",
+      "title": "Río Neuquén como estructura territorial",
+      "period": "larga_duracion",
+      "status": "EN_INVESTIGACION",
+      "evidence": "El río debe estudiarse como eje ambiental, productivo, de movilidad y de transformación territorial.",
+      "relation": "LOCAL",
+      "notes": "Requiere cartografía histórica y ambiental."
+    },
+    {
+      "id": "TD-006",
+      "layer": "transformaciones",
+      "title": "Transformación productiva e irrigación",
+      "period": "siglo_xx",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "Fuentes oficiales municipales y provinciales describen la transformación productiva y los programas de colonización agrícola iniciados en la década de 1970.",
+      "relation": "LOCAL",
+      "notes": "La cronología deberá contrastarse entre fuentes municipales, provinciales y bibliografía."
+    },
+    {
+      "id": "TD-007",
+      "layer": "nacimiento_localidad",
+      "title": "Fundación de San Patricio del Chañar",
+      "period": "1973",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "La fecha de fundación utilizada por fuentes oficiales es 21 de mayo de 1973.",
+      "relation": "LOCAL",
+      "notes": "La fundación es un capítulo del museo, no el comienzo de la historia territorial."
+    }
+  ]
+}
