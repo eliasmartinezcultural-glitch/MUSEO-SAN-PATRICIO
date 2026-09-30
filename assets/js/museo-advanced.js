@@ -40,11 +40,11 @@
  function buildUnifiedIndex(d){
    index=[];
    const add=(type,id,title,text,action)=>index.push({type,id,title,text:String(text||''),action});
-   (d.records||[]).forEach(r=>add('PIEZA',r.id,r.title,[r.evidence,r.notes,r.period,r.status,r.layer].join(' '),()=>window.openRecord?.(r.id)));
+   (d.records||[]).forEach(r=>add('PIEZA',r.id,r.title,[r.evidence,r.notes,r.period,r.status,r.layer].join(' '),()=>document.querySelector('[data-record="'+r.id+'"]')?.click()));
    (d.collections||[]).forEach(c=>add('COLECCIÓN',c.id,c.title,[c.subtitle,c.description,c.kind].join(' '),()=>document.getElementById('colecciones')?.scrollIntoView({behavior:'smooth'})));
    (d.multimedia||[]).forEach(m=>add('ARCHIVO',m.id,m.title,[m.description,m.date,m.type].join(' '),()=>document.getElementById('archivo')?.scrollIntoView({behavior:'smooth'})));
    (d.threads||[]).forEach(t=>add('INVESTIGACIÓN',t.id,t.title,[t.title,(t.needs||[]).join(' ')].join(' '),()=>document.querySelector('.research-threads')?.scrollIntoView({behavior:'smooth'})));
-   (d.sources||[]).forEach(s=>add('FUENTE',s.id,s.title,[s.description,s.type,s.scope].join(' '),()=>window.openSource?.(s.id)));
+   (d.sources||[]).forEach(s=>add('FUENTE',s.id,s.title,[s.description,s.type,s.scope].join(' '),()=>document.querySelector('[data-source-id="'+s.id+'"]')?.click()));
    window.__museumUnifiedIndex=index;
  }
  function unifiedSearch(q){
