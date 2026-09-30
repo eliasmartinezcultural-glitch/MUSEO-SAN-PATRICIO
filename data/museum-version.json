@@ -1,12 +1,40 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.0.1",
-  "status": "LOCKED_FOUNDATION",
+  "version": "0.1.0",
+  "status": "DEVELOPMENT_READY",
   "architecture": "CONTENIDO -> DATOS -> MOTOR -> EXPERIENCIA",
-  "historicalLayers": ["tiempo_profundo","paleontologia","primeras_presencias_humanas","pueblos_originarios","territorio_historico","transformaciones_productivas","nacimiento_localidad","historia_viva_memoria"],
-  "evidenceStatuses": ["EVIDENCIA_LOCAL","CONTEXTO_REGIONAL","FUENTE_HISTORICA","MEMORIA_ORAL","EN_INVESTIGACION","IDENTIFICACION_PENDIENTE"],
+  "historicalLayers": [
+    "tiempo_profundo",
+    "paleontologia",
+    "primeras_presencias_humanas",
+    "pueblos_originarios",
+    "territorio_historico",
+    "transformaciones_productivas",
+    "nacimiento_localidad",
+    "historia_viva_memoria"
+  ],
+  "evidenceStatuses": [
+    "EVIDENCIA_LOCAL",
+    "CONTEXTO_REGIONAL",
+    "FUENTE_HISTORICA",
+    "MEMORIA_ORAL",
+    "EN_INVESTIGACION",
+    "IDENTIFICACION_PENDIENTE"
+  ],
   "experiencePrinciple": "profundidad_de_fondo_con_experiencia_simple",
   "contentRule": "No inventar patrimonio, fuentes, fotografías, testimonios ni relaciones locales.",
   "stabilityRule": "Las nuevas versiones amplían la base bloqueada y no destruyen funcionalidades consolidadas.",
-  "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
+  "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones",
+  "stage": "motor_de_piezas_y_experiencia",
+  "additions": [
+    "pieza_museologica",
+    "timeline",
+    "places",
+    "research_questions",
+    "sources",
+    "progressive_fiches",
+    "guided_entry_modes"
+  ],
+  "next": "0.2 — colecciones, mapa narrativo y archivo visual",
+  "lockedFoundation": "0.0.1"
 }
