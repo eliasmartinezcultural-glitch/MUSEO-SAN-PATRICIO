@@ -2,8 +2,8 @@ export const museum = {
   meta: {
     id: "museo-san-patricio-del-chanar",
     name: "Museo Virtual de San Patricio del Chañar",
-    version: "0.4.0",
-    status: "active-foundation",
+    version: "0.6.0",
+    status: "active-museum",
     rule: "simple-public-interface-deep-internal-architecture",
     editorial: "Las afirmaciones históricas se mantienen vinculadas a fuentes. Los recuerdos y testimonios se distinguen de los hechos documentados."
   },
