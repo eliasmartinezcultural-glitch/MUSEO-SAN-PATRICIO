@@ -95,3 +95,12 @@
 .atlas-reading>span{font:11px "DM Mono";color:#c6a768;padding-top:3px}.atlas-reading b{font-size:14px}.atlas-reading p{color:#92998e;line-height:1.65;font-size:12px;margin:7px 0 0}
 @media(max-width:900px){.atlas-head{grid-template-columns:1fr;gap:18px}.atlas-stage{grid-template-columns:1fr}.atlas-legend{border-left:0;border-top:1px solid #c6a76838;display:grid;grid-template-columns:repeat(2,1fr)}.atlas-map{min-height:480px}.atlas-reading{grid-template-columns:35px 1fr}}
 @media(max-width:600px){.visual-atlas{padding-left:5vw;padding-right:5vw}.atlas-map{min-height:390px}.atlas-legend{grid-template-columns:1fr}.map-label{font-size:7px;padding:5px 6px}.label-rio{left:63%}.atlas-reading{grid-template-columns:28px 1fr}.atlas-reading>span:nth-of-type(2),.atlas-reading>span:nth-of-type(3){margin-top:22px}}
+
+/* 1.1 — centro de exploración */
+.museum-command{background:#e9e1d0;border-top:1px solid #11171322;border-bottom:1px solid #11171322;padding:clamp(70px,8vw,120px) 7vw}
+.command-inner{max-width:1280px;margin:auto;display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
+.command-inner h2{font-size:clamp(42px,6vw,78px);line-height:.92;letter-spacing:-.06em;margin:12px 0 20px}.command-inner h2 em{font-family:"Playfair Display",serif;color:var(--rust)}.command-inner p{max-width:590px;color:var(--muted);line-height:1.75}
+.command-box{border:1px solid #11171344;background:#f5f0e5;padding:18px;box-shadow:10px 10px 0 #1117130b}
+.command-box>button{width:100%;display:grid;grid-template-columns:35px 1fr auto;align-items:center;text-align:left;padding:20px;border:1px solid #11171344;background:#111713;color:#f5f0e5;cursor:pointer;font-size:14px}.command-box>button:first-letter{font-size:24px}.command-box kbd{font:8px "DM Mono";letter-spacing:.12em;color:#c6a768;border:1px solid #c6a76855;padding:7px}
+.command-suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.command-suggestions button{border:1px solid #11171333;background:transparent;padding:9px 12px;color:#4f5149;cursor:pointer;font:10px "DM Mono"}.command-suggestions button:hover{background:#111713;color:#f5f0e5}
+@media(max-width:800px){.command-inner{grid-template-columns:1fr;gap:30px}.museum-command{padding-left:5vw;padding-right:5vw}}
