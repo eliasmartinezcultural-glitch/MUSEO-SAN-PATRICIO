@@ -1,4 +1,4 @@
-const state={data:null,collections:null,multimedia:null,threads:null};
+const state={data:null,collections:null,multimedia:null,threads:null,currentSources:[]};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const visual=(kind,label='ARCHIVO')=>'<div class="piece-visual visual-'+esc(kind||'archive')+'"><span class="visual-label">'+esc(label)+'</span></div>';
@@ -16,7 +16,8 @@ function openRecordData(r){
  $('#modalRelation').textContent=r.relation.replaceAll('_',' ');
  $('#modalNotes').textContent=r.notes||'Sin nota adicional.';
  const sources=(r.sourceIds||[]).map(id=>state.data.sources?.find(s=>s.id===id)).filter(Boolean);
- $('#modalSource').innerHTML=sources.length?'Fuente: '+sources.map(s=>'<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title)+'</a>').join(' · '):'Fuente específica pendiente de incorporación.';
+ $('#modalSource').innerHTML=sources.length?'<b>Documentación</b><div class="source-chips">'+sources.map(s=>'<button class="source-chip" data-source-id="'+esc(s.id)+'">'+esc(s.title)+'</button>').join('')+'</div>':'Fuente específica pendiente de incorporación.';
+ state.currentSources=sources;
  const related=state.data.records.filter(x=>x.id!==r.id&&(x.layer===r.layer||(r.sourceIds||[]).some(id=>(x.sourceIds||[]).includes(id)))).slice(0,4);
  $('#modalRelated').innerHTML=related.length?'También podés explorar: '+related.map(x=>'<button class="related-btn" data-record="'+esc(x.id)+'">'+esc(x.title)+'</button>').join(' '):'';
  $('#detailModal').classList.add('open');$('#detailModal').setAttribute('aria-hidden','false');
@@ -33,7 +34,7 @@ function render(){
  $('#timeline').innerHTML=timelineIds.map(id=>{const r=recordById(id);return '<article class="time-item" data-record="'+esc(id)+'"><div class="time-dot"></div><span class="time-year">'+esc(r?.period||'—')+'</span><h3>'+esc(r?.title||'')+'</h3><p>'+esc(r?.status?.replaceAll('_',' ')||'')+'</p></article>'}).join('');
  $('#placeGrid').innerHTML=(d.places||[]).map(p=>'<article class="place" data-record="'+esc(p.recordId)+'"><div class="place-visual visual-'+esc(p.visual)+'"></div><div class="place-content"><span class="place-kind">'+esc(p.kind.toUpperCase())+'</span><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div></article>').join('');
  $('#evidenceBoard').innerHTML=(d.questions||[]).map(q=>'<article class="question" data-record="'+esc(q.recordId)+'"><span>'+esc(q.status.replaceAll('_',' '))+'</span><b>'+esc(q.title)+'</b></article>').join('');
- $('#sourceList').innerHTML=(d.sources||[]).map((s,i)=>'<article class="source"><span class="source-num">'+String(i+1).padStart(2,'0')+'</span><div><b>'+esc(s.title)+'</b><small>'+esc(s.type.replaceAll('_',' '))+'</small></div><a href="'+esc(s.url)+'" target="_blank" rel="noopener">Abrir fuente ↗</a></article>').join('');
+ $('#sourceList').innerHTML=(d.sources||[]).map((s,i)=>'<article class="source"><span class="source-num">'+String(i+1).padStart(2,'0')+'</span><div><b>'+esc(s.title)+'</b><small>'+esc(s.type.replaceAll('_',' '))+'</small></div><button class="inside-source" data-source-id="'+esc(s.id)+'">Leer dentro del museo →</button></article>').join('');
  renderCollections();
  renderMultimedia();
  renderThreads();
@@ -54,7 +55,7 @@ function renderThreads(){
 function bind(){
  document.addEventListener('click',e=>{
    const close=e.target.closest('[data-close]');if(close){close.closest('.modal')?.classList.remove('open');return}
-   const rec=e.target.closest('[data-record]');if(rec){openRecord(rec.dataset.record);return}
+   const source=e.target.closest('[data-source-id]');if(source){openSource(source.dataset.sourceId);return} if(e.target.closest('[data-source-open]')){openSource(state.currentSources[0]?.id);return} const rec=e.target.closest('[data-record]');if(rec){openRecord(rec.dataset.record);return}
    const layer=e.target.closest('[data-layer]');if(layer){const r=state.data.records.find(x=>x.layer===layer.dataset.layer);if(r)openRecordData(r);return}
    const mode=e.target.closest('[data-mode]');if(mode){const map={curioso:'pieceGrid',tiempo:'tiempo',territorio:'territorio',investigar:'evidenceBoard'};document.getElementById(map[mode.dataset.mode]).scrollIntoView({behavior:'smooth'});toast('Recorrido: '+mode.querySelector('b').textContent);return}
    if(e.target===$('#detailModal'))$('#detailModal').classList.remove('open');
@@ -71,6 +72,7 @@ function bind(){
  };
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.open').forEach(x=>x.classList.remove('open'));$('#searchPanel').classList.remove('open')}});
 }
+function openSource(id){const s=(state.data.sources||[]).find(x=>x.id===id);if(!s)return;$('#sourceReaderTitle').textContent=s.title;$('#sourceReaderType').textContent=(s.type||'FUENTE').replaceAll('_',' ');$('#sourceReaderMeta').textContent=(s.organization||'Archivo del museo')+' · '+(s.date||'Registro documental');$('#sourceReaderText').textContent=(s.description||'Esta fuente forma parte de la documentación que sustenta una o más piezas del museo.')+' El museo conserva aquí su función documental y deja el original externo como consulta opcional.';$('#sourceModal').classList.add('open');$('#sourceModal').setAttribute('aria-hidden','false');$('#sourceModal').querySelector('[data-source-original]').onclick=()=>window.open(s.url,'_blank','noopener');}
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
 async function boot(){try{const [d,c,m,t]=await Promise.all([fetch('data/territory-depth.json').then(r=>r.json()),fetch('data/collections.json').then(r=>r.json()),fetch('data/multimedia.json').then(r=>r.json()),fetch('data/research-threads.json').then(r=>r.json())]);state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind()}catch(e){console.error(e);toast('No se pudo cargar uno de los archivos del museo.');}}
 boot();
