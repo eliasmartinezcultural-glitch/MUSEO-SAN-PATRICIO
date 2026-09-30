@@ -1,0 +1,81 @@
+{
+  "version": "1.2.0",
+  "title": "Puente escolar del Museo San Patricio del Chañar",
+  "purpose": "Convertir el museo en una puerta de entrada sencilla para escuelas, familias, curiosos e investigadores sin reducir la profundidad documental.",
+  "principles": [
+    "Una pantalla debe decir Chañar antes de explicar Chañar.",
+    "La experiencia pública tiene pocas decisiones; el sistema interno mantiene relaciones, fuentes y estados de evidencia.",
+    "Las escuelas reciben rutas breves, visuales y verificables.",
+    "No se inventan imágenes, citas, coordenadas, testimonios ni patrimonio.",
+    "Contexto regional siempre separado de evidencia específicamente local."
+  ],
+  "audiences": [
+    {
+      "id": "AUD-01",
+      "title": "Niñas y niños",
+      "subtitle": "Mirar y descubrir",
+      "description": "Recorrido visual con preguntas simples sobre agua, chacras, río, barda y memoria.",
+      "entry": "curioso"
+    },
+    {
+      "id": "AUD-02",
+      "title": "Familias",
+      "subtitle": "Recorrer juntos",
+      "description": "Piezas breves para conversar sobre lugares, recuerdos y transformaciones del pueblo.",
+      "entry": "territorio"
+    },
+    {
+      "id": "AUD-03",
+      "title": "Docentes",
+      "subtitle": "Usar en clase",
+      "description": "Ruta guiada, fuentes, preguntas y actividades de observación para primaria y secundaria.",
+      "entry": "investigar"
+    },
+    {
+      "id": "AUD-04",
+      "title": "Investigadores",
+      "subtitle": "Ir a fondo",
+      "description": "Fuentes, cronología, estados de evidencia, relaciones y líneas de investigación abiertas.",
+      "entry": "investigar"
+    }
+  ],
+  "route": [
+    {
+      "step": "01",
+      "title": "Mirar",
+      "text": "Entrar por una imagen, paisaje o pieza."
+    },
+    {
+      "step": "02",
+      "title": "Preguntar",
+      "text": "¿Qué estamos viendo?"
+    },
+    {
+      "step": "03",
+      "title": "Ubicar",
+      "text": "¿Dónde y cuándo ocurre?"
+    },
+    {
+      "step": "04",
+      "title": "Conectar",
+      "text": "¿Con qué otra historia se relaciona?"
+    },
+    {
+      "step": "05",
+      "title": "Investigar",
+      "text": "¿Qué fuente lo demuestra?"
+    }
+  ],
+  "teacherKit": {
+    "title": "Kit docente inicial",
+    "items": [
+      "Recorrido breve: territorio → agua → chacra → pueblo → memoria",
+      "Preguntas de observación antes de leer textos largos",
+      "Cronología maestra para ubicar 1973 dentro de una historia mayor",
+      "Fichas con fuente, estado de evidencia y relaciones",
+      "Preguntas abiertas para distinguir saber documentado de investigación pendiente",
+      "Actividad de cierre: traer una foto, objeto o recuerdo familiar con procedencia"
+    ]
+  },
+  "publicationStatus": "BASE DE PRESENTACIÓN · contenido escolar específico se ampliará con especialistas docentes y fuentes primarias."
+}
