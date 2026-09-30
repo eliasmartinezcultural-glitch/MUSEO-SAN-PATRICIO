@@ -124,3 +124,65 @@ document.addEventListener('click',e=>{
  const q=e.target.closest('[data-query]');if(q){museumSearch(q.dataset.query);return}
  if(e.target.closest('#commandSearch')){museumSearch('');return}
 });
+
+
+/* 1.3 — relation engine + interaction hardening */
+function museumRelationsFor(id){
+ const rel=state.relations?.relations||[];
+ return rel.flatMap(x=>{
+   if(x.from===id)return [{id:x.to,type:x.type,basis:x.basis,direction:'→'}];
+   if(x.to===id)return [{id:x.from,type:x.type,basis:x.basis,direction:'←'}];
+   return [];
+ }).filter(x=>recordById(x.id));
+}
+function openRecordData(r){
+ const l=state.data?.layers?.find(x=>x.key===r.layer);
+ const safeStatus=String(r.status||'EN_INVESTIGACION').replaceAll('_',' ');
+ $('#modalVisual').className='modal-visual visual-'+esc(r.visual||'archive');
+ $('#modalVisual').innerHTML='<span class="visual-label">'+esc(l?.title||'PIEZA')+'</span>';
+ $('#modalKicker').textContent=(l?('CAPA '+String(l.order).padStart(2,'0')+' · '):'')+safeStatus;
+ $('#modalTitle').textContent=r.title||'Sin título';
+ $('#modalPeriod').textContent=r.period||'Período en investigación';
+ $('#modalEvidence').textContent=r.evidence||'Sin descripción breve.';
+ $('#modalStatus').textContent=safeStatus;
+ $('#modalRelation').textContent=String(r.relation||'RELACIÓN PENDIENTE').replaceAll('_',' ');
+ $('#modalNotes').textContent=r.notes||'Sin nota adicional.';
+ const sources=(r.sourceIds||[]).map(id=>state.data?.sources?.find(s=>s.id===id)).filter(Boolean);
+ $('#modalSource').innerHTML=sources.length?'<b>Documentación</b><div class="source-chips">'+sources.map(s=>'<button class="source-chip" data-source-id="'+esc(s.id)+'">'+esc(s.title)+'</button>').join('')+'</div>':'Fuente específica pendiente de incorporación.';
+ state.currentSources=sources;
+ const explicit=museumRelationsFor(r.id);
+ const legacy=state.data.records.filter(x=>x.id!==r.id&&(x.layer===r.layer||(r.sourceIds||[]).some(id=>(x.sourceIds||[]).includes(id)))).filter(x=>!explicit.some(e=>e.id===x.id)).slice(0,4).map(x=>({id:x.id,type:'RELACIONADO',basis:'Coincidencia temática o documental.',direction:'↔'}));
+ const all=[...explicit,...legacy].slice(0,6);
+ $('#modalRelated').innerHTML=all.length?'<div class="relation-title">SEGUIR EL HILO</div>'+all.map(x=>{const rr=recordById(x.id);return '<button class="related-btn relation-item" data-record="'+esc(x.id)+'"><span>'+esc(x.direction)+' '+esc(x.type.replaceAll('_',' '))+'</span><b>'+esc(rr.title)+'</b><small>'+esc(x.basis||'')+'</small></button>'}).join(''):'';
+ $('#detailModal').classList.add('open');$('#detailModal').setAttribute('aria-hidden','false');
+ window.__museumLastFocus=document.activeElement;
+ document.body.classList.add('modal-open');
+ setTimeout(()=>$('#detailModal .close')?.focus(),0);
+}
+(function hardenInteractions(){
+ const modalIds=['detailModal','sourceModal','introModal'];
+ const closeModal=(modal)=>{
+   if(!modal)return;
+   modal.classList.remove('open');modal.setAttribute('aria-hidden','true');
+   document.body.classList.remove('modal-open');
+   if(window.__museumLastFocus&&typeof window.__museumLastFocus.focus==='function'){try{window.__museumLastFocus.focus()}catch(e){}}
+ };
+ document.addEventListener('click',e=>{
+   const modal=e.target.closest('.modal');
+   if(modal&&e.target===modal)closeModal(modal);
+   if(e.target.closest('[data-close]'))closeModal(e.target.closest('.modal'));
+ });
+ document.addEventListener('keydown',e=>{
+   if(e.key!=='Escape')return;
+   const open=document.querySelector('.modal.open');
+   if(open){closeModal(open);return}
+   const search=$('#searchPanel');
+   if(search?.classList.contains('open')){search.classList.remove('open');search.setAttribute('aria-hidden','true');return}
+   const adjust=$('#adjustPanel');
+   if(adjust?.classList.contains('open')){adjust.classList.remove('open');adjust.setAttribute('aria-hidden','true')}
+ });
+ document.addEventListener('click',e=>{
+   const result=e.target.closest('.v12-result');
+   if(result){setTimeout(()=>document.querySelector('.search-panel')?.setAttribute('aria-hidden','true'),80)}
+ });
+})();
