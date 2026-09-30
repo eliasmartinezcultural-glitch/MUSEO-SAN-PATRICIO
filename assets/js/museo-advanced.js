@@ -6,7 +6,13 @@
  async function loadSchool(){
    try{const data=await fetch('data/school-gateway.json').then(r=>r.json()); renderSchool(data)}catch(e){console.warn('school-gateway',e)}
  }
- function renderSchool(d){
+  function renderMission(){
+   const main=document.querySelector('main'); if(!main||document.getElementById('mission'))return;
+   const sec=document.createElement('section'); sec.className='museum-mission'; sec.id='mission';
+   sec.innerHTML='<div class="mission-shell"><div><p class="eyebrow">MISIÓN · VALORES · COMPROMISO</p><h2>Un museo para recordar mejor.</h2><p class="mission-lead">Preservar, documentar, investigar y compartir la historia, el territorio y las memorias de San Patricio del Chañar.</p></div><div class="mission-grid"><article><b>01 · PROCEDENCIA</b><p>Primero sabemos de dónde viene una pieza. Después la mostramos.</p></article><article><b>02 · EVIDENCIA</b><p>Hecho, contexto, memoria e investigación pendiente tienen estados diferentes.</p></article><article><b>03 · COMUNIDAD</b><p>El museo puede recibir aportes, correcciones, fotografías y memorias identificadas.</p></article><article><b>04 · ACCESO</b><p>La misma experiencia debe funcionar en teléfono, tablet, computadora y tecnologías de asistencia.</p></article></div><div class="mission-sequence"><span>PRESERVAR</span><i>→</i><span>DOCUMENTAR</span><i>→</i><span>CONTEXTUALIZAR</span><i>→</i><span>CONECTAR</span><i>→</i><span>INTERPRETAR</span></div></div>';
+   const identity=document.querySelector('.chanar-identity'); main.insertBefore(sec,identity||main.firstElementChild);
+ }
+function renderSchool(d){
    const main=document.querySelector('main'); if(!main)return;
    const sec=document.createElement('section');sec.className='museum-school';sec.id='escuelas';
    sec.innerHTML='<div class="school-shell">'+
@@ -56,6 +62,7 @@
    out.innerHTML=hits.length?hits.map((x,i)=>'<button class="result v12-result" data-v12-result="'+i+'"><small>'+esc(x.type)+' · '+esc(x.id)+'</small><b>'+esc(x.title)+'</b><span>'+esc(x.text.slice(0,170))+'…</span></button>').join(''):'<p style="color:#777;margin-top:30px">No encontramos una coincidencia todavía. Probá otra palabra o convertí la ausencia en una pregunta de investigación.</p>';
    out.querySelectorAll('[data-v12-result]').forEach(b=>b.onclick=()=>index[Number(b.dataset.v12Result)]?.action());
  }
+ renderMission();
  loadSchool();
  enhance();
 })();
