@@ -137,3 +137,11 @@ main{padding-bottom:max(92px,env(safe-area-inset-bottom))}
 .experience-dock{padding-bottom:max(5px,env(safe-area-inset-bottom))}
 @media(max-width:700px){.experience-dock{bottom:max(8px,env(safe-area-inset-bottom));min-height:58px}.experience-dock button{min-height:46px}.search-panel{overscroll-behavior:contain}.modal{padding:10px}.modal-card{max-height:calc(100dvh - 20px);overflow:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.experience-dock,.modal,.search-panel,.adjust-panel{transition:none!important}}
+
+
+.museum-error{padding:30px;border:1px solid #a24d3644;background:#fff8eb;display:grid;gap:10px;max-width:680px;margin:20px auto}
+.museum-error b{font:9px DM Mono;color:#a24d36;letter-spacing:.12em}.museum-error h3{font-size:28px;margin:0}.museum-error p{color:#62645c;line-height:1.6}.museum-error .primary{width:max-content}
+.relation-title{font:9px DM Mono;letter-spacing:.14em;color:#a24d36;margin:28px 0 10px}
+.relation-item{display:flex;flex-direction:column;align-items:flex-start;width:100%;gap:4px;border:1px solid #b8ad99;background:#f7f0e2;padding:13px 14px;margin-top:7px;text-align:left;cursor:pointer}
+.relation-item span{font:8px DM Mono;color:#a24d36;text-transform:uppercase}.relation-item b{font-size:14px;color:#20251f}.relation-item small{font-size:10px;line-height:1.5;color:#6b6b62}
+.modal-open{overflow:hidden}
