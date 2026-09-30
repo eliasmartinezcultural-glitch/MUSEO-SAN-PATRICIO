@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="assets/css/museo.css">
 <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
-<body>
+<body><a class="skip-link" href="#descubrir">Saltar al contenido</a><div class="experience-start" id="experienceStart" aria-hidden="false"><div class="experience-start-inner"><p class="eyebrow">MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</p><h2>Entrá al museo.</h2><p>Una experiencia pensada para teléfono, tablet y computadora. Podés recorrer, volver, ampliar, ajustar la lectura y continuar donde la dejaste.</p><button class="primary" id="startExperience">Comenzar recorrido <span>→</span></button><small>El contenido principal se mantiene dentro del museo.</small></div></div>
 <header class="topbar">
 <a class="brand" href="#inicio"><span class="brand-mark">M</span><span><b>MUSEO</b><small>San Patricio del Chañar</small></span></a>
 <nav><a href="#descubrir">Descubrir</a><a href="#fotografia">Fotos</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#colecciones">Colecciones</a><a href="#archivo">Archivo</a></nav>
 <button class="search-btn" id="openSearch" aria-label="Buscar en el museo">⌕</button>
 </header>
 
-<main>
+<main id="museumExperience" tabindex="-1">
 <section class="hero" id="inicio">
 <div class="hero-copy">
 <p class="eyebrow">MUSEO DIGITAL · ARCHIVO VIVO</p>
@@ -101,7 +101,7 @@
 <div class="criteria-list"><article><span>01</span><b>Qué sabemos</b><p>La afirmación concreta, sin adornos.</p></article><article><span>02</span><b>Cómo lo sabemos</b><p>Fuente, documento, objeto, mapa o testimonio.</p></article><article><span>03</span><b>Qué relación tiene</b><p>Local, regional, histórica o memoria oral.</p></article><article><span>04</span><b>Qué falta investigar</b><p>Las preguntas abiertas también forman parte del museo.</p></article></div></section>
 
 <section class="closing"><p class="eyebrow">EL RECORRIDO RECIÉN COMIENZA</p><h2>De la tierra a la memoria.</h2><a class="primary" href="#inicio">Volver al comienzo ↑</a><small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones · 0.6 · Archivo fotográfico en construcción</small></section>
-</main>
+</main><aside class="experience-dock" aria-label="Controles de experiencia"><div class="experience-progress"><span id="experienceProgressBar"></span></div><button id="dockHome" title="Volver al inicio">⌂<span>Inicio</span></button><button id="dockAdjust" title="Ajustar pantalla">Aa<span>Ajustar</span></button><button id="dockFullscreen" title="Pantalla completa">⛶<span>Pantalla</span></button><button id="dockExit" title="Cerrar recorrido">×<span>Salir</span></button></aside><div class="adjust-panel" id="adjustPanel" aria-hidden="true"><div class="adjust-card"><button class="close" id="closeAdjust">×</button><p class="eyebrow">AJUSTAR EXPERIENCIA</p><h2>Hacé que el museo se adapte a vos.</h2><div class="adjust-row"><span>Tamaño del texto</span><div><button data-font="-1">A−</button><button data-font="0">A</button><button data-font="1">A+</button></div></div><div class="adjust-row"><span>Movimiento</span><button id="toggleMotion">Reducir movimiento</button></div><div class="adjust-row"><span>Contraste</span><button id="toggleContrast">Alto contraste</button></div><div class="adjust-row"><span>Anchura</span><button id="toggleReading">Modo lectura</button></div><button class="primary" id="resetExperience">Restablecer ajustes</button></div></div>
 
 <div class="modal" id="detailModal" aria-hidden="true"><div class="modal-card piece-modal"><button class="close" data-close>×</button><div class="modal-visual" id="modalVisual"></div><p class="eyebrow" id="modalKicker"></p><h2 id="modalTitle"></h2><p class="modal-period" id="modalPeriod"></p><p id="modalEvidence"></p><div class="meta-row"><span id="modalStatus"></span><span id="modalRelation"></span></div><div class="modal-note"><b>La historia</b><p id="modalNotes"></p></div><div class="modal-source" id="modalSource"></div><div class="modal-related" id="modalRelated"></div></div></div>
 <div class="modal" id="sourceModal" aria-hidden="true"><div class="modal-card source-reader"><button class="close" data-close>×</button><p class="eyebrow">DOCUMENTACIÓN DEL MUSEO</p><h2 id="sourceReaderTitle">La fuente detrás de la pieza</h2><p id="sourceReaderText">La documentación se consulta desde el museo para que el recorrido no se interrumpa.</p><div class="source-reader-box"><b id="sourceReaderType">FUENTE</b><span id="sourceReaderMeta"></span></div><div class="source-reader-links"><button class="primary" data-source-original>Consultar original externo ↗</button><button class="ghost" data-close>Cerrar</button></div></div></div>

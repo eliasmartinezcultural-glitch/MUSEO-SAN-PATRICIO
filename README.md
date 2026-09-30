@@ -32,3 +32,7 @@ Tecnología desarrollada por Elías Martínez / Ocarina Producciones.
 
 ## Regla UX 0.7 — Museo por dentro
 La experiencia principal permanece dentro del museo. Fuentes, documentación, relaciones y contexto se abren mediante fichas y visores internos. Los originales externos quedan como consulta opcional.
+
+
+## 0.8 — Experiencia multidispositivo
+Se incorpora una capa de experiencia transversal: ingreso, navegación, progreso, regreso al inicio, salida del recorrido, pantalla completa, tamaño de texto, reducción de movimiento, contraste y modo lectura. La interfaz se adapta a teléfono, tablet y escritorio manteniendo una misma línea narrativa.
