@@ -5,11 +5,12 @@
 <meta name="theme-color" content="#101612">
 <title>Museo San Patricio del Chañar — Territorio profundo</title>
 <link rel="stylesheet" href="assets/css/museo.css">
+<link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
 <body>
 <header class="topbar">
 <a class="brand" href="#inicio"><span class="brand-mark">M</span><span><b>MUSEO</b><small>San Patricio del Chañar</small></span></a>
-<nav><a href="#descubrir">Descubrir</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#capas">Capas</a></nav>
+<nav><a href="#descubrir">Descubrir</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#colecciones">Colecciones</a><a href="#archivo">Archivo</a></nav>
 <button class="search-btn" id="openSearch" aria-label="Buscar en el museo">⌕</button>
 </header>
 
@@ -20,7 +21,7 @@
 <h1>Antes del pueblo,<br><em>estaba el territorio.</em></h1>
 <p class="lead">Un museo para descubrir la historia profunda de San Patricio del Chañar: tierra, río, fósiles, caminos, personas, riego, producción y memoria.</p>
 <div class="hero-actions"><a class="primary" href="#descubrir">Entrar al museo <span>↓</span></a><button class="ghost" id="openIntro">Cómo recorrerlo</button></div>
-<div class="hero-stats"><span><b>8</b> capas</span><span><b>12</b> piezas iniciales</span><span><b>4</b> recorridos</span></div>
+<div class="hero-stats"><span><b>8</b> capas</span><span><b id="pieceStat">—</b> piezas catalogadas</span><span><b>4</b> recorridos</span></div>
 </div>
 <div class="hero-landscape" aria-hidden="true"><div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="river"></div><div class="hero-marker">39° SUR · RÍO NEUQUÉN</div></div>
 </section>
@@ -60,6 +61,12 @@
 <div class="chapter-intro"><p class="eyebrow">NO ES UNA LÍNEA RECTA</p><h2>Es una red de historias.</h2><p>Una pieza puede llevarte a una persona, esa persona a un lugar y ese lugar a un documento. El visitante decide cuánto profundizar.</p></div>
 <div class="chapter-grid" id="chapterGrid"></div>
 </section>
+
+<section class="collections-section" id="colecciones"><div class="collections-head"><p class="eyebrow">COLECCIONES</p><h2>No todo tiene que ser una cronología.</h2><p>Las colecciones agrupan piezas por temas. Así una misma historia puede aparecer desde el agua, la producción, la cartografía, la memoria o la paleontología.</p></div><div class="collection-grid" id="collectionGrid"></div></section>
+
+<section class="media-section" id="archivo"><div class="media-head"><p class="eyebrow">ARCHIVO MULTIMEDIA</p><h2>La historia también tiene voz, imagen y documento.</h2><p>El museo separa el archivo real de los espacios todavía pendientes. Cada material conserva procedencia y estado de incorporación.</p></div><div class="media-grid" id="mediaGrid"></div><div class="archive-note">Regla del archivo: no descargar ni republicar material ajeno sin autorización. Cuando un contenido vive en una fuente externa, el museo conserva el vínculo y la procedencia.</div></section>
+
+<section class="research-threads"><div class="threads-head"><p class="eyebrow">HILOS DE INVESTIGACIÓN</p><h2>Una pregunta puede convertirse en una colección.</h2><p>Estos hilos organizan el trabajo futuro y evitan llenar el museo con información sin procedencia.</p></div><div class="thread-grid" id="threadGrid"></div></section>
 
 <section class="evidence-section">
 <div><p class="eyebrow">LABORATORIO DEL MUSEO</p><h2>También mostramos lo que todavía no sabemos.</h2><p>Una investigación viva no oculta sus zonas grises. Las preguntas abiertas quedan visibles y pueden convertirse en nuevas piezas cuando aparezca evidencia.</p></div>
