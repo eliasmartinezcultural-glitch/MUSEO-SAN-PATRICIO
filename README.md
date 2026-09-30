@@ -1,26 +1,40 @@
 # Museo San Patricio del Chañar
 
-## 0.0.1 — Mapa de profundidad histórica del territorio
+## 0.0.1 — Fundación del museo digital
 
-Este proyecto comienza desde el territorio, no desde la fecha de fundación de la localidad.
+Este proyecto es un museo digital vivo del territorio de San Patricio del Chañar.
 
-La investigación se organiza desde el **tiempo profundo** (geología y paleontología) hacia las **presencias humanas**, los **pueblos originarios**, la **arqueología**, el **territorio histórico**, las **transformaciones productivas** y finalmente la **localidad de San Patricio del Chañar**.
+No comienza con la fundación de la localidad. Comienza con la profundidad del territorio: tiempo geológico, paleontología, primeras presencias humanas, pueblos originarios, territorio histórico, transformaciones productivas, nacimiento de la localidad e historia viva.
 
-### Regla editorial
+### Principio rector
 
-No incorporar contenido por proximidad geográfica solamente. Cada registro debe indicar su relación con el territorio del museo y su nivel de evidencia.
+**Mucha profundidad de fondo. Experiencia sencilla en lo visual y en el aprendizaje.**
 
-Estados:
-- EVIDENCIA_LOCAL
-- CONTEXTO_REGIONAL
-- FUENTE_HISTORICA
-- MEMORIA_ORAL
-- EN_INVESTIGACION
+La arquitectura queda organizada como:
 
-El museo separa hechos documentados, interpretación y memoria.
+**CONTENIDO → DATOS → MOTOR → EXPERIENCIA**
 
-### Arquitectura inicial
+La interfaz pública debe ser fácil de recorrer. La complejidad debe vivir detrás: datos estructurados, fuentes, relaciones, estados de evidencia, colecciones, recorridos y piezas.
 
-CONTENIDO → DATOS → MOTOR → INTERFAZ
+### Reglas editoriales
 
-La primera versión construye datos y arquitectura. La interfaz pública vendrá después.
+- No inventar patrimonio.
+- No inventar fotografías, documentos, testimonios o fuentes.
+- Diferenciar evidencia local de contexto regional.
+- Diferenciar hechos documentados, interpretación y memoria oral.
+- Mantener preguntas abiertas cuando la investigación todavía no está resuelta.
+- Cada nueva versión debe ampliar el sistema sin romper lo consolidado.
+
+### Estado actual
+
+**0.0.1 — FUNDACIÓN BLOQUEADA**
+
+Incluye portada museográfica, mapa de profundidad histórica, ocho capas territoriales, interacción y fichas iniciales, búsqueda, criterio de investigación y arquitectura de datos inicial.
+
+### Próxima expansión
+
+El siguiente salto será construir el motor real de piezas museológicas y comenzar a incorporar patrimonio y fuentes reales, con una experiencia visual progresiva y sencilla.
+
+Ver `MUSEUM-ARCHITECTURE.md` para la arquitectura bloqueada.
+
+Tecnología desarrollada por Elías Martínez / Ocarina Producciones.
