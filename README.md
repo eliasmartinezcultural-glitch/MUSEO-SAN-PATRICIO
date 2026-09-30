@@ -3,7 +3,7 @@
 Museo virtual y archivo histórico digital vivo de San Patricio del Chañar, Neuquén.
 
 ## Estado
-**0.5.0 — Investigación, fuentes y mapa multimedia en expansión**
+**1.3.0 — Sistema integral de museo, experiencia multidispositivo y relaciones conectadas**
 
 La arquitectura 0.3 permanece bloqueada. Esta etapa amplía el contenido sin alterar las entidades nucleares.
 
@@ -36,3 +36,33 @@ La experiencia principal permanece dentro del museo. Fuentes, documentación, re
 
 ## 0.8 — Experiencia multidispositivo
 Se incorpora una capa de experiencia transversal: ingreso, navegación, progreso, regreso al inicio, salida del recorrido, pantalla completa, tamaño de texto, reducción de movimiento, contraste y modo lectura. La interfaz se adapta a teléfono, tablet y escritorio manteniendo una misma línea narrativa.
+
+
+## 1.3 — Sistema integral
+
+Esta versión convierte el proyecto en un sistema mantenible de extremo a extremo:
+
+- misión, visión, valores y compromiso editorial;
+- contrato público de experiencia;
+- quality gate para contenido, datos, motor, UX y publicación;
+- carga de datos con recuperación visible ante errores;
+- registro explícito de relaciones bidireccionales;
+- fichas con “Seguir el hilo”;
+- accesibilidad de foco, Escape, scroll y controles táctiles;
+- entrada directa al museo;
+- protección para móvil, tablet y escritorio;
+- rutas educativas conectadas al mismo motor.
+
+### Documentación técnica
+
+- `docs/MISSION-AND-VALUES.md`
+- `docs/QUALITY-GATE.md`
+- `data/experience-contract.json`
+- `data/relations.json`
+- `data/museum-version.json`
+
+## Principio rector
+
+**La función precede al efecto visual.**
+
+El museo debe funcionar completo aunque todavía falten fotografías reales. Cuando lleguen nuevos archivos, fuentes y piezas, se incorporan al sistema sin reconstruir la experiencia.

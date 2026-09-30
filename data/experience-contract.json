@@ -1,0 +1,14 @@
+{
+  "version":"1.3.0",
+  "purpose":"Contrato público y técnico de la experiencia del Museo San Patricio del Chañar.",
+  "entry":"direct",
+  "primaryPrinciple":"La función precede al efecto visual.",
+  "audiences":["niñez","familias","docentes","investigadores","comunidad"],
+  "coreJourney":["mirar","entender","ubicar","conectar","investigar"],
+  "deviceModes":["mobile","tablet","desktop"],
+  "requiredCapabilities":["navegacion-interna","busqueda","fichas","fuentes","cronologia","lugares","colecciones","rutas-educativas","accesibilidad"],
+  "fallbacks":{"externalSources":"optional","missingMedia":"placeholder-documental","failedDataLoad":"error-recoverable","reducedMotion":"supported"},
+  "qualityGates":["contenido","datos","motor","experiencia","publicacion"],
+  "editorialRule":"Ninguna interfaz puede convertir una hipótesis en un hecho.",
+  "credit":"Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
+}

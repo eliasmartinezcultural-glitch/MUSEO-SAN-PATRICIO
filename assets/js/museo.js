@@ -74,7 +74,30 @@ function bind(){
 }
 function openSource(id){const s=(state.data.sources||[]).find(x=>x.id===id);if(!s)return;$('#sourceReaderTitle').textContent=s.title;$('#sourceReaderType').textContent=(s.type||'FUENTE').replaceAll('_',' ');$('#sourceReaderMeta').textContent=(s.organization||'Archivo del museo')+' · '+(s.date||'Registro documental');$('#sourceReaderText').textContent=(s.description||'Esta fuente forma parte de la documentación que sustenta una o más piezas del museo.')+' El museo conserva aquí su función documental y deja el original externo como consulta opcional.';$('#sourceModal').classList.add('open');$('#sourceModal').setAttribute('aria-hidden','false');$('#sourceModal').querySelector('[data-source-original]').onclick=()=>window.open(s.url,'_blank','noopener');}
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
-async function boot(){try{const [d,c,m,t]=await Promise.all([fetch('data/territory-depth.json').then(r=>r.json()),fetch('data/collections.json').then(r=>r.json()),fetch('data/multimedia.json').then(r=>r.json()),fetch('data/research-threads.json').then(r=>r.json())]);state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind()}catch(e){console.error(e);toast('No se pudo cargar uno de los archivos del museo.');}}
+async function loadJson(path){
+ const res=await fetch(path,{cache:'no-cache'});
+ if(!res.ok)throw new Error(path+' · HTTP '+res.status);
+ const data=await res.json();
+ return data;
+}
+async function boot(){
+ try{
+  const [d,c,m,t,r]=await Promise.all([
+   loadJson('data/territory-depth.json'),
+   loadJson('data/collections.json'),
+   loadJson('data/multimedia.json'),
+   loadJson('data/research-threads.json'),
+   loadJson('data/relations.json')
+  ]);
+  if(!d||!Array.isArray(d.records)||!Array.isArray(d.layers))throw new Error('territory-depth.json: estructura inválida');
+  state.data=d;state.collections=c;state.multimedia=m;state.threads=t;state.relations=r;render();bind();
+ }catch(e){
+  console.error('[Museo] boot error',e);
+  const grid=$('#pieceGrid');
+  if(grid)grid.innerHTML='<article class="museum-error"><b>EL MUSEO SIGUE ABIERTO</b><h3>Una capa de datos no pudo cargarse.</h3><p>La interfaz está disponible. Volvé a intentar o revisá la conexión.</p><button class="primary" onclick="location.reload()">Reintentar</button></article>';
+  toast('Una capa documental no pudo cargarse.');
+ }
+}
 boot();
 /* 0.8 — experiencia multidispositivo */
 function initExperience(){const root=document.documentElement, body=document.body; body.classList.add('experience-active'); $('#dockHome').onclick=()=>{window.scrollTo({top:0,behavior:'smooth'});toast('Volviste al inicio del museo')}; $('#dockExit').onclick=()=>{window.scrollTo({top:0,behavior:'smooth'});toast('El museo permanece abierto')}; $('#dockFullscreen').onclick=async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()}catch(e){toast('La pantalla completa no está disponible en este dispositivo')}}; $('#dockAdjust').onclick=()=>{$('#adjustPanel').classList.add('open');$('#adjustPanel').setAttribute('aria-hidden','false')}; $('#closeAdjust').onclick=()=>{$('#adjustPanel').classList.remove('open');$('#adjustPanel').setAttribute('aria-hidden','true')}; document.querySelectorAll('[data-font]').forEach(b=>b.onclick=()=>{const v=b.dataset.font; if(v==='0')root.style.removeProperty('--reading-scale'); else root.style.setProperty('--reading-scale',v==='1'?'1.12':'.94');localStorage.setItem('museum-font',v)}); $('#toggleMotion').onclick=()=>{body.classList.toggle('reduce-motion');localStorage.setItem('museum-motion',body.classList.contains('reduce-motion')?'1':'0')}; $('#toggleContrast').onclick=()=>{body.classList.toggle('high-contrast');localStorage.setItem('museum-contrast',body.classList.contains('high-contrast')?'1':'0')}; $('#toggleReading').onclick=()=>{body.classList.toggle('reading-mode');localStorage.setItem('museum-reading',body.classList.contains('reading-mode')?'1':'0')}; $('#resetExperience').onclick=()=>{localStorage.removeItem('museum-font');localStorage.removeItem('museum-motion');localStorage.removeItem('museum-contrast');localStorage.removeItem('museum-reading');root.style.removeProperty('--reading-scale');body.classList.remove('reduce-motion','high-contrast','reading-mode');toast('Ajustes restablecidos')}; const font=localStorage.getItem('museum-font');if(font==='1')root.style.setProperty('--reading-scale','1.12');if(font==='-1')root.style.setProperty('--reading-scale','.94');if(localStorage.getItem('museum-motion')==='1')body.classList.add('reduce-motion');if(localStorage.getItem('museum-contrast')==='1')body.classList.add('high-contrast');if(localStorage.getItem('museum-reading')==='1')body.classList.add('reading-mode'); const bar=$('#experienceProgressBar');let ticking=false; const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?(scrollY/max)*100:0)+'%';ticking=false};window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update();}
@@ -101,3 +124,65 @@ document.addEventListener('click',e=>{
  const q=e.target.closest('[data-query]');if(q){museumSearch(q.dataset.query);return}
  if(e.target.closest('#commandSearch')){museumSearch('');return}
 });
+
+
+/* 1.3 — relation engine + interaction hardening */
+function museumRelationsFor(id){
+ const rel=state.relations?.relations||[];
+ return rel.flatMap(x=>{
+   if(x.from===id)return [{id:x.to,type:x.type,basis:x.basis,direction:'→'}];
+   if(x.to===id)return [{id:x.from,type:x.type,basis:x.basis,direction:'←'}];
+   return [];
+ }).filter(x=>recordById(x.id));
+}
+function openRecordData(r){
+ const l=state.data?.layers?.find(x=>x.key===r.layer);
+ const safeStatus=String(r.status||'EN_INVESTIGACION').replaceAll('_',' ');
+ $('#modalVisual').className='modal-visual visual-'+esc(r.visual||'archive');
+ $('#modalVisual').innerHTML='<span class="visual-label">'+esc(l?.title||'PIEZA')+'</span>';
+ $('#modalKicker').textContent=(l?('CAPA '+String(l.order).padStart(2,'0')+' · '):'')+safeStatus;
+ $('#modalTitle').textContent=r.title||'Sin título';
+ $('#modalPeriod').textContent=r.period||'Período en investigación';
+ $('#modalEvidence').textContent=r.evidence||'Sin descripción breve.';
+ $('#modalStatus').textContent=safeStatus;
+ $('#modalRelation').textContent=String(r.relation||'RELACIÓN PENDIENTE').replaceAll('_',' ');
+ $('#modalNotes').textContent=r.notes||'Sin nota adicional.';
+ const sources=(r.sourceIds||[]).map(id=>state.data?.sources?.find(s=>s.id===id)).filter(Boolean);
+ $('#modalSource').innerHTML=sources.length?'<b>Documentación</b><div class="source-chips">'+sources.map(s=>'<button class="source-chip" data-source-id="'+esc(s.id)+'">'+esc(s.title)+'</button>').join('')+'</div>':'Fuente específica pendiente de incorporación.';
+ state.currentSources=sources;
+ const explicit=museumRelationsFor(r.id);
+ const legacy=state.data.records.filter(x=>x.id!==r.id&&(x.layer===r.layer||(r.sourceIds||[]).some(id=>(x.sourceIds||[]).includes(id)))).filter(x=>!explicit.some(e=>e.id===x.id)).slice(0,4).map(x=>({id:x.id,type:'RELACIONADO',basis:'Coincidencia temática o documental.',direction:'↔'}));
+ const all=[...explicit,...legacy].slice(0,6);
+ $('#modalRelated').innerHTML=all.length?'<div class="relation-title">SEGUIR EL HILO</div>'+all.map(x=>{const rr=recordById(x.id);return '<button class="related-btn relation-item" data-record="'+esc(x.id)+'"><span>'+esc(x.direction)+' '+esc(x.type.replaceAll('_',' '))+'</span><b>'+esc(rr.title)+'</b><small>'+esc(x.basis||'')+'</small></button>'}).join(''):'';
+ $('#detailModal').classList.add('open');$('#detailModal').setAttribute('aria-hidden','false');
+ window.__museumLastFocus=document.activeElement;
+ document.body.classList.add('modal-open');
+ setTimeout(()=>$('#detailModal .close')?.focus(),0);
+}
+(function hardenInteractions(){
+ const modalIds=['detailModal','sourceModal','introModal'];
+ const closeModal=(modal)=>{
+   if(!modal)return;
+   modal.classList.remove('open');modal.setAttribute('aria-hidden','true');
+   document.body.classList.remove('modal-open');
+   if(window.__museumLastFocus&&typeof window.__museumLastFocus.focus==='function'){try{window.__museumLastFocus.focus()}catch(e){}}
+ };
+ document.addEventListener('click',e=>{
+   const modal=e.target.closest('.modal');
+   if(modal&&e.target===modal)closeModal(modal);
+   if(e.target.closest('[data-close]'))closeModal(e.target.closest('.modal'));
+ });
+ document.addEventListener('keydown',e=>{
+   if(e.key!=='Escape')return;
+   const open=document.querySelector('.modal.open');
+   if(open){closeModal(open);return}
+   const search=$('#searchPanel');
+   if(search?.classList.contains('open')){search.classList.remove('open');search.setAttribute('aria-hidden','true');return}
+   const adjust=$('#adjustPanel');
+   if(adjust?.classList.contains('open')){adjust.classList.remove('open');adjust.setAttribute('aria-hidden','true')}
+ });
+ document.addEventListener('click',e=>{
+   const result=e.target.closest('.v12-result');
+   if(result){setTimeout(()=>document.querySelector('.search-panel')?.setAttribute('aria-hidden','true'),80)}
+ });
+})();
