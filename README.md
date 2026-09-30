@@ -1,6 +1,6 @@
 # Museo San Patricio del Chañar
 
-## 0.1.0 — Motor de piezas y experiencia profunda
+## 0.2.0 — Colecciones, archivo multimedia e investigación
 
 Este proyecto es un museo digital vivo del territorio de San Patricio del Chañar.
 
@@ -30,6 +30,14 @@ La interfaz pública debe ser fácil de recorrer. La complejidad debe vivir detr
 **0.0.1 — FUNDACIÓN BLOQUEADA · 0.1.0 EN CONSTRUCCIÓN**
 
 Ahora suma un motor inicial de piezas museológicas, recorridos de entrada, piezas destacadas, línea temporal, lugares, preguntas abiertas, fuentes rastreables y fichas progresivas. La profundidad crece detrás de una experiencia visual simple.
+
+### Lo que agrega 0.2
+
+- Colecciones temáticas separadas de la cronología.
+- Archivo multimedia con procedencia y estado de incorporación.
+- Hilos de investigación para organizar búsquedas futuras.
+- Nuevas piezas de historia contemporánea, incluyendo el registro del 50.º aniversario de 2023 y un registro documental de 2026.
+- Separación explícita entre material externo y archivos que todavía deben ser localizados, digitalizados o incorporados con autorización.
 
 ### Próxima expansión
 
