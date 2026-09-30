@@ -1,6 +1,6 @@
 # Museo San Patricio del Chañar
 
-## 0.0.1 — Fundación del museo digital
+## 0.1.0 — Motor de piezas y experiencia profunda
 
 Este proyecto es un museo digital vivo del territorio de San Patricio del Chañar.
 
@@ -27,13 +27,13 @@ La interfaz pública debe ser fácil de recorrer. La complejidad debe vivir detr
 
 ### Estado actual
 
-**0.0.1 — FUNDACIÓN BLOQUEADA**
+**0.0.1 — FUNDACIÓN BLOQUEADA · 0.1.0 EN CONSTRUCCIÓN**
 
-Incluye portada museográfica, mapa de profundidad histórica, ocho capas territoriales, interacción y fichas iniciales, búsqueda, criterio de investigación y arquitectura de datos inicial.
+Ahora suma un motor inicial de piezas museológicas, recorridos de entrada, piezas destacadas, línea temporal, lugares, preguntas abiertas, fuentes rastreables y fichas progresivas. La profundidad crece detrás de una experiencia visual simple.
 
 ### Próxima expansión
 
-El siguiente salto será construir el motor real de piezas museológicas y comenzar a incorporar patrimonio y fuentes reales, con una experiencia visual progresiva y sencilla.
+El siguiente salto será ampliar colecciones, mapa narrativo, archivo visual real, personas, instituciones, memoria oral y conexiones entre piezas.
 
 Ver `MUSEUM-ARCHITECTURE.md` para la arquitectura bloqueada.
 
