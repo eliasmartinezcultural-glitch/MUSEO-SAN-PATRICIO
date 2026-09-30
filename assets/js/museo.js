@@ -82,14 +82,15 @@ async function loadJson(path){
 }
 async function boot(){
  try{
-  const [d,c,m,t]=await Promise.all([
+  const [d,c,m,t,r]=await Promise.all([
    loadJson('data/territory-depth.json'),
    loadJson('data/collections.json'),
    loadJson('data/multimedia.json'),
-   loadJson('data/research-threads.json')
+   loadJson('data/research-threads.json'),
+   loadJson('data/relations.json')
   ]);
   if(!d||!Array.isArray(d.records)||!Array.isArray(d.layers))throw new Error('territory-depth.json: estructura inválida');
-  state.data=d;state.collections=c;state.multimedia=m;state.threads=t;render();bind();
+  state.data=d;state.collections=c;state.multimedia=m;state.threads=t;state.relations=r;render();bind();
  }catch(e){
   console.error('[Museo] boot error',e);
   const grid=$('#pieceGrid');
