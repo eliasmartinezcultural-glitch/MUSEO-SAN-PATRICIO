@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.0.1",
+  "schemaVersion": "0.1.0",
   "title": "Mapa de profundidad histórica del territorio",
   "scope": {
     "primary": "territorio de San Patricio del Chañar",
@@ -12,56 +12,99 @@
       "order": 1,
       "key": "tiempo_profundo",
       "title": "Tiempo profundo",
-      "focus": ["geologia", "geomorfologia", "clima_paleoambiental"]
+      "focus": [
+        "geologia",
+        "geomorfologia",
+        "clima_paleoambiental"
+      ]
     },
     {
       "id": "L02",
       "order": 2,
       "key": "paleontologia",
       "title": "Paleontología",
-      "focus": ["fossiles", "formaciones", "yacimientos", "fauna_extinta"]
+      "focus": [
+        "fossiles",
+        "formaciones",
+        "yacimientos",
+        "fauna_extinta"
+      ]
     },
     {
       "id": "L03",
       "order": 3,
       "key": "primeras_presencias_humanas",
       "title": "Primeras presencias humanas",
-      "focus": ["poblamiento", "arqueologia", "tecnologia", "ambiente"]
+      "focus": [
+        "poblamiento",
+        "arqueologia",
+        "tecnologia",
+        "ambiente"
+      ]
     },
     {
       "id": "L04",
       "order": 4,
       "key": "pueblos_originarios",
       "title": "Pueblos originarios",
-      "focus": ["mapuche", "territorialidad", "lengua", "memoria", "continuidades"]
+      "focus": [
+        "mapuche",
+        "territorialidad",
+        "lengua",
+        "memoria",
+        "continuidades"
+      ]
     },
     {
       "id": "L05",
       "order": 5,
       "key": "territorio_historico",
       "title": "Territorio histórico",
-      "focus": ["rios", "parajes", "caminos", "puestos", "mensuras", "cartografia"]
+      "focus": [
+        "rios",
+        "parajes",
+        "caminos",
+        "puestos",
+        "mensuras",
+        "cartografia"
+      ]
     },
     {
       "id": "L06",
       "order": 6,
       "key": "transformaciones",
       "title": "Transformaciones del territorio",
-      "focus": ["riego", "agricultura", "colonizacion", "infraestructura"]
+      "focus": [
+        "riego",
+        "agricultura",
+        "colonizacion",
+        "infraestructura"
+      ]
     },
     {
       "id": "L07",
       "order": 7,
       "key": "nacimiento_localidad",
       "title": "Nacimiento de la localidad",
-      "focus": ["El_Chanar", "fundacion", "instituciones", "poblacion"]
+      "focus": [
+        "El_Chanar",
+        "fundacion",
+        "instituciones",
+        "poblacion"
+      ]
     },
     {
       "id": "L08",
       "order": 8,
       "key": "historia_viva",
       "title": "Historia viva",
-      "focus": ["familias", "barrios", "trabajo", "cultura", "memoria_oral"]
+      "focus": [
+        "familias",
+        "barrios",
+        "trabajo",
+        "cultura",
+        "memoria_oral"
+      ]
     }
   ],
   "records": [
@@ -69,71 +112,444 @@
       "id": "TD-001",
       "layer": "tiempo_profundo",
       "title": "Formación geológica y paisaje",
-      "period": "mesozoico-a-cuaternario",
+      "period": "Mesozoico → Cuaternario",
       "status": "EN_INVESTIGACION",
-      "evidence": "Debe reconstruirse con bibliografía geológica específica del área y cartografía oficial.",
+      "evidence": "La base geológica del territorio debe reconstruirse con cartografía y bibliografía específica del área.",
       "relation": "LOCAL_A_DETERMINAR",
-      "notes": "No completar con datos generales de Neuquén sin demostrar relación con el área."
+      "notes": "Esta pieza funciona como puerta de entrada al tiempo profundo. No se incorporan afirmaciones locales no verificadas.",
+      "sourceIds": []
     },
     {
       "id": "TD-002",
       "layer": "paleontologia",
-      "title": "Registro paleontológico regional",
-      "period": "mesozoico",
-      "status": "CONTEXTO_REGIONAL",
-      "evidence": "Neuquén posee un registro paleontológico excepcional. Los registros del museo deberán separar hallazgos del ejido/entorno inmediato de hallazgos regionales.",
-      "relation": "CONTEXTO_REGIONAL",
-      "notes": "La proximidad geográfica no convierte automáticamente un hallazgo en patrimonio local."
+      "title": "Panamericansaurus schroederi",
+      "period": "Cretácico Superior · ~75 millones de años",
+      "status": "EVIDENCIA_LOCAL",
+      "evidence": "Durante la construcción de Bodega Familia Schroeder se hallaron restos de un dinosaurio herbívoro; la familia y su sitio de conservación identifican el ejemplar como Panamericansaurus schroederi.",
+      "relation": "LOCAL",
+      "notes": "La información publicada por Familia Schroeder describe un saurópodo titanosáurido, herbívoro, de unos 10–12 metros, hallado en terrenos de la bodega. El sitio conserva los restos en una cava especial. La nomenclatura y datación deben contrastarse con bibliografía paleontológica especializada antes de convertirlas en ficha científica definitiva.",
+      "sourceIds": [
+        "SRC-005"
+      ],
+      "visual": "fossil"
     },
     {
       "id": "TD-003",
       "layer": "primeras_presencias_humanas",
       "title": "Poblamiento humano temprano de Neuquén",
-      "period": "Pleistoceno final-Holoceno",
+      "period": "Pleistoceno final → Holoceno",
       "status": "CONTEXTO_REGIONAL",
-      "evidence": "La investigación arqueológica de Neuquén documenta presencia humana desde aproximadamente 12.000 años atrás, con conocimiento espacial todavía fragmentario.",
+      "evidence": "La arqueología neuquina documenta presencia humana temprana, pero el museo debe separar ese conocimiento regional de cualquier afirmación específica para Chañar.",
       "relation": "CONTEXTO_REGIONAL",
-      "notes": "Se incorporará como marco hasta localizar evidencia específica del valle del río Neuquén y del área de Chañar."
+      "notes": "Próxima investigación: localizar sitios, publicaciones y colecciones arqueológicas específicamente vinculadas al valle del río Neuquén y al entorno de San Patricio del Chañar.",
+      "sourceIds": []
     },
     {
       "id": "TD-004",
       "layer": "pueblos_originarios",
       "title": "Pueblo Mapuche y territorialidad",
-      "period": "historico-y-contemporaneo",
+      "period": "Historia y presente",
       "status": "CONTEXTO_REGIONAL",
-      "evidence": "Las fuentes oficiales argentinas reconocen procesos de relevamiento territorial de comunidades mapuche en Neuquén y registran cartografía de ocupación actual, tradicional y pública.",
+      "evidence": "La historia territorial de Neuquén incluye presencia y continuidad mapuche. El museo debe construir esta capa con fuentes indígenas, arqueológicas, históricas y testimoniales sin atribuir comunidades concretas al ejido sin evidencia.",
       "relation": "REGIONAL_A_CONTRASTAR",
-      "notes": "No atribuir una comunidad concreta al ejido sin fuente específica. Priorizar fuentes y testimonios indígenas."
+      "notes": "Esta capa tendrá tratamiento propio: territorio, lengua, movilidad, memoria, relaciones con el Estado y continuidades contemporáneas. No reducirla a un prólogo previo a la historia local.",
+      "sourceIds": []
     },
     {
       "id": "TD-005",
       "layer": "territorio_historico",
-      "title": "Río Neuquén como estructura territorial",
-      "period": "larga_duracion",
-      "status": "EN_INVESTIGACION",
-      "evidence": "El río debe estudiarse como eje ambiental, productivo, de movilidad y de transformación territorial.",
+      "title": "El río Neuquén como eje territorial",
+      "period": "Larga duración",
+      "status": "EVIDENCIA_LOCAL",
+      "evidence": "Las fuentes municipales ubican la historia de El Chañar junto al río Neuquén y describen obras de riego y transformaciones productivas dependientes del agua.",
       "relation": "LOCAL",
-      "notes": "Requiere cartografía histórica y ambiental."
+      "notes": "El río debe estudiarse simultáneamente como ambiente, recurso, vía de movilidad, límite, riesgo y soporte de transformación productiva.",
+      "sourceIds": [
+        "SRC-001"
+      ]
     },
     {
       "id": "TD-006",
-      "layer": "transformaciones",
-      "title": "Transformación productiva e irrigación",
-      "period": "siglo_xx",
+      "layer": "territorio_historico",
+      "title": "Mensura de 1881–1882 y el posible Mangrullo Chañar",
+      "period": "1881–1883",
       "status": "FUENTE_HISTORICA",
-      "evidence": "Fuentes oficiales municipales y provinciales describen la transformación productiva y los programas de colonización agrícola iniciados en la década de 1970.",
-      "relation": "LOCAL",
-      "notes": "La cronología deberá contrastarse entre fuentes municipales, provinciales y bibliografía."
+      "evidence": "La Municipalidad cita planos y documentación de la mensura de Encina, Moreno y Cía. de 1881–1882 y trabajos de Juan Mario Raone que mencionan el Mangrullo Chañar del Fortín Chañar.",
+      "relation": "LOCAL_A_CONTRASTAR",
+      "notes": "La ficha debe presentar esta información como fuente municipal y distinguir la documentación del contexto de la Campaña del Desierto de las interpretaciones posteriores.",
+      "sourceIds": [
+        "SRC-001"
+      ],
+      "visual": "map"
     },
     {
       "id": "TD-007",
+      "layer": "territorio_historico",
+      "title": "Colonia Tratayen y la mensura de 1913",
+      "period": "1913",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "La Municipalidad señala una mensura del ingeniero Tressens hacia 1913 en la colonia Tratayen, con un núcleo urbano que habría alcanzado unas 20 manzanas.",
+      "relation": "LOCAL_A_CONTRASTAR",
+      "notes": "La misma fuente plantea como hipótesis que la colonia habría desaparecido tras una gran crecida del río Neuquén. Esa hipótesis debe conservarse como tal hasta localizar documentación adicional.",
+      "sourceIds": [
+        "SRC-001"
+      ],
+      "visual": "map"
+    },
+    {
+      "id": "TD-008",
+      "layer": "transformaciones",
+      "title": "El Chañar: 20.000 hectáreas y proyecto de transformación",
+      "period": "1966–1971",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "La historia municipal describe la adquisición de El Chañar en 1966 por vecinos de Cinco Saltos y la adquisición posterior de 20.000 hectáreas por Frigorífico Cipolletti S.A. en 1968, luego absorbida por Gasparri Hnos.",
+      "relation": "LOCAL",
+      "notes": "La fuente municipal describe estudios de Topoges que identificaron 8.400 hectáreas con riego gravitacional, obras de sistematización desde 1969 y una primera bocatoma en 1971 que permitió regar 3.068 hectáreas en la primera etapa.",
+      "sourceIds": [
+        "SRC-001"
+      ]
+    },
+    {
+      "id": "TD-009",
+      "layer": "transformaciones",
+      "title": "Las primeras cosechas y el riego",
+      "period": "1969–1971",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "La Municipalidad señala que en 1969 se regaron primeros cultivos por bombeo desde el río Neuquén; las primeras cosechas fueron papas y el área piloto rondó 500 hectáreas.",
+      "relation": "LOCAL",
+      "notes": "La infraestructura hídrica es una pieza central para explicar cómo un paisaje árido se transformó en un territorio productivo. Debe conectarse con bocatomas, canales, parcelas, trabajadores y familias.",
+      "sourceIds": [
+        "SRC-001"
+      ]
+    },
+    {
+      "id": "TD-010",
       "layer": "nacimiento_localidad",
       "title": "Fundación de San Patricio del Chañar",
-      "period": "1973",
+      "period": "21 de mayo de 1973",
       "status": "FUENTE_HISTORICA",
-      "evidence": "La fecha de fundación utilizada por fuentes oficiales es 21 de mayo de 1973.",
+      "evidence": "Fuentes oficiales provinciales y legislativas sitúan la fundación de la localidad el 21 de mayo de 1973.",
       "relation": "LOCAL",
-      "notes": "La fundación es un capítulo del museo, no el comienzo de la historia territorial."
+      "notes": "La fecha marca el nacimiento de la localidad, no el comienzo de la historia del territorio. Las fuentes también vinculan el nombre San Patricio con Campo Filone, Italia, y Chañar con el nombre del árbol.",
+      "sourceIds": [
+        "SRC-003",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "TD-011",
+      "layer": "nacimiento_localidad",
+      "title": "Primera Comisión de Fomento",
+      "period": "8 de abril de 1974",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "Neuquén Informa registra el 8 de abril de 1974 como fecha de creación y puesta en funcionamiento de la Comisión de Fomento; durante la ceremonia se inauguró la comisaría y luego se creó el consorcio de riego.",
+      "relation": "LOCAL",
+      "notes": "La institución debe estudiarse como parte de la construcción cotidiana de la localidad: gobierno, seguridad, riego, educación, deporte y organización comunitaria.",
+      "sourceIds": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "TD-012",
+      "layer": "historia_viva",
+      "title": "Primeras cantidades industriales de fruta",
+      "period": "1975",
+      "status": "FUENTE_HISTORICA",
+      "evidence": "Neuquén Informa señala que en 1975 se produjeron las primeras cantidades industriales de fruta y que ese año se fundaron la cooperadora escolar y el Club Atlético San Patricio.",
+      "relation": "LOCAL",
+      "notes": "Esta pieza permite conectar producción, escuela, deporte y comunidad en una misma etapa de formación local.",
+      "sourceIds": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "TD-013",
+      "layer": "historia_viva",
+      "title": "Fiesta Provincial del Pelón",
+      "period": "Desde 1985",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad informa que la Fiesta Provincial del Pelón fue inaugurada en 1985 como homenaje a uno de los primeros frutos emblemáticos de la ciudad.",
+      "relation": "LOCAL",
+      "notes": "La fiesta puede crecer como colección de fotografías, afiches, programas, artistas, productores, anécdotas y recuerdos de distintas ediciones.",
+      "sourceIds": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "TD-014",
+      "layer": "historia_viva",
+      "title": "Parroquia construida por la comunidad",
+      "period": "1983–1996",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad señala que el templo fue construido por la comunidad y bendecido por Jaime de Nevares el 11 de septiembre de 1983; en 1996 se erigió la parroquia María Auxiliadora.",
+      "relation": "LOCAL",
+      "notes": "La pieza muestra cómo instituciones religiosas, familias y comunidad participaron en la consolidación de la localidad.",
+      "sourceIds": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "TD-015",
+      "layer": "historia_viva",
+      "title": "Estadio Municipal Juan Bautista Jara",
+      "period": "2000–2003",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad registra un primer partido oficial el 24 de septiembre de 2000 y una segunda inauguración el 27 de septiembre de 2003.",
+      "relation": "LOCAL",
+      "notes": "El Muro de la Identidad, descrito por la Municipalidad como obra artística colectiva, permite conectar deporte, espacio público y memoria comunitaria.",
+      "sourceIds": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "TD-016",
+      "layer": "historia_viva",
+      "title": "Dique Compensador y paisaje protegido",
+      "period": "Desde 2006",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad informa que el Dique Compensador fue declarado Área Natural Protegida Municipal en octubre de 2006.",
+      "relation": "LOCAL",
+      "notes": "La pieza abre una línea de investigación sobre biodiversidad, aves, paisaje, agua y relación entre producción y conservación.",
+      "sourceIds": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "TD-017",
+      "layer": "historia_viva",
+      "title": "Chacra Municipal Valles del Chañar",
+      "period": "Historia contemporánea",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad describe una chacra de 10 hectáreas donde 40 familias producen hortalizas durante todo el año, con riego por canales, bombas y 27 invernaderos.",
+      "relation": "LOCAL",
+      "notes": "Es una excelente puerta para investigar producción familiar, autoconsumo, comercialización, trabajo y conocimientos agrícolas contemporáneos.",
+      "sourceIds": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "TD-018",
+      "layer": "historia_viva",
+      "title": "Bodega Familia Schroeder y vitivinicultura",
+      "period": "Desde 2001",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "Familia Schroeder informa que el proyecto de bodega comenzó en 2001 y que sus viñedos se encuentran en San Patricio del Chañar, con riego por goteo alimentado por agua del río Neuquén.",
+      "relation": "LOCAL",
+      "notes": "La vitivinicultura puede estudiarse como transformación productiva reciente y como nuevo patrimonio material, paisajístico, gastronómico y turístico.",
+      "sourceIds": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "TD-019",
+      "layer": "territorio_historico",
+      "title": "Mirador La Virgen",
+      "period": "Contemporáneo",
+      "status": "FUENTE_INSTITUCIONAL",
+      "evidence": "La Municipalidad identifica la Virgen del Valle como parte del patrimonio natural y cultural y sitúa el mirador a unos 2 km de la intersección de las rutas provinciales 7 y 8.",
+      "relation": "LOCAL",
+      "notes": "Este sitio permite unir paisaje, turismo, religiosidad, caminos y transformación productiva.",
+      "sourceIds": [
+        "SRC-002"
+      ],
+      "visual": "landscape"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Municipalidad de San Patricio del Chañar — Nuestra Identidad",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.sanpatricio.gob.ar/identidad"
+    },
+    {
+      "id": "SRC-002",
+      "title": "Municipalidad de San Patricio del Chañar — Nuestra Ciudad",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://sanpatricio.gob.ar/nuestra"
+    },
+    {
+      "id": "SRC-003",
+      "title": "Legislatura del Neuquén — 46.º aniversario",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.legislaturaneuquen.gob.ar/SVRFILES/hln/documentos/DiaSesio/XLVIII/DXLVIII_08.pdf"
+    },
+    {
+      "id": "SRC-004",
+      "title": "Neuquén Informa — 41.º aniversario",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2014/05/22/48785-jorge-sapag-asistira-al-41-aniversario-de-san-patricio-del-chanar"
+    },
+    {
+      "id": "SRC-005",
+      "title": "Familia Schroeder — Bodega y hallazgo paleontológico",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://familiaschroeder.com/eng/the-winery/"
+    },
+    {
+      "id": "SRC-006",
+      "title": "Neuquén Informa — 43.º aniversario",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2016/05/20/81371-san-patricio-del-chanar"
+    },
+    {
+      "id": "SRC-007",
+      "title": "Neuquén Informa — discurso aniversario 2010",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2010/05/21/8271-discurso-del-gobernador-jorge-sapag-en-el-37-aniversario-de-san-patricio-del-chanar"
+    }
+  ],
+  "pieces": [
+    {
+      "id": "P-001",
+      "recordId": "TD-002",
+      "title": "El dinosaurio de la bodega",
+      "label": "PALEONTOLOGÍA",
+      "visual": "fossil"
+    },
+    {
+      "id": "P-002",
+      "recordId": "TD-006",
+      "title": "El camino y el Mangrullo Chañar",
+      "label": "TERRITORIO HISTÓRICO",
+      "visual": "map"
+    },
+    {
+      "id": "P-003",
+      "recordId": "TD-007",
+      "title": "La colonia que dejó una huella",
+      "label": "1913",
+      "visual": "archive"
+    },
+    {
+      "id": "P-004",
+      "recordId": "TD-008",
+      "title": "20.000 hectáreas: el proyecto",
+      "label": "TRANSFORMACIÓN",
+      "visual": "land"
+    },
+    {
+      "id": "P-005",
+      "recordId": "TD-009",
+      "title": "Cuando llegó el riego",
+      "label": "1969–1971",
+      "visual": "water"
+    },
+    {
+      "id": "P-006",
+      "recordId": "TD-010",
+      "title": "21 de mayo de 1973",
+      "label": "FUNDACIÓN",
+      "visual": "date"
+    },
+    {
+      "id": "P-007",
+      "recordId": "TD-013",
+      "title": "El pelón como memoria",
+      "label": "1985 →",
+      "visual": "archive"
+    },
+    {
+      "id": "P-008",
+      "recordId": "TD-017",
+      "title": "40 familias, una chacra",
+      "label": "HOY",
+      "visual": "land"
+    },
+    {
+      "id": "P-009",
+      "recordId": "TD-018",
+      "title": "Viñedos sobre el valle",
+      "label": "2001 →",
+      "visual": "vine"
+    }
+  ],
+  "places": [
+    {
+      "id": "PL-001",
+      "title": "Río Neuquén",
+      "kind": "agua",
+      "recordId": "TD-005",
+      "text": "Eje ambiental y productivo del territorio.",
+      "visual": "water"
+    },
+    {
+      "id": "PL-002",
+      "title": "El Chañar / paraje histórico",
+      "kind": "territorio",
+      "recordId": "TD-008",
+      "text": "Nombre histórico del paraje y escenario de la transformación productiva.",
+      "visual": "land"
+    },
+    {
+      "id": "PL-003",
+      "title": "Dique Compensador",
+      "kind": "naturaleza",
+      "recordId": "TD-016",
+      "text": "Paisaje y área natural protegida municipal.",
+      "visual": "water"
+    },
+    {
+      "id": "PL-004",
+      "title": "Mirador La Virgen",
+      "kind": "paisaje",
+      "recordId": "TD-019",
+      "text": "Punto de observación sobre el valle productivo.",
+      "visual": "land"
+    },
+    {
+      "id": "PL-005",
+      "title": "Bodega Familia Schroeder",
+      "kind": "patrimonio",
+      "recordId": "TD-018",
+      "text": "Viñedos, bodega y sitio de conservación paleontológica.",
+      "visual": "fossil"
+    },
+    {
+      "id": "PL-006",
+      "title": "Chacra Municipal Valles del Chañar",
+      "kind": "producción",
+      "recordId": "TD-017",
+      "text": "Producción hortícola de 40 familias en 10 hectáreas.",
+      "visual": "land"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-001",
+      "title": "¿Dónde estuvo exactamente el Mangrullo Chañar?",
+      "status": "EN_INVESTIGACION",
+      "recordId": "TD-006"
+    },
+    {
+      "id": "Q-002",
+      "title": "¿Qué documentos permiten reconstruir Tratayen en 1913?",
+      "status": "EN_INVESTIGACION",
+      "recordId": "TD-007"
+    },
+    {
+      "id": "Q-003",
+      "title": "¿Qué evidencia arqueológica existe específicamente en el entorno de Chañar?",
+      "status": "EN_INVESTIGACION",
+      "recordId": "TD-003"
+    },
+    {
+      "id": "Q-004",
+      "title": "¿Cómo cambió el paisaje antes y después del riego?",
+      "status": "EN_INVESTIGACION",
+      "recordId": "TD-009"
+    },
+    {
+      "id": "Q-005",
+      "title": "¿Qué memorias conservan las primeras familias y trabajadores?",
+      "status": "MEMORIA_ORAL",
+      "recordId": "TD-012"
+    },
+    {
+      "id": "Q-006",
+      "title": "¿Cómo se vivieron las primeras Fiestas del Pelón?",
+      "status": "MEMORIA_ORAL",
+      "recordId": "TD-013"
     }
   ]
 }

@@ -1,78 +1,88 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101612">
 <title>Museo San Patricio del Chañar — Territorio profundo</title>
 <link rel="stylesheet" href="assets/css/museo.css">
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#inicio" aria-label="Museo San Patricio del Chañar">
-    <span class="brand-mark">M</span><span><b>MUSEO</b><small>San Patricio del Chañar</small></span>
-  </a>
-  <nav>
-    <a href="#explorar">Explorar</a><a href="#capas">Capas</a><a href="#criterio">Cómo se investiga</a>
-  </nav>
-  <button class="search-btn" id="openSearch" aria-label="Buscar">⌕</button>
+<a class="brand" href="#inicio"><span class="brand-mark">M</span><span><b>MUSEO</b><small>San Patricio del Chañar</small></span></a>
+<nav><a href="#descubrir">Descubrir</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#capas">Capas</a></nav>
+<button class="search-btn" id="openSearch" aria-label="Buscar en el museo">⌕</button>
 </header>
 
 <main>
 <section class="hero" id="inicio">
-  <div class="hero-noise"></div>
-  <div class="hero-copy">
-    <p class="eyebrow">MUSEO DIGITAL · VERSIÓN 0.0.1</p>
-    <h1>Antes del pueblo,<br><em>estaba el territorio.</em></h1>
-    <p class="lead">Una exploración desde el tiempo profundo, los fósiles y las primeras presencias humanas hasta la historia viva de San Patricio del Chañar.</p>
-    <div class="hero-actions"><a class="primary" href="#explorar">Comenzar a explorar <span>↓</span></a><button class="ghost" id="openIntro">¿Cómo funciona?</button></div>
-  </div>
-  <div class="hero-landscape" aria-hidden="true">
-    <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="river"></div>
-    <span class="land-label">RÍO NEUQUÉN · TERRITORIO · MEMORIA</span>
-  </div>
+<div class="hero-copy">
+<p class="eyebrow">MUSEO DIGITAL · 0.1</p>
+<h1>Antes del pueblo,<br><em>estaba el territorio.</em></h1>
+<p class="lead">Un museo para descubrir la historia profunda de San Patricio del Chañar: tierra, río, fósiles, caminos, personas, riego, producción y memoria.</p>
+<div class="hero-actions"><a class="primary" href="#descubrir">Entrar al museo <span>↓</span></a><button class="ghost" id="openIntro">Cómo recorrerlo</button></div>
+<div class="hero-stats"><span><b>8</b> capas</span><span><b>12</b> piezas iniciales</span><span><b>4</b> recorridos</span></div>
+</div>
+<div class="hero-landscape" aria-hidden="true"><div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="river"></div><div class="hero-marker">39° SUR · RÍO NEUQUÉN</div></div>
 </section>
 
-<section class="statement">
-  <div class="statement-number">01</div>
-  <div><p class="eyebrow">UNA HISTORIA MÁS LARGA</p><h2>La fundación no es el principio.</h2><p>San Patricio del Chañar tiene una historia local que comienza en el siglo XX, pero el territorio tiene una profundidad muchísimo mayor. El museo permite recorrer esas escalas sin mezclarlas.</p></div>
-  <div class="statement-side"><span>8</span><small>capas históricas</small></div>
+<section class="welcome" id="descubrir">
+<div class="section-kicker"><span>00</span><p class="eyebrow">BIENVENIDO</p></div>
+<div class="welcome-main"><h2>No hace falta saber historia para entrar.</h2><p>Podés empezar por una fotografía, una fecha, un lugar, una pregunta o simplemente dejarte llevar. El sistema profundo está detrás para que la experiencia adelante sea clara.</p></div>
+<div class="entry-grid">
+<button class="entry" data-mode="curioso"><span>01</span><b>Quiero descubrir</b><small>Un recorrido breve y visual.</small><i>→</i></button>
+<button class="entry" data-mode="tiempo"><span>02</span><b>Quiero viajar en el tiempo</b><small>Del tiempo profundo a hoy.</small><i>→</i></button>
+<button class="entry" data-mode="territorio"><span>03</span><b>Quiero conocer el lugar</b><small>Río, caminos, paisajes y sitios.</small><i>→</i></button>
+<button class="entry" data-mode="investigar"><span>04</span><b>Quiero investigar</b><small>Fuentes, evidencias y preguntas abiertas.</small><i>→</i></button>
+</div>
 </section>
 
-<section id="explorar" class="explorer">
-  <div class="section-head"><div><p class="eyebrow">MAPA DE PROFUNDIDAD</p><h2>Descendé por las capas del territorio</h2></div><div class="counter"><b id="visibleCount">8</b><span>capas</span></div></div>
-  <div class="depth-map" id="depthMap"></div>
+<section class="featured">
+<div class="section-head"><div><p class="eyebrow">PIEZAS DESTACADAS</p><h2>Entrá por una historia.</h2></div><button class="text-button" id="showAllPieces">Ver todas →</button></div>
+<div class="piece-grid" id="pieceGrid"></div>
 </section>
 
-<section id="capas" class="chapters">
-  <div class="chapter-intro"><p class="eyebrow">NO ES UNA LÍNEA DE TIEMPO</p><h2>Es un territorio que cambia.</h2><p>Cada capa puede abrirse, investigarse y conectarse con otras. El visitante puede entrar por el tiempo, por un lugar, por una persona o por una evidencia.</p></div>
-  <div class="chapter-grid" id="chapterGrid"></div>
+<section class="timeline-section" id="tiempo">
+<div class="timeline-head"><div><p class="eyebrow">TIEMPO</p><h2>Una historia mucho más larga que la localidad.</h2></div><p>La escala cambia. El territorio permanece. Deslizá para atravesar las grandes etapas y abrí cada hito.</p></div>
+<div class="timeline" id="timeline"></div>
 </section>
 
-<section class="interlude">
-  <div class="interlude-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="core">CHAÑAR</div></div>
-  <div><p class="eyebrow">UNA REGLA DEL MUSEO</p><h2>Contexto regional no significa evidencia local.</h2><p>El museo puede mostrar el conocimiento de Neuquén y la Patagonia, pero siempre indica cuándo una información está documentada específicamente para este territorio y cuándo funciona como contexto.</p></div>
+<section class="territory-section" id="territorio">
+<div class="territory-intro"><p class="eyebrow">TERRITORIO</p><h2>El museo también se puede recorrer con los pies.</h2><p>Los lugares no son decorado: son parte de la historia. Cada sitio podrá reunir fotografías, mapas, documentos, testimonios y cambios en el tiempo.</p></div>
+<div class="place-grid" id="placeGrid"></div>
 </section>
 
-<section id="criterio" class="criteria">
- <div><p class="eyebrow">CÓMO SE INVESTIGA</p><h2>Cada pieza tiene una historia detrás.</h2></div>
- <div class="criteria-list">
-   <article><span>01</span><b>Qué sabemos</b><p>La afirmación concreta, sin adornos.</p></article>
-   <article><span>02</span><b>Cómo lo sabemos</b><p>Fuente, documento, objeto, mapa o testimonio.</p></article>
-   <article><span>03</span><b>Qué relación tiene</b><p>Local, regional, histórica o memoria oral.</p></article>
-   <article><span>04</span><b>Qué falta investigar</b><p>Las preguntas abiertas también forman parte del museo.</p></article>
- </div>
+<section class="explorer" id="capas">
+<div class="section-head"><div><p class="eyebrow">MAPA DE PROFUNDIDAD</p><h2>Descendé por las capas.</h2></div><div class="counter"><b id="visibleCount">8</b><span>capas</span></div></div>
+<div class="depth-map" id="depthMap"></div>
 </section>
 
-<section class="closing">
-  <p class="eyebrow">EL RECORRIDO RECIÉN COMIENZA</p><h2>De la tierra a la memoria.</h2>
-  <a class="primary" href="#explorar">Volver al mapa ↑</a>
-  <small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones</small>
+<section class="chapters">
+<div class="chapter-intro"><p class="eyebrow">NO ES UNA LÍNEA RECTA</p><h2>Es una red de historias.</h2><p>Una pieza puede llevarte a una persona, esa persona a un lugar y ese lugar a un documento. El visitante decide cuánto profundizar.</p></div>
+<div class="chapter-grid" id="chapterGrid"></div>
 </section>
+
+<section class="evidence-section">
+<div><p class="eyebrow">LABORATORIO DEL MUSEO</p><h2>También mostramos lo que todavía no sabemos.</h2><p>Una investigación viva no oculta sus zonas grises. Las preguntas abiertas quedan visibles y pueden convertirse en nuevas piezas cuando aparezca evidencia.</p></div>
+<div class="evidence-board" id="evidenceBoard"></div>
+</section>
+
+<section class="sources-section">
+<div><p class="eyebrow">FUENTES</p><h2>La historia se puede rastrear.</h2></div>
+<div class="source-list" id="sourceList"></div>
+</section>
+
+<section class="interlude"><div class="interlude-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="core">CHAÑAR</div></div>
+<div><p class="eyebrow">REGLA FUNDAMENTAL</p><h2>Contexto regional no significa evidencia local.</h2><p>El museo puede enseñar la historia de Neuquén y Patagonia, pero marca claramente cuándo una afirmación está documentada para San Patricio del Chañar y cuándo funciona como contexto.</p></div></section>
+
+<section id="criterio" class="criteria"><div><p class="eyebrow">CÓMO SE INVESTIGA</p><h2>Cada pieza tiene una historia detrás.</h2></div>
+<div class="criteria-list"><article><span>01</span><b>Qué sabemos</b><p>La afirmación concreta, sin adornos.</p></article><article><span>02</span><b>Cómo lo sabemos</b><p>Fuente, documento, objeto, mapa o testimonio.</p></article><article><span>03</span><b>Qué relación tiene</b><p>Local, regional, histórica o memoria oral.</p></article><article><span>04</span><b>Qué falta investigar</b><p>Las preguntas abiertas también forman parte del museo.</p></article></div></section>
+
+<section class="closing"><p class="eyebrow">EL RECORRIDO RECIÉN COMIENZA</p><h2>De la tierra a la memoria.</h2><a class="primary" href="#inicio">Volver al comienzo ↑</a><small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones · 0.1</small></section>
 </main>
 
-<div class="modal" id="detailModal" aria-hidden="true"><div class="modal-card"><button class="close" data-close>×</button><p class="eyebrow" id="modalKicker"></p><h2 id="modalTitle"></h2><p class="modal-period" id="modalPeriod"></p><p id="modalEvidence"></p><div class="meta-row"><span id="modalStatus"></span><span id="modalRelation"></span></div><div class="modal-note"><b>Nota de investigación</b><p id="modalNotes"></p></div></div></div>
-<div class="modal" id="introModal" aria-hidden="true"><div class="modal-card intro-card"><button class="close" data-close>×</button><p class="eyebrow">EL MUSEO POR DENTRO</p><h2>Explorar, no solamente leer.</h2><p>Esta primera experiencia convierte la investigación territorial en un recorrido visual. Tocá una capa para entrar en ella, abrir una pieza y seguir sus conexiones.</p><div class="mini-path"><span>TIEMPO</span><i>→</i><span>TERRITORIO</span><i>→</i><span>PERSONAS</span><i>→</i><span>MEMORIA</span></div></div></div>
-<div class="search-panel" id="searchPanel" aria-hidden="true"><button class="close" id="closeSearch">×</button><p class="eyebrow">BUSCAR EN EL MUSEO</p><input id="searchInput" placeholder="fósiles, río, pueblos originarios, riego..." autofocus><div id="searchResults"></div></div>
+<div class="modal" id="detailModal" aria-hidden="true"><div class="modal-card piece-modal"><button class="close" data-close>×</button><div class="modal-visual" id="modalVisual"></div><p class="eyebrow" id="modalKicker"></p><h2 id="modalTitle"></h2><p class="modal-period" id="modalPeriod"></p><p id="modalEvidence"></p><div class="meta-row"><span id="modalStatus"></span><span id="modalRelation"></span></div><div class="modal-note"><b>La historia</b><p id="modalNotes"></p></div><div class="modal-source" id="modalSource"></div><div class="modal-related" id="modalRelated"></div></div></div>
+<div class="modal" id="introModal" aria-hidden="true"><div class="modal-card intro-card"><button class="close" data-close>×</button><p class="eyebrow">EL MUSEO POR DENTRO</p><h2>Profundo por dentro. Sencillo por fuera.</h2><p>Podés entrar por cualquier puerta. Las fichas muestran primero lo esencial y después abren fuentes, relaciones, contexto y preguntas de investigación.</p><div class="mini-path"><span>VER</span><i>→</i><span>ENTENDER</span><i>→</i><span>CONECTAR</span><i>→</i><span>PROFUNDIZAR</span></div></div></div>
+<div class="search-panel" id="searchPanel" aria-hidden="true"><button class="close" id="closeSearch">×</button><p class="eyebrow">BUSCAR EN EL MUSEO</p><input id="searchInput" placeholder="río, riego, Chañar, fósil, 1973..." autocomplete="off"><div class="search-hint">Buscá una palabra, una fecha, un lugar o una persona.</div><div id="searchResults"></div></div>
+<div class="toast" id="toast"></div>
 <script src="assets/js/museo.js"></script>
 </body></html>
