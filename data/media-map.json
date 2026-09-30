@@ -1,0 +1,19 @@
+{
+  "version":"0.5.0",
+  "title":"Mapa de multimedia del museo",
+  "principle":"La fotografía, el audio, el video, el mapa y el documento son piezas documentales; no decoración.",
+  "mediaChannels":[
+    {"id":"MM-01","name":"Fotografía histórica","wanted":["chacras","familias","calles","canales","bocatomas","escuelas","clubes","fiestas","trabajo rural","arquitectura","paisajes"],"status":"ARCHIVE_TO_BUILD"},
+    {"id":"MM-02","name":"Documentos","wanted":["decretos","actas","mensuras","planos","permisos","programas","afiches","recortes","libros escolares"],"status":"ARCHIVE_TO_BUILD"},
+    {"id":"MM-03","name":"Cartografía","wanted":["1881-1882","1913 Tratayen","parcelamiento 1966-1971","riego","urbanización","crecimiento urbano"],"status":"RESEARCH_REQUIRED"},
+    {"id":"MM-04","name":"Audio","wanted":["Radio Chañar","entrevistas","fiestas","relatos familiares","sonidos de chacra","discursos públicos"],"status":"COMMUNITY_COLLECTION"},
+    {"id":"MM-05","name":"Video","wanted":["fiestas","cosecha","riego","instituciones","familias","transformación urbana"],"status":"COMMUNITY_COLLECTION"},
+    {"id":"MM-06","name":"Objetos","wanted":["herramientas","envases","uniformes","camisetas","elementos escolares","objetos domésticos","elementos de cosecha"],"status":"PHYSICAL_ARCHIVE_TO_BUILD"}
+  ],
+  "visualPolicy":[
+    "No usar imágenes de internet como si fueran patrimonio local.",
+    "Cada imagen pública debe tener procedencia, fecha aproximada, autor si se conoce, lugar, descripción y estado de derechos.",
+    "Si una imagen no puede publicarse, puede existir como registro interno con derechos restringidos.",
+    "Priorizar fotografías aportadas por familias y archivos institucionales con consentimiento."
+  ]
+}
