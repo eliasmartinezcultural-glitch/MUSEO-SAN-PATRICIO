@@ -1,10 +1,10 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.6.0",
-  "status": "LOCKED_ARCHITECTURE_VISUAL_EXPANDED",
+  "version": "0.7.0",
+  "status": "LOCKED_EXPERIENCE_INTERNAL",
   "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
   "locked": true,
-  "stage": "photography-first-design",
+  "stage": "internal-first-museum-experience",
   "newSystems": [
     "source_registry",
     "research_agenda",
@@ -12,15 +12,21 @@
     "archive_growth_plan",
     "photo_archive_wall",
     "photo_provenance_ui",
-    "editorial_visual_system"
+    "editorial_visual_system",
+    "internal_source_reader",
+    "in_museum_documentation_navigation",
+    "no_forced_external_navigation"
   ],
   "rules": [
     "No inventar patrimonio",
     "No convertir contexto regional en evidencia local",
     "No publicar multimedia sin procedencia y derechos",
     "No destruir entidades nucleares",
-    "Toda contradicción documental se conserva y atribuye"
+    "Toda contradicción documental se conserva y atribuye",
+    "El recorrido principal permanece dentro del museo.",
+    "Las fuentes se consultan mediante fichas internas; el original externo es opcional.",
+    "Los enlaces externos nunca son requisito para comprender una pieza."
   ],
-  "next": "0.7 — Fichas museológicas visuales, visor multimedia y relaciones navegables",
+  "next": "0.8 — Visor fotográfico real, fichas museológicas y relaciones navegables",
   "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
 }

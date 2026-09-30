@@ -28,3 +28,7 @@ Se priorizan documentos primarios, archivos institucionales, publicaciones cient
 
 ## Crédito
 Tecnología desarrollada por Elías Martínez / Ocarina Producciones.
+
+
+## Regla UX 0.7 — Museo por dentro
+La experiencia principal permanece dentro del museo. Fuentes, documentación, relaciones y contexto se abren mediante fichas y visores internos. Los originales externos quedan como consulta opcional.
