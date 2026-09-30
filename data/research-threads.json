@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.2.0",
+  "threads": [
+    {
+      "id": "TH-001",
+      "title": "¿Dónde estaba el Mangrullo Chañar?",
+      "recordIds": [
+        "TD-006"
+      ],
+      "needs": [
+        "plano original",
+        "ubicación geográfica contrastada",
+        "bibliografía de Juan Mario Raone"
+      ],
+      "priority": "alta"
+    },
+    {
+      "id": "TH-002",
+      "title": "¿Qué quedó de Tratayen?",
+      "recordIds": [
+        "TD-007"
+      ],
+      "needs": [
+        "mensura 1913",
+        "mapas posteriores",
+        "registros de crecidas",
+        "fotografías"
+      ],
+      "priority": "alta"
+    },
+    {
+      "id": "TH-003",
+      "title": "La llegada del agua",
+      "recordIds": [
+        "TD-005",
+        "TD-009"
+      ],
+      "needs": [
+        "planos de riego",
+        "fotografías de obras",
+        "testimonios de trabajadores",
+        "fechas documentales"
+      ],
+      "priority": "alta"
+    },
+    {
+      "id": "TH-004",
+      "title": "Las primeras familias",
+      "recordIds": [
+        "TD-011",
+        "TD-012"
+      ],
+      "needs": [
+        "padrones",
+        "entrevistas",
+        "fotografías familiares",
+        "actas comunitarias"
+      ],
+      "priority": "media"
+    },
+    {
+      "id": "TH-005",
+      "title": "La Fiesta del Pelón como archivo",
+      "recordIds": [
+        "TD-013"
+      ],
+      "needs": [
+        "afiches",
+        "programas",
+        "fotografías",
+        "prensa local",
+        "testimonios"
+      ],
+      "priority": "media"
+    },
+    {
+      "id": "TH-006",
+      "title": "Arqueología específicamente local",
+      "recordIds": [
+        "TD-003"
+      ],
+      "needs": [
+        "inventario de hallazgos",
+        "bibliografía arqueológica",
+        "sitios documentados",
+        "instituciones responsables"
+      ],
+      "priority": "alta"
+    }
+  ]
+}
