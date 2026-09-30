@@ -1,10 +1,10 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.7.0",
-  "status": "LOCKED_EXPERIENCE_INTERNAL",
+  "version": "0.8.0",
+  "status": "LOCKED_MULTIDEVICE_EXPERIENCE",
   "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
   "locked": true,
-  "stage": "internal-first-museum-experience",
+  "stage": "end-to-end-multidevice-experience",
   "newSystems": [
     "source_registry",
     "research_agenda",
@@ -15,7 +15,17 @@
     "editorial_visual_system",
     "internal_source_reader",
     "in_museum_documentation_navigation",
-    "no_forced_external_navigation"
+    "no_forced_external_navigation",
+    "experience_entry",
+    "experience_exit",
+    "persistent_display_controls",
+    "fullscreen_mode",
+    "reading_scale",
+    "reduced_motion",
+    "high_contrast",
+    "reading_mode",
+    "scroll_progress",
+    "responsive_experience_shell"
   ],
   "rules": [
     "No inventar patrimonio",
@@ -25,8 +35,13 @@
     "Toda contradicción documental se conserva y atribuye",
     "El recorrido principal permanece dentro del museo.",
     "Las fuentes se consultan mediante fichas internas; el original externo es opcional.",
-    "Los enlaces externos nunca son requisito para comprender una pieza."
+    "Los enlaces externos nunca son requisito para comprender una pieza.",
+    "La experiencia se diseña de inicio a fin, no sección por sección.",
+    "Ingreso, recorrido, ajuste, navegación y salida forman un único sistema.",
+    "El lenguaje debe ser claro, preciso y no banalizar la historia.",
+    "El visitante puede volver al inicio o salir del recorrido sin perder el museo.",
+    "La interfaz se adapta a móvil, tablet y escritorio sin alterar el contenido esencial."
   ],
-  "next": "0.8 — Visor fotográfico real, fichas museológicas y relaciones navegables",
+  "next": "0.9 — Visor fotográfico real + fichas museológicas + relaciones internas",
   "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
 }
