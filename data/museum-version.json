@@ -1,10 +1,10 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "1.0.0",
-  "status": "LOCKED_VISUAL_ATLAS",
+  "version": "1.1.0",
+  "status": "LOCKED_CONNECTED_EXPERIENCE",
   "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
   "locked": true,
-  "stage": "territorial-atlas-and-photographic-archive",
+  "stage": "connected-navigation-and-visual-system",
   "newSystems": [
     "source_registry",
     "research_agenda",
@@ -28,7 +28,10 @@
     "responsive_experience_shell",
     "territorial_visual_atlas",
     "territorial_layer_switcher",
-    "local_landscape_visual_grammar"
+    "local_landscape_visual_grammar",
+    "museum_command_center",
+    "semantic_search_entrypoints",
+    "connected_exploration_ui"
   ],
   "rules": [
     "No inventar patrimonio",
@@ -46,8 +49,11 @@
     "La interfaz se adapta a móvil, tablet y escritorio sin alterar el contenido esencial.",
     "La identidad visual del museo debe poder reconocerse como San Patricio del Chañar y no como una Patagonia genérica.",
     "La cartografía gráfica nunca se presenta como plano histórico exacto: las reconstrucciones visuales se identifican como esquemas.",
-    "La fotografía real será incorporada únicamente con procedencia, identificación y derechos."
+    "La fotografía real será incorporada únicamente con procedencia, identificación y derechos.",
+    "El visitante debe poder pasar de tema a pieza, pieza a fuente, fuente a lugar y lugar a tiempo sin comprender la arquitectura interna.",
+    "La complejidad se concentra en datos y relaciones; la interfaz pública mantiene pocas decisiones visibles.",
+    "Cada entrada temática debe converger en el mismo motor de búsqueda y fichas."
   ],
-  "next": "1.1 — visor fotográfico real + cartografía documental + arquitectura y patrimonio construido",
+  "next": "1.2 — visor fotográfico interno + fichas de lugar + relaciones de doble sentido",
   "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
 }
