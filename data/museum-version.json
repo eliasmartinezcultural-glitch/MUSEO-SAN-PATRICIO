@@ -1,10 +1,10 @@
 {
   "museum": "Museo San Patricio del Chañar",
-  "version": "0.9.0",
-  "status": "LOCKED_MULTIDEVICE_EXPERIENCE",
+  "version": "1.0.0",
+  "status": "LOCKED_VISUAL_ATLAS",
   "architecture": "CONTENIDO -> DATOS -> DOCUMENTACIÓN -> RELACIONES -> MOTOR -> EXPERIENCIA",
   "locked": true,
-  "stage": "end-to-end-multidevice-experience",
+  "stage": "territorial-atlas-and-photographic-archive",
   "newSystems": [
     "source_registry",
     "research_agenda",
@@ -25,7 +25,10 @@
     "high_contrast",
     "reading_mode",
     "scroll_progress",
-    "responsive_experience_shell"
+    "responsive_experience_shell",
+    "territorial_visual_atlas",
+    "territorial_layer_switcher",
+    "local_landscape_visual_grammar"
   ],
   "rules": [
     "No inventar patrimonio",
@@ -40,8 +43,11 @@
     "Ingreso, recorrido, ajuste, navegación y salida forman un único sistema.",
     "El lenguaje debe ser claro, preciso y no banalizar la historia.",
     "El visitante puede volver al inicio o salir del recorrido sin perder el museo.",
-    "La interfaz se adapta a móvil, tablet y escritorio sin alterar el contenido esencial."
+    "La interfaz se adapta a móvil, tablet y escritorio sin alterar el contenido esencial.",
+    "La identidad visual del museo debe poder reconocerse como San Patricio del Chañar y no como una Patagonia genérica.",
+    "La cartografía gráfica nunca se presenta como plano histórico exacto: las reconstrucciones visuales se identifican como esquemas.",
+    "La fotografía real será incorporada únicamente con procedencia, identificación y derechos."
   ],
-  "next": "0.9 — Visor fotográfico real + fichas museológicas + relaciones internas",
+  "next": "1.1 — visor fotográfico real + cartografía documental + arquitectura y patrimonio construido",
   "credit": "Tecnología desarrollada por Elías Martínez / Ocarina Producciones"
 }
