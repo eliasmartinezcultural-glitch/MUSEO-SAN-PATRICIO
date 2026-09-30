@@ -10,7 +10,7 @@
 <body><a class="skip-link" href="#descubrir">Saltar al contenido</a><div class="experience-start" id="experienceStart" aria-hidden="false"><div class="experience-start-inner"><p class="eyebrow">MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</p><h2>Entrá al museo.</h2><p>Una experiencia pensada para teléfono, tablet y computadora. Podés recorrer, volver, ampliar, ajustar la lectura y continuar donde la dejaste.</p><button class="primary" id="startExperience">Comenzar recorrido <span>→</span></button><small>El contenido principal se mantiene dentro del museo.</small></div></div>
 <header class="topbar">
 <a class="brand" href="#inicio"><span class="brand-mark">M</span><span><b>MUSEO</b><small>San Patricio del Chañar</small></span></a>
-<nav><a href="#descubrir">Descubrir</a><a href="#fotografia">Fotos</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#colecciones">Colecciones</a><a href="#archivo">Archivo</a></nav>
+<nav><a href="#descubrir">Descubrir</a><a href="#atlas">Atlas</a><a href="#fotografia">Fotos</a><a href="#tiempo">Tiempo</a><a href="#territorio">Territorio</a><a href="#colecciones">Colecciones</a><a href="#archivo">Archivo</a></nav>
 <button class="search-btn" id="openSearch" aria-label="Buscar en el museo">⌕</button>
 </header>
 
@@ -34,6 +34,26 @@
     <article class="identity-card identity-chacra"><span>03 · TRAMA</span><h3>La geometría de las chacras.</h3><p>Parcelas, caminos, alamedas y cortinas rompeviento construyen una imagen reconocible del paisaje agrario.</p><b>CHACRAS · ALAMEDAS</b></article>
     <article class="identity-card identity-wind"><span>04 · VIENTO</span><h3>Una ciudad atravesada por el clima.</h3><p>Las líneas de viento y las barreras forestales aparecen como recurso gráfico recurrente, no como dato climático inventado.</p><b>VIENTO · CORTINAS</b></article>
   </div>
+</section>
+
+<section class="visual-atlas" id="atlas" aria-labelledby="atlas-title">
+  <div class="atlas-head">
+    <div><p class="eyebrow">ATLAS VISUAL · SAN PATRICIO DEL CHAÑAR</p><h2 id="atlas-title">Leer Chañar antes de leer su historia.</h2></div>
+    <p>Este atlas convierte rasgos territoriales documentados en una herramienta de orientación. Cada capa podrá crecer con fotografías, mapas, documentos y piezas reales. La gráfica acompaña la investigación: no reemplaza la evidencia.</p>
+  </div>
+  <div class="atlas-stage">
+    <div class="atlas-map" aria-label="Esquema visual del territorio">
+      <div class="map-river"></div><div class="map-barda"></div><div class="map-chacras"></div><div class="map-town"></div><div class="map-road r1"></div><div class="map-road r2"></div><div class="map-water w1"></div><div class="map-water w2"></div>
+      <span class="map-label label-rio">RÍO NEUQUÉN</span><span class="map-label label-barda">BARDAS</span><span class="map-label label-chacra">MATRIZ DE CHACRAS</span><span class="map-label label-town">LOCALIDAD</span><span class="map-label label-riego">RIEGO</span>
+    </div>
+    <div class="atlas-legend">
+      <button class="atlas-key active" data-atlas="agua"><i></i><span><b>Agua</b><small>Río y riego</small></span></button>
+      <button class="atlas-key" data-atlas="barda"><i></i><span><b>Barda</b><small>Meseta y borde</small></span></button>
+      <button class="atlas-key" data-atlas="chacra"><i></i><span><b>Chacra</b><small>Parcelas y producción</small></span></button>
+      <button class="atlas-key" data-atlas="pueblo"><i></i><span><b>Pueblo</b><small>Arquitectura y vida urbana</small></span></button>
+    </div>
+  </div>
+  <div class="atlas-reading"><span>01</span><div><b>Una matriz territorial</b><p>La localidad está rodeada por chacras en producción y su crecimiento urbano se relaciona con esa estructura territorial.</p></div><span>02</span><div><b>Una transformación histórica</b><p>El museo seguirá la transformación desde el territorio y el agua hacia la producción, las instituciones, las familias y la ciudad.</p></div><span>03</span><div><b>Un archivo por construir</b><p>El atlas se completará con registros fotográficos y cartográficos verificables, conservando procedencia y derechos.</p></div></div>
 </section>
 
 <section class="welcome" id="descubrir">
@@ -110,7 +130,7 @@
 <section id="criterio" class="criteria"><div><p class="eyebrow">CÓMO SE INVESTIGA</p><h2>Cada pieza tiene una historia detrás.</h2></div>
 <div class="criteria-list"><article><span>01</span><b>Qué sabemos</b><p>La afirmación concreta, sin adornos.</p></article><article><span>02</span><b>Cómo lo sabemos</b><p>Fuente, documento, objeto, mapa o testimonio.</p></article><article><span>03</span><b>Qué relación tiene</b><p>Local, regional, histórica o memoria oral.</p></article><article><span>04</span><b>Qué falta investigar</b><p>Las preguntas abiertas también forman parte del museo.</p></article></div></section>
 
-<section class="closing"><p class="eyebrow">EL RECORRIDO RECIÉN COMIENZA</p><h2>De la tierra a la memoria.</h2><a class="primary" href="#inicio">Volver al comienzo ↑</a><small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones · 0.6 · Archivo fotográfico en construcción</small></section>
+<section class="closing"><p class="eyebrow">EL RECORRIDO RECIÉN COMIENZA</p><h2>De la tierra a la memoria.</h2><a class="primary" href="#inicio">Volver al comienzo ↑</a><small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones · 1.0 · Atlas visual en construcción</small></section>
 </main><aside class="experience-dock" aria-label="Controles de experiencia"><div class="experience-progress"><span id="experienceProgressBar"></span></div><button id="dockHome" title="Volver al inicio">⌂<span>Inicio</span></button><button id="dockAdjust" title="Ajustar pantalla">Aa<span>Ajustar</span></button><button id="dockFullscreen" title="Pantalla completa">⛶<span>Pantalla</span></button><button id="dockExit" title="Cerrar recorrido">×<span>Salir</span></button></aside><div class="adjust-panel" id="adjustPanel" aria-hidden="true"><div class="adjust-card"><button class="close" id="closeAdjust">×</button><p class="eyebrow">AJUSTAR EXPERIENCIA</p><h2>Hacé que el museo se adapte a vos.</h2><div class="adjust-row"><span>Tamaño del texto</span><div><button data-font="-1">A−</button><button data-font="0">A</button><button data-font="1">A+</button></div></div><div class="adjust-row"><span>Movimiento</span><button id="toggleMotion">Reducir movimiento</button></div><div class="adjust-row"><span>Contraste</span><button id="toggleContrast">Alto contraste</button></div><div class="adjust-row"><span>Anchura</span><button id="toggleReading">Modo lectura</button></div><button class="primary" id="resetExperience">Restablecer ajustes</button></div></div>
 
 <div class="modal" id="detailModal" aria-hidden="true"><div class="modal-card piece-modal"><button class="close" data-close>×</button><div class="modal-visual" id="modalVisual"></div><p class="eyebrow" id="modalKicker"></p><h2 id="modalTitle"></h2><p class="modal-period" id="modalPeriod"></p><p id="modalEvidence"></p><div class="meta-row"><span id="modalStatus"></span><span id="modalRelation"></span></div><div class="modal-note"><b>La historia</b><p id="modalNotes"></p></div><div class="modal-source" id="modalSource"></div><div class="modal-related" id="modalRelated"></div></div></div>
