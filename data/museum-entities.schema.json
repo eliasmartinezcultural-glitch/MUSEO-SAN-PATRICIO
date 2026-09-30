@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "0.3.0",
+  "description": "Modelo maestro de entidades del museo",
+  "entities": {
+    "piece": [
+      "id",
+      "type",
+      "title",
+      "summary",
+      "description",
+      "date",
+      "placeIds",
+      "personIds",
+      "institutionIds",
+      "eventIds",
+      "collectionIds",
+      "sourceIds",
+      "mediaIds",
+      "evidenceStatus",
+      "rightsStatus",
+      "editorialStatus",
+      "relatedIds",
+      "createdAt",
+      "updatedAt",
+      "reviewedAt"
+    ],
+    "media": [
+      "id",
+      "type",
+      "title",
+      "creator",
+      "date",
+      "placeId",
+      "description",
+      "sourceId",
+      "origin",
+      "rightsStatus",
+      "credit",
+      "pieceIds",
+      "quality",
+      "checksum",
+      "createdAt"
+    ],
+    "person": [
+      "id",
+      "name",
+      "birth",
+      "death",
+      "roles",
+      "placeIds",
+      "sourceIds",
+      "evidenceStatus",
+      "notes"
+    ],
+    "place": [
+      "id",
+      "name",
+      "type",
+      "description",
+      "historicalNames",
+      "locationStatus",
+      "sourceIds",
+      "evidenceStatus"
+    ],
+    "institution": [
+      "id",
+      "name",
+      "type",
+      "period",
+      "placeIds",
+      "sourceIds",
+      "notes"
+    ],
+    "event": [
+      "id",
+      "title",
+      "dateStart",
+      "dateEnd",
+      "placeIds",
+      "personIds",
+      "institutionIds",
+      "sourceIds",
+      "evidenceStatus"
+    ],
+    "source": [
+      "id",
+      "title",
+      "type",
+      "author",
+      "publisher",
+      "date",
+      "url",
+      "archiveReference",
+      "accessDate",
+      "reliabilityNote",
+      "rightsNote"
+    ],
+    "testimony": [
+      "id",
+      "title",
+      "speaker",
+      "date",
+      "recordingDate",
+      "placeId",
+      "consentStatus",
+      "transcriptionStatus",
+      "mediaIds",
+      "evidenceStatus",
+      "notes"
+    ],
+    "research": [
+      "id",
+      "title",
+      "question",
+      "status",
+      "recordIds",
+      "sourceIds",
+      "needs",
+      "priority",
+      "updatedAt"
+    ],
+    "relation": [
+      "id",
+      "from",
+      "to",
+      "type",
+      "confidence",
+      "sourceIds",
+      "note"
+    ]
+  }
+}
