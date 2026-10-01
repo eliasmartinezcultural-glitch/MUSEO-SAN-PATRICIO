@@ -179,3 +179,5 @@ html{background:var(--paper);overflow-x:hidden}body{overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}.hero-art:after{animation:none}.door i,.piece,.collection-card,.pulse-river,.pulse-rows,.pulse-tab:after{transition:none}.piece,.collection-card,.door{will-change:auto}
 }
+
+/* 3.20 visual system ready */
