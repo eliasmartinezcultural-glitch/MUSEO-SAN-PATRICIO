@@ -180,4 +180,5 @@ html{background:var(--paper);overflow-x:hidden}body{overflow-x:hidden}
  html{scroll-behavior:auto}.hero-art:after{animation:none}.door i,.piece,.collection-card,.pulse-river,.pulse-rows,.pulse-tab:after{transition:none}.piece,.collection-card,.door{will-change:auto}
 }
 
-/* 3.20 visual system ready */
+/* MUSEO CHANAR 3.20 */
+.pulse-image{background:#687653}.pulse-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.pulse-image:before{z-index:1}.pulse-orbit,.pulse-sun,.pulse-river,.pulse-rows{z-index:2;pointer-events:none}.pulse-credit{position:absolute;z-index:4;left:16px;bottom:14px;padding:7px 9px;background:rgba(24,32,25,.78);color:#f3eadb;font:8px "DM Mono";letter-spacing:.08em}
