@@ -24,26 +24,38 @@ function openRecordData(r){
 }
 function render(){
  const d=state.data;
- $('#visibleCount').textContent=d.layers.length;
- $('#pieceStat').textContent=(d.pieces||[]).length;
- $('#depthMap').innerHTML=d.layers.map((l,i)=>'<article class="depth-node" data-layer="'+esc(l.key)+'"><div class="node-dot">'+String(i+1).padStart(2,'0')+'</div><div class="node-card"><div><h3>'+esc(l.title)+'</h3><p>'+esc(l.focus.join(' · '))+'</p></div><span class="node-arrow">↗</span></div></article>').join('');
- $('#chapterGrid').innerHTML=d.layers.map((l,i)=>{const rec=d.records.find(r=>r.layer===l.key);return '<article class="chapter" data-layer="'+esc(l.key)+'"><div><span class="chapter-index">CAPA '+String(i+1).padStart(2,'0')+'</span><h3>'+esc(l.title)+'</h3><p>'+esc(rec?.evidence||l.focus.join(' · '))+'</p></div><span class="open">Abrir investigación →</span></article>'}).join('');
- const featured=(d.pieces||[]).slice(0,9);
- $('#pieceGrid').innerHTML=featured.map(p=>{const r=recordById(p.recordId);return '<article class="piece" data-record="'+esc(p.recordId)+'">'+visual(p.visual,p.label)+'<div class="piece-body"><span class="piece-label">'+esc(p.label)+'</span><h3>'+esc(p.title)+'</h3><p>'+esc(r?.evidence||'')+'</p><span class="piece-more">Abrir pieza →</span></div></article>'}).join('');
- const timelineIds=['TD-001','TD-002','TD-003','TD-006','TD-007','TD-008','TD-009','TD-010','TD-011','TD-012','TD-013','TD-018'];
- $('#timeline').innerHTML=timelineIds.map(id=>{const r=recordById(id);return '<article class="time-item" data-record="'+esc(id)+'"><div class="time-dot"></div><span class="time-year">'+esc(r?.period||'—')+'</span><h3>'+esc(r?.title||'')+'</h3><p>'+esc(r?.status?.replaceAll('_',' ')||'')+'</p></article>'}).join('');
- $('#placeGrid').innerHTML=(d.places||[]).map(p=>'<article class="place" data-record="'+esc(p.recordId)+'"><div class="place-visual visual-'+esc(p.visual)+'"></div><div class="place-content"><span class="place-kind">'+esc(p.kind.toUpperCase())+'</span><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div></article>').join('');
- $('#evidenceBoard').innerHTML=(d.questions||[]).map(q=>'<article class="question" data-record="'+esc(q.recordId)+'"><span>'+esc(q.status.replaceAll('_',' '))+'</span><b>'+esc(q.title)+'</b></article>').join('');
- $('#sourceList').innerHTML=(d.sources||[]).map((s,i)=>'<article class="source"><span class="source-num">'+String(i+1).padStart(2,'0')+'</span><div><b>'+esc(s.title)+'</b><small>'+esc(s.type.replaceAll('_',' '))+'</small></div><button class="inside-source" data-source-id="'+esc(s.id)+'">Leer dentro del museo →</button></article>').join('');
+ const pieces=d.pieces||[];
+ const records=d.records||[];
+ const ps=document.querySelector('#pieceGrid');
+ if(ps){
+  ps.innerHTML=pieces.map(p=>{
+   const r=recordById(p.recordId);
+   return '<article class="piece" data-record="'+esc(p.recordId)+'">'+visual(p.visual,p.label)+'<div class="piece-body"><span class="piece-label">'+esc(p.label||'PIEZA')+'</span><h3>'+esc(p.title||r?.title||'Sin título')+'</h3><p>'+esc(r?.evidence||'')+'</p><div class="piece-meta"><span>'+esc(String(r?.status||'').replaceAll('_',' '))+'</span><span>'+esc(String(r?.relation||'').replaceAll('_',' '))+'</span></div><span class="piece-more">Abrir pieza →</span></div></article>';
+  }).join('');
+ }
+ const stat=document.querySelector('#pieceStat'); if(stat)stat.textContent=pieces.length||records.length;
+ const cs=document.querySelector('#collectionStat'); if(cs)cs.textContent=(state.collections?.collections||[]).length;
+ const ms=document.querySelector('#mediaStat'); if(ms)ms.textContent=(state.multimedia?.media||[]).length;
  renderCollections();
  renderMultimedia();
- renderThreads();
 }
+
 function renderCollections(){
  const cs=state.collections?.collections||[];
- $('#collectionGrid').innerHTML=cs.map((c,i)=>'<article class="collection-card"><div><span class="collection-number">COLECCIÓN '+String(i+1).padStart(2,'0')+' · '+esc(c.kind)+'</span><h3>'+esc(c.title)+'</h3><p>'+esc(c.description)+'</p></div><div class="collection-meta"><span>'+esc(c.subtitle)+'</span><span>'+c.recordIds.length+' piezas vinculadas</span></div></article>').join('');
+ $('#collectionGrid').innerHTML=cs.map((c,i)=>'<button class="collection-card" data-collection="'+esc(c.id)+'"><div><span class="collection-number">COLECCIÓN '+String(i+1).padStart(2,'0')+' · '+esc(c.kind)+'</span><h3>'+esc(c.title)+'</h3><p>'+esc(c.description)+'</p></div><div class="collection-meta"><span>'+esc(c.subtitle)+'</span><span>'+c.recordIds.length+' piezas vinculadas</span></div></button>').join('');
 }
 function mediaIcon(type){const m={'pagina-con-audio':'◉','documento-pdf':'▤','pagina-historica':'◌','pagina-paleontologia':'✦','archivo-fotografico-pendiente':'▧','archivo-oral-pendiente':'◉','archivo-afiches-pendiente':'▤','cartografia-pendiente':'⌖'};return m[type]||'□'}
+function filterCollection(id){
+ const c=(state.collections?.collections||[]).find(x=>x.id===id); if(!c)return;
+ const ids=new Set(c.recordIds||[]);
+ const ps=state.data.pieces||[];
+ const subset=ps.filter(p=>ids.has(p.recordId));
+ const grid=$('#pieceGrid'); if(!grid)return;
+ grid.innerHTML=subset.map(p=>{const r=recordById(p.recordId);return '<article class="piece" data-record="'+esc(p.recordId)+'">'+visual(p.visual,p.label)+'<div class="piece-body"><span class="piece-label">'+esc(p.label||'PIEZA')+'</span><h3>'+esc(p.title||r?.title||'Sin título')+'</h3><p>'+esc(r?.evidence||'')+'</p><div class="piece-meta"><span>'+esc(String(r?.status||'').replaceAll('_',' '))+'</span><span>'+esc(String(r?.relation||'').replaceAll('_',' '))+'</span></div><span class="piece-more">Abrir pieza →</span></div></article>'}).join('');
+ $('#catalogTitle').textContent=c.title;
+ $('#catalogStatus').textContent=c.description+' · '+subset.length+' piezas vinculadas.';
+ $('#piezas')?.scrollIntoView({behavior:'smooth'});
+}
 function renderMultimedia(){
  const ms=state.multimedia?.media||[];
  $('#mediaGrid').innerHTML=ms.map(m=>'<article class="media-card"><div><div class="media-icon">'+mediaIcon(m.type)+'</div><span class="media-type">'+esc(m.type.replaceAll('-',' '))+'</span><h3>'+esc(m.title)+'</h3><p>'+esc(m.description)+'</p></div><div><div class="media-status">'+esc(m.status.replaceAll('_',' '))+(m.date?' · '+esc(m.date):'')+'</div>'+(m.sourceUrl?'<a href="'+esc(m.sourceUrl)+'" target="_blank" rel="noopener">Abrir material / fuente ↗</a>':'<span class="media-status">Material pendiente de localizar</span>')+'</div></article>').join('');
@@ -54,10 +66,11 @@ function renderThreads(){
 }
 function bind(){
  document.addEventListener('click',e=>{
-   const close=e.target.closest('[data-close]');if(close){close.closest('.modal')?.classList.remove('open');return}
+   const close=e.target.closest('[data-close]');if(close){close.closest('.modal')?.classList.remove('open');document.body.classList.remove('modal-open');return}
+   const col=e.target.closest('[data-collection]');if(col){filterCollection(col.dataset.collection);return}
    const source=e.target.closest('[data-source-id]');if(source){openSource(source.dataset.sourceId);return} if(e.target.closest('[data-source-open]')){openSource(state.currentSources[0]?.id);return} const rec=e.target.closest('[data-record]');if(rec){openRecord(rec.dataset.record);return}
    const layer=e.target.closest('[data-layer]');if(layer){const r=state.data.records.find(x=>x.layer===layer.dataset.layer);if(r)openRecordData(r);return}
-   const mode=e.target.closest('[data-mode]');if(mode){const map={curioso:'pieceGrid',tiempo:'tiempo',territorio:'territorio',investigar:'evidenceBoard'};document.getElementById(map[mode.dataset.mode]).scrollIntoView({behavior:'smooth'});toast('Recorrido: '+mode.querySelector('b').textContent);return}
+   const mode=e.target.closest('[data-mode]');if(mode){document.querySelector('#pieceGrid')?.scrollIntoView({behavior:'smooth'});toast('Recorrido: '+mode.querySelector('b').textContent);return}
    if(e.target===$('#detailModal'))$('#detailModal').classList.remove('open');
    if(e.target===$('#introModal'))$('#introModal').classList.remove('open');
    if(e.target.closest('#openIntro'))$('#introModal').classList.add('open');
