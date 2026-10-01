@@ -1,0 +1,24 @@
+/* MUSEO · ESTATUTO RECTOR 1.0 · capa visual de aplicación */
+:root{--museum-law-gap:clamp(28px,5vw,72px)}
+.museum-legacy,.chanar-identity,.museum-command,.visual-atlas,.photo-archive,.timeline-section,.territory-section,.explorer,.chapters,.research-threads,.evidence-section,.sources-section,.interlude,#criterio{display:none!important}
+.museum-command{display:none!important}
+.featured{padding-top:var(--museum-law-gap);padding-bottom:var(--museum-law-gap)}
+.featured .section-head{max-width:1250px;margin:auto}
+.catalog-status{max-width:1250px;margin:12px auto 22px;font:10px 'DM Mono';letter-spacing:.05em;color:var(--muted);min-height:16px}
+.piece-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.piece-meta span{border:1px solid var(--line);padding:5px 7px;font:8px 'DM Mono';letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.collection-card{width:100%;text-align:left;background:var(--paper2);border:1px solid var(--line);padding:22px;cursor:pointer;color:inherit}
+.collection-card:hover{border-color:var(--rust);transform:translateY(-3px)}
+.collections-section{padding:var(--museum-law-gap) 7vw}
+.collections-head{max-width:850px;margin:0 auto 35px}
+.collection-grid{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.compact-archive{padding-top:var(--museum-law-gap)!important;padding-bottom:var(--museum-law-gap)!important}
+.museum-closing{max-width:1250px;margin:auto;padding:var(--museum-law-gap) 7vw;display:grid;grid-template-columns:1fr 1fr auto;gap:35px;align-items:end;border-top:1px solid var(--line)}
+.museum-closing h2{font-size:clamp(42px,6vw,76px);line-height:.9;letter-spacing:-.06em;margin:10px 0 0}
+.museum-closing>p{color:var(--muted);line-height:1.7;max-width:520px}
+.museum-footer{border-top:1px solid var(--line);padding:24px 7vw;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:9px 'DM Mono';color:var(--muted)}
+.museum-footer div{display:flex;gap:15px;flex-wrap:wrap}.museum-footer b{color:var(--ink)}.museum-footer span{opacity:.75}
+.mission-veto{margin-top:18px;padding:16px;border:1px solid #a45135;background:#f4eadb;display:grid;gap:7px}
+.mission-veto b{font:9px 'DM Mono';letter-spacing:.1em;color:#a45135}.mission-veto span{font-size:11px;line-height:1.6;color:#5d594f}
+@media(max-width:900px){.collection-grid{grid-template-columns:1fr 1fr}.museum-closing{grid-template-columns:1fr}.museum-closing .primary{width:max-content}}
+@media(max-width:600px){.collection-grid{grid-template-columns:1fr}.collections-section{padding-left:5vw;padding-right:5vw}.museum-closing{padding-left:5vw;padding-right:5vw}.museum-footer{padding-left:5vw;padding-right:5vw}}
