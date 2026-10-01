@@ -16,3 +16,37 @@ const panel=$("#searchPanel");function closeSearch(){panel.classList.remove("ope
 async function loadData(){try{const[c,t,m]=await Promise.all([fetch("data/collections.json").then(r=>r.json()),fetch("data/territory-depth.json").then(r=>r.json()),fetch("data/media.json").then(r=>r.json())]);state.collections=c.collections||[];state.records=t.records||[];state.media=m.items||[]}catch(e){console.warn("Datos profundos no disponibles",e)}}loadData();
 $("#searchInput").addEventListener("input",e=>{const q=e.target.value.trim().toLowerCase();if(!q){$("#searchResults").innerHTML="";return}const all=[...state.records.map(r=>({t:r.title||"",d:r.period||r.layer||"",kind:"DOCUMENTO"})),...state.collections.map(c=>({t:c.title||"",d:c.subtitle||"",kind:"COLECCIÓN"})),...state.media.filter(m=>m.verified).map(m=>({t:m.title,d:m.caption,kind:"IMAGEN"}))];const found=all.filter(x=>(x.t+" "+x.d+" "+x.kind).toLowerCase().includes(q)).slice(0,10);$("#searchResults").innerHTML=found.length?found.map(x=>'<div class="result"><small>'+x.kind+'</small><b>'+x.t+'</b><span>'+x.d+'</span></div>').join(""):"<p>No encontramos esa palabra todavía. Probá otra puerta.</p>"});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeDrawer();closeSearch()}});
+const discoveryMap={
+tiempo:["Tiempo profundo","Paleontología, primeras presencias y el territorio antes de la localidad."],
+territorio:["Territorio","Río, riego, mensuras, caminos, chacras y lugares."],
+personas:["Personas","Familias, instituciones, trabajo, deporte y comunidad."],
+memoria:["Memoria","Fotografías, documentos, objetos y testimonios."],
+hoy:["Hoy","Naturaleza, barrios, espacios comunes y registro contemporáneo."]
+};
+function openDiscovery(key){
+ const d=discoveryMap[key]; if(!d)return;
+ state.mode="presente"; state.active=0;
+ $("#drawerKicker").textContent="RUTA · "+key.toUpperCase();
+ $("#drawerTitle").textContent=d[0];
+ $("#drawerText").textContent=d[1]+" Esta ruta reorganiza el acceso al mismo archivo: no crea hechos nuevos, solo cambia la forma de recorrerlos.";
+ $("#doorProgress").textContent="RUTA";
+ renderMedia();
+ const matches=state.records.filter(r=>{
+   const hay=(r.title+" "+r.layer+" "+(r.notes||"")+" "+(r.period||"")).toLowerCase();
+   return key==="tiempo"?/tiempo|paleont|humana|fósil|geolog/.test(hay):
+          key==="territorio"?/agua|riego|territorio|mensura|mapa|paisaje|chacra|río/.test(hay):
+          key==="personas"?/famil|comun|instit|club|trabajo|producción/.test(hay):
+          key==="memoria"?/memoria|fiesta|fotograf|testimonio|document/.test(hay):
+          /contempor|presente|naturaleza|dique|actual|2026/.test(hay);
+ }).slice(0,8);
+ $("#drawerList").innerHTML=matches.length?matches.map((r,i)=>'<button data-record="'+r.id+'" class="'+(i===0?"active":"")+'"><b>'+r.title+'</b><small>'+r.period+' · '+r.status+'</small></button>').join(""):'<button class="active"><b>Ruta en construcción</b><small>La colección crecerá con evidencia local verificada.</small></button>';
+ $("#depthPanel").innerHTML="";
+ $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden","false"); document.body.classList.add("locked"); $("#closeDrawer").focus();
+}
+$$("[data-discover]").forEach(b=>b.addEventListener("click",()=>openDiscovery(b.dataset.discover)));
+$("#drawer").addEventListener("click",e=>{
+ const b=e.target.closest("[data-record]"); if(!b)return;
+ const r=state.records.find(x=>x.id===b.dataset.record); if(!r)return;
+ $$("#drawerList [data-record]").forEach(x=>x.classList.remove("active")); b.classList.add("active");
+ $("#depthPanel").innerHTML='<div class="depth-label">'+r.status.replaceAll("_"," ")+'</div><h3>'+r.title+'</h3><p><b>'+r.period+'</b></p><p>'+r.evidence+'</p><p>'+((r.notes)||"Registro en construcción.")+'</p><div class="source"><b>FUENTES</b><br>'+((r.sourceIds||[]).join(" · ")||"Pendiente de incorporar")+'</div>';
+});
