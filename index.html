@@ -18,7 +18,7 @@
   <nav aria-label="Navegación principal">
     <a href="#descubrir">Descubrir</a><a href="#colecciones">Colecciones</a><a href="#archivo">Archivo</a>
   </nav>
-  <div class="bar-actions"><button id="searchBtn" class="icon-btn" aria-label="Buscar">⌕</button><button id="lawBtn" class="law-btn">Estatuto</button></div>
+  <div class="bar-actions"><button type="button" id="searchBtn" class="icon-btn" aria-label="Buscar">⌕</button><button type="button" id="lawBtn" class="law-btn">Estatuto</button></div>
 </header>
 
 <main id="content">
@@ -27,7 +27,7 @@
     <p class="eyebrow">MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</p>
     <h1>Preservar para enseñar.<br><em>Enseñar para cuidar.</em></h1>
     <p class="lead">Entrá por una pieza, una fecha, una imagen o una pregunta. El sistema conecta las historias sin convertir el museo en una página interminable.</p>
-    <div class="actions"><a class="primary" href="#descubrir">Entrar al museo <span>↓</span></a><button class="secondary" id="howBtn">Cómo funciona</button></div>
+    <div class="actions"><a class="primary" href="#descubrir">Entrar al museo <span>↓</span></a><button type="button" class="secondary" id="howBtn">Cómo funciona</button></div>
     <div class="hero-facts"><span><b id="pieceCount">—</b><small>piezas</small></span><span><b id="collectionCount">—</b><small>colecciones</small></span><span><b id="sourceCount">—</b><small>fuentes</small></span></div>
   </div>
   <div class="hero-art" aria-hidden="true"><span class="sun"></span><span class="ridge r1"></span><span class="ridge r2"></span><span class="river"></span><i>39° SUR · RÍO NEUQUÉN</i></div>
@@ -37,30 +37,21 @@
   <div class="section-label"><span>01</span><p class="eyebrow">DESCUBRIR</p></div>
   <div class="discover-head"><div><h2>Elegí una puerta.<br><em>El museo hace el resto.</em></h2></div><p>No necesitás conocer la historia antes de entrar. Podés explorar libremente o dejar que el museo te proponga una pieza.</p></div>
   <div class="door-grid">
-    <button class="door" data-action="surprise"><span>01</span><b>Pieza sorpresa</b><small>Una historia elegida del catálogo.</small><i>✦</i></button>
-    <button class="door" data-action="local"><span>02</span><b>Solo evidencia local</b><small>Lo que el archivo identifica específicamente con Chañar.</small><i>→</i></button>
-    <button class="door" data-action="time"><span>03</span><b>Viajar en el tiempo</b><small>Del territorio profundo a la historia viva.</small><i>↗</i></button>
-    <button class="door" data-action="question"><span>04</span><b>Investigar</b><small>Lo documentado y lo que todavía está abierto.</small><i>?</i></button>
+    <button type="button" class="door" data-action="surprise"><span>01</span><b>Pieza sorpresa</b><small>Una historia elegida del catálogo.</small><i>✦</i></button>
+    <button type="button" class="door" data-action="local"><span>02</span><b>Solo evidencia local</b><small>Lo que el archivo identifica específicamente con Chañar.</small><i>→</i></button>
+    <button type="button" class="door" data-action="time"><span>03</span><b>Viajar en el tiempo</b><small>Del territorio profundo a la historia viva.</small><i>↗</i></button>
+    <button type="button" class="door" data-action="question"><span>04</span><b>Investigar</b><small>Lo documentado y lo que todavía está abierto.</small><i>?</i></button>
   </div>
 </section>
 
 
-<section class="local-identity" aria-label="Identidad territorial">
-  <div class="section-label"><span>CHAÑAR</span><p class="eyebrow">EL TERRITORIO COMO PIEZA</p></div>
-  <div class="identity-grid">
-    <article><span class="micro">01 · AGUA</span><h3>El río no es fondo.</h3><p>El Neuquén, las bocatomas, los canales y el drenaje explican una parte fundamental de cómo se transformó este territorio productivo.</p></article>
-    <article><span class="micro">02 · TIERRA</span><h3>Antes del pueblo.</h3><p>El museo no empieza en 1973: sigue mensuras, territorio, riego, producción y las transformaciones que hicieron posible la localidad.</p></article>
-    <article><span class="micro">03 · MEMORIA</span><h3>Las personas dejan huellas.</h3><p>Familias, escuelas, trabajadores, clubes, instituciones y fotografías serán incorporados cuando podamos documentar su procedencia.</p></article>
-    <article><span class="micro">04 · PRESENTE</span><h3>El Chañar sigue cambiando.</h3><p>La historia no queda cerrada: cada nueva fuente puede modificar, precisar o incluso corregir lo que creemos saber.</p></article>
-  </div>
-</section>
 <section class="chanar-pulse" id="territorio" aria-labelledby="territoryTitle">
-  <div class="pulse-head"><div><p class="eyebrow">04 · LATIDO DEL TERRITORIO</p><h2 id="territoryTitle">Chañar se entiende<br><em>cuando conectás las capas.</em></h2></div><p>Una navegación táctil y visual para entrar al territorio sin salir del museo. Elegí una capa; el paisaje cambia y la explicación se concentra.</p></div>
+  <div class="pulse-head"><div><p class="eyebrow">CAPAS DEL TERRITORIO · CHAÑAR</p><h2 id="territoryTitle">Chañar se entiende<br><em>cuando conectás las capas.</em></h2></div><p>Una navegación táctil y visual para entrar al territorio sin salir del museo. Elegí una capa; el paisaje cambia y la explicación se concentra.</p></div>
   <div class="pulse-stage" data-pulse-stage><div class="pulse-image" data-pulse-image aria-hidden="true"><span class="pulse-orbit"></span><span class="pulse-sun"></span><span class="pulse-river"></span><span class="pulse-rows"></span></div><div class="pulse-copy"><span class="pulse-index" data-pulse-index>01</span><span class="micro" data-pulse-kicker>AGUA</span><h3 data-pulse-title>El Neuquén como estructura.</h3><p data-pulse-text>Río, bocatomas, canales y drenajes: el agua no es un decorado del Chañar. Es una de las claves para leer su transformación territorial.</p><div class="pulse-tags" data-pulse-tags><span>RÍO NEUQUÉN</span><span>RIEGO</span><span>TERRITORIO</span></div></div></div>
-  <div class="pulse-nav" role="tablist" aria-label="Capas del territorio"><button class="pulse-tab is-active" role="tab" aria-selected="true" data-pulse="0"><span>01</span><b>AGUA</b><small>Río · riego</small></button><button class="pulse-tab" role="tab" aria-selected="false" data-pulse="1"><span>02</span><b>TIERRA</b><small>Chacras · paisaje</small></button><button class="pulse-tab" role="tab" aria-selected="false" data-pulse="2"><span>03</span><b>MEMORIA</b><small>Personas · instituciones</small></button><button class="pulse-tab" role="tab" aria-selected="false" data-pulse="3"><span>04</span><b>PRESENTE</b><small>Transformación · continuidad</small></button></div>
+  <div class="pulse-nav" role="tablist" aria-label="Capas del territorio"><button type="button" class="pulse-tab is-active" role="tab" aria-selected="true" data-pulse="0"><span>01</span><b>AGUA</b><small>Río · riego</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="1"><span>02</span><b>TIERRA</b><small>Chacras · paisaje</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="2"><span>03</span><b>MEMORIA</b><small>Personas · instituciones</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="3"><span>04</span><b>PRESENTE</b><small>Transformación · continuidad</small></button></div>
 </section>
-<section class="catalog" id="piezas" aria-labelledby="catalogTitle">
-  <div class="section-head"><div><p class="eyebrow">CATÁLOGO VIVO</p><h2 id="catalogTitle">Piezas del museo</h2></div><button class="text-btn" id="resetCatalog">Ver todas →</button></div>
+<div class="territory-rail" aria-label="Accesos rápidos del museo"><span>CHAÑAR · 39° SUR</span><button type="button" data-action="local">EVIDENCIA LOCAL</button><button type="button" data-action="time">LÍNEA DE TIEMPO</button><button type="button" data-action="question">INVESTIGAR</button></div><section class="catalog" id="piezas" aria-labelledby="catalogTitle">
+  <div class="section-head"><div><p class="eyebrow">CATÁLOGO VIVO</p><h2 id="catalogTitle">Piezas del museo</h2></div><button type="button" class="text-btn" id="resetCatalog">Ver todas →</button></div>
   <div class="filter-row" id="filters" role="toolbar" aria-label="Filtros del catálogo"></div>
   <div class="catalog-meta" id="catalogMeta" aria-live="polite"></div>
   <div class="piece-grid" id="pieceGrid"></div>
@@ -80,14 +71,14 @@
   <p class="eyebrow">PRINCIPIO RECTOR</p>
   <h2>El museo crece<br><em>hacia adentro.</em></h2>
   <p>Más fuentes. Mejores piezas. Relaciones más claras. Experiencias educativas más profundas. No más páginas por el simple hecho de tenerlas.</p>
-  <button class="primary" id="lawBtnBottom">Leer el estatuto →</button>
+  <button type="button" class="primary" id="lawBtnBottom">Leer el estatuto →</button>
 </section>
 </main>
 
 <footer class="footer"><strong>MUSEO DIGITAL DE SAN PATRICIO DEL CHAÑAR</strong><span>Patrimonio · Historia · Territorio · Memoria</span><small>Tecnología desarrollada por Elías Martínez / Ocarina Producciones.</small></footer>
 
 <div class="drawer" id="pieceDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
-  <div class="drawer-panel"><button class="close" data-close aria-label="Cerrar">×</button><div class="drawer-scroll">
+  <div class="drawer-panel"><button type="button" class="close" data-close aria-label="Cerrar">×</button><div class="drawer-scroll">
     <div class="piece-hero" id="drawerVisual"></div>
     <p class="eyebrow" id="drawerKicker"></p><h2 id="drawerTitle"></h2><p class="period" id="drawerPeriod"></p>
     <div class="truth" id="drawerTruth"></div>
@@ -99,11 +90,11 @@
 </div>
 
 <div class="overlay-panel" id="searchPanel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
-  <div class="search-card"><button class="close" data-close>×</button><p class="eyebrow">EXPLORADOR</p><h2 id="searchTitle">¿Qué querés descubrir?</h2><input id="searchInput" type="search" placeholder="río, riego, 1973, fósil, Tratayen..." autocomplete="off"><div class="suggestions"><button data-query="río">Río</button><button data-query="riego">Riego</button><button data-query="1973">1973</button><button data-query="fósil">Fósil</button><button data-query="Tratayen">Tratayen</button></div><div id="searchResults"></div></div>
+  <div class="search-card"><button type="button" class="close" data-close>×</button><p class="eyebrow">EXPLORADOR</p><h2 id="searchTitle">¿Qué querés descubrir?</h2><input id="searchInput" type="search" placeholder="río, riego, 1973, fósil, Tratayen..." autocomplete="off"><div class="suggestions"><button type="button" data-query="río">Río</button><button type="button" data-query="riego">Riego</button><button type="button" data-query="1973">1973</button><button type="button" data-query="fósil">Fósil</button><button type="button" data-query="Tratayen">Tratayen</button></div><div id="searchResults"></div></div>
 </div>
 
 <div class="overlay-panel" id="lawPanel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lawTitle">
- <div class="law-card"><button class="close" data-close>×</button><p class="eyebrow">ESTATUTO RECTOR · VERSIÓN 1.0</p><h2 id="lawTitle">Preservar para enseñar.<br>Enseñar para cuidar.</h2><p class="law-lead">El Museo Digital de San Patricio del Chañar existe para preservar, investigar, interpretar y enseñar el patrimonio natural, histórico y cultural del territorio.</p>
+ <div class="law-card"><button type="button" class="close" data-close>×</button><p class="eyebrow">ESTATUTO RECTOR · VERSIÓN 1.0</p><h2 id="lawTitle">Preservar para enseñar.<br>Enseñar para cuidar.</h2><p class="law-lead">El Museo Digital de San Patricio del Chañar existe para preservar, investigar, interpretar y enseñar el patrimonio natural, histórico y cultural del territorio.</p>
  <div class="law-grid">
   <article><b>01 · PRESERVAR</b><span>Cuidar documentos, imágenes, objetos, testimonios y memoria para transmitirlos.</span></article>
   <article><b>02 · ENSEÑAR</b><span>Convertir el patrimonio en conocimiento comprensible y accesible.</span></article>
@@ -120,7 +111,7 @@
 </div>
 
 <div class="overlay-panel" id="howPanel" aria-hidden="true" role="dialog" aria-modal="true">
- <div class="how-card"><button class="close" data-close>×</button><p class="eyebrow">CÓMO FUNCIONA</p><h2>Simple adelante.<br>Complejo detrás.</h2><div class="how-path"><span>VER</span><i>→</i><span>ELEGIR</span><i>→</i><span>ABRIR</span><i>→</i><span>SEGUIR EL HILO</span></div><p>El visitante ve pocas decisiones. El motor interno trabaja con registros, capas, fuentes, relaciones, estados documentales, colecciones y preguntas abiertas.</p></div>
+ <div class="how-card"><button type="button" class="close" data-close>×</button><p class="eyebrow">CÓMO FUNCIONA</p><h2>Simple adelante.<br>Complejo detrás.</h2><div class="how-path"><span>VER</span><i>→</i><span>ELEGIR</span><i>→</i><span>ABRIR</span><i>→</i><span>SEGUIR EL HILO</span></div><p>El visitante ve pocas decisiones. El motor interno trabaja con registros, capas, fuentes, relaciones, estados documentales, colecciones y preguntas abiertas.</p></div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="assets/js/museum-core.js"></script>
