@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "0.2.0",
-  "rule": "Solo se incorporan archivos propios, cedidos, públicos o enlazados a una fuente autorizada. Nunca se inventan fotografías, audios o videos.",
+  "schemaVersion": "0.3.0",
+  "rule": "Los objetos externos se enlazan y atribuyen; el museo no los presenta como archivos propios. Los objetos pendientes siguen separados hasta obtener procedencia, derechos y acceso.",
   "media": [
     {
       "id": "MED-001",
@@ -113,6 +113,170 @@
       ],
       "status": "BUSQUEDA_ABIERTA",
       "description": "Documento cartográfico prioritario para investigar la localización histórica del Mangrullo Chañar."
+    },
+    {
+      "id": "MED-010",
+      "type": "articulo-academico",
+      "title": "Dinámica del paisaje agrario de San Patricio del Chañar",
+      "date": "2012",
+      "recordIds": [
+        "TD-008",
+        "TD-009",
+        "TD-018"
+      ],
+      "sourceId": "SRC-010",
+      "sourceUrl": "https://dialnet.unirioja.es/servlet/articulo?codigo=5017798",
+      "status": "FUENTE_EXTERNA",
+      "description": "Artículo académico que analiza la organización histórica del paisaje agrario y utiliza imágenes satelitales para estudiar transformaciones territoriales.",
+      "rights": "Consultar condiciones de uso del documento en el repositorio/editor."
+    },
+    {
+      "id": "MED-011",
+      "type": "articulo-paleontologico",
+      "title": "Descripción científica de Panamericansaurus schroederi",
+      "date": "2010",
+      "recordIds": [
+        "TD-002"
+      ],
+      "sourceId": "SRC-011",
+      "sourceUrl": "https://www.researchgate.net/publication/233742047_Panamericansaurus_schroederi_gen_nov_sp_nov_Unnuevo_Sauropoda_Titanosauridae-Aeolosaurini_de_laProvincia_del_Neuquen_Cretacico_Superior_de_PatagoniaArgentina",
+      "status": "FUENTE_EXTERNA",
+      "description": "Publicación científica utilizada para contrastar taxonomía, material fósil, localidad y edad geológica del ejemplar.",
+      "rights": "El museo enlaza la referencia; no reproduce el artículo completo."
+    },
+    {
+      "id": "MED-012",
+      "type": "historia-local-web",
+      "title": "Identidad histórica de San Patricio del Chañar",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-006",
+        "TD-007",
+        "TD-008",
+        "TD-009"
+      ],
+      "sourceId": "SRC-012",
+      "sourceUrl": "https://www.sanpatricio.gob.ar/identidad",
+      "status": "FUENTE_EXTERNA",
+      "description": "Fuente institucional municipal de referencia para la cronología histórica local y el proceso de transformación territorial.",
+      "rights": "Contenido externo; consultar condiciones del sitio fuente."
+    },
+    {
+      "id": "MED-013",
+      "type": "patrimonio-local-web",
+      "title": "Nuestra Ciudad — patrimonio y espacios contemporáneos",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-016",
+        "TD-017",
+        "TD-019"
+      ],
+      "sourceId": "SRC-013",
+      "sourceUrl": "https://sanpatricio.gob.ar/nuestra",
+      "status": "FUENTE_EXTERNA",
+      "description": "Fuente municipal para documentar el Dique Compensador, la Chacra Municipal y otros espacios del patrimonio contemporáneo.",
+      "rights": "Contenido externo; consultar condiciones del sitio fuente."
+    },
+    {
+      "id": "MED-014",
+      "type": "documento-legislativo-web",
+      "title": "Antecedentes parlamentarios de la Fiesta del Pelón",
+      "date": "2014",
+      "recordIds": [
+        "TD-013"
+      ],
+      "sourceId": "SRC-017",
+      "sourceUrl": "https://www.hcdn.gob.ar/comisiones/permanentes/cdhygarantias/proyecto.html?exp=9105-D-2014",
+      "status": "FUENTE_EXTERNA",
+      "description": "Documento legislativo que registra antecedentes y fundamentos sobre la Fiesta del Pelón y su relación con producción y trabajo rural.",
+      "rights": "Fuente pública; mantener atribución institucional."
+    },
+    {
+      "id": "MED-015",
+      "type": "normativa-web",
+      "title": "Decreto 668/2018 — Fiesta Provincial y Regional del Pelón",
+      "date": "2018",
+      "recordIds": [
+        "TD-013"
+      ],
+      "sourceId": "SRC-018",
+      "sourceUrl": "https://infoleg.neuquen.gov.ar/LeyesDecretosDetalle?Id=387597",
+      "status": "FUENTE_EXTERNA",
+      "description": "Norma provincial que documenta asistencia financiera vinculada con la XXXII Fiesta Provincial y Regional del Pelón.",
+      "rights": "Documento público; conservar referencia oficial."
+    },
+    {
+      "id": "MED-016",
+      "type": "archivo-origen-institucional",
+      "title": "41.º aniversario — reseña histórica y memoria institucional",
+      "date": "2014",
+      "recordIds": [
+        "TD-010",
+        "TD-011",
+        "TD-012"
+      ],
+      "sourceId": "SRC-014",
+      "sourceUrl": "https://www.neuqueninforma.gob.ar/noticias/2014/05/22/48785-jorge-sapag-asistira-al-41-aniversario-de-san-patricio-del-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "Publicación provincial que reúne cronología sobre fundación, Comisión de Fomento y primeras instituciones.",
+      "rights": "Contenido externo; enlazar en vez de copiar extensamente."
+    },
+    {
+      "id": "MED-017",
+      "type": "memoria-publica",
+      "title": "50.º aniversario — celebración y memoria pública",
+      "date": "2023",
+      "recordIds": [
+        "TD-020"
+      ],
+      "sourceId": "SRC-015",
+      "sourceUrl": "https://www.neuqueninforma.gob.ar/noticias/2023/05/21/215945-gutierrez-acompano-los-festejos-por-el-50-aniversario-de-san-patricio-del-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "Registro contemporáneo de la celebración del 50.º aniversario y de los relatos públicos asociados a esa conmemoración.",
+      "rights": "Contenido externo; enlazar en vez de copiar extensamente."
+    },
+    {
+      "id": "MED-018",
+      "type": "memoria-festiva",
+      "title": "36.ª Fiesta Provincial del Pelón — registro contemporáneo",
+      "date": "2026",
+      "recordIds": [
+        "TD-013"
+      ],
+      "sourceId": "SRC-016",
+      "sourceUrl": "https://www.neuqueninforma.gob.ar/noticias/2026/02/10/255111-san-patricio-del-chanar-se-prepara-para-la-fiesta-del-pelon",
+      "status": "FUENTE_EXTERNA",
+      "description": "Fuente reciente para documentar la continuidad de la fiesta, su relación con el trabajador rural y sus raíces productivas y culturales.",
+      "rights": "Contenido externo; fecha de consulta registrada."
+    },
+    {
+      "id": "MED-019",
+      "type": "discurso-historico",
+      "title": "8 de abril de 1974 — primeras autoridades de la Comisión de Fomento",
+      "date": "1974-04-08",
+      "recordIds": [
+        "TD-011"
+      ],
+      "sourceId": "SRC-020",
+      "sourceUrl": "https://www.neuqueneldesafio.com.ar/blog/62-san-patricio-del-chanar/",
+      "status": "FUENTE_EXTERNA",
+      "description": "Reproducción de un discurso atribuido al acto de puesta en funciones de las primeras autoridades de la Comisión de Fomento. Debe contrastarse con el documento primario original.",
+      "rights": "Referencia secundaria/reproducción; no tratar como copia diplomática del original."
+    },
+    {
+      "id": "MED-020",
+      "type": "historia-productiva",
+      "title": "Paisaje agrario y vitivinicultura — investigación académica",
+      "date": "2012",
+      "recordIds": [
+        "TD-018"
+      ],
+      "sourceId": "SRC-010",
+      "sourceUrl": "https://dialnet.unirioja.es/servlet/articulo?codigo=5017798",
+      "status": "FUENTE_EXTERNA",
+      "description": "Material de investigación para estudiar la transformación del paisaje productivo y la expansión de la vitivinicultura.",
+      "rights": "Referencia académica; consultar condiciones de reproducción."
     }
-  ]
+  ],
+  "lastCuratorialReview": "2026-09-30"
 }
