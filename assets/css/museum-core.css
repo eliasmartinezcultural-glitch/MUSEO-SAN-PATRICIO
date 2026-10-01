@@ -115,13 +115,67 @@
   .hero-facts{gap:18px}
 }
 
-/* MUSEO CHANAR · LEY VISUAL MULTIDISPOSITIVO · 3.17+ */
-:root{--chanar-green:#46553d;--chanar-sage:#aeb9a3;--chanar-river:#7d9b98;--chanar-sun:#d19b68;--chanar-sand:#c7b693}
-html{background:var(--paper);overflow-x:hidden}body{overflow-x:hidden}.hero{position:relative}.hero:before{content:"CHAÑAR";position:absolute;z-index:-1;right:-1vw;top:5vh;font:700 clamp(110px,20vw,300px)/.7 "DM Mono";letter-spacing:-.12em;color:rgba(70,85,61,.045);pointer-events:none}.hero-art{isolation:isolate;border-radius:2px;box-shadow:0 25px 80px rgba(24,32,25,.10)}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.16),transparent 65%);transform:translateX(-120%);animation:landLight 9s ease-in-out infinite;pointer-events:none}.hero-art .sun{box-shadow:0 0 0 18px rgba(209,155,104,.10),0 0 80px rgba(209,155,104,.35)}
-@keyframes landLight{0%,65%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
-.door{min-height:220px;overflow:hidden;border-radius:2px}.door i{font-size:28px;transition:transform .25s ease}.door:hover i,.door:focus-visible i{transform:translate(5px,-5px) rotate(8deg)}.door:focus-visible,.pulse-tab:focus-visible,.piece:focus-visible{outline:3px solid var(--chanar-river);outline-offset:3px}
-.local-identity{max-width:var(--max);margin:auto;padding:clamp(65px,8vw,110px) 5vw;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(70,85,61,.035),transparent)}.identity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px}.identity-grid article{min-height:230px;padding:20px;border-left:1px solid var(--line);position:relative}.identity-grid article:last-child{border-right:1px solid var(--line)}.identity-grid article:after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:3px;background:var(--chanar-green);transform:scaleX(0);transform-origin:left;transition:transform .35s}.identity-grid article:hover:after{transform:scaleX(1)}.identity-grid h3{font:500 clamp(27px,3vw,40px)/1 "Playfair Display";letter-spacing:-.04em;margin:40px 0 14px}.identity-grid p{color:var(--muted);font-size:13px;max-width:250px}
-.chanar-pulse{max-width:var(--max);margin:auto;padding:clamp(75px,9vw,130px) 5vw;border-top:1px solid var(--line)}.pulse-head{display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;align-items:end;margin-bottom:30px}.pulse-head h2{font:500 clamp(42px,6vw,76px)/.93 "Playfair Display";letter-spacing:-.055em;margin:8px 0 0}.pulse-head>p{max-width:440px;color:var(--muted)}.pulse-stage{display:grid;grid-template-columns:1.05fr .95fr;min-height:440px;border:1px solid var(--line);background:var(--paper2);overflow:hidden}.pulse-image{position:relative;min-height:440px;overflow:hidden;background:linear-gradient(180deg,#d9d0bd 0 39%,#9aa48e 39% 58%,#7c806c 58% 100%);isolation:isolate}.pulse-image:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 40%),repeating-linear-gradient(90deg,transparent 0 24px,rgba(24,32,25,.08) 25px 26px);mix-blend-mode:multiply}.pulse-orbit{position:absolute;width:60%;aspect-ratio:1;border:1px solid rgba(24,32,25,.16);border-radius:50%;left:12%;top:15%;transform:rotate(-18deg)}.pulse-sun{position:absolute;width:95px;height:95px;border-radius:50%;right:15%;top:13%;background:var(--chanar-sun);box-shadow:0 0 70px rgba(209,155,104,.35)}.pulse-river{position:absolute;width:24%;height:125%;right:22%;top:-10%;background:linear-gradient(90deg,rgba(125,155,152,.20),rgba(125,155,152,.85),rgba(125,155,152,.20));transform:rotate(15deg);transition:all .45s ease}.pulse-rows{position:absolute;left:-10%;right:-10%;bottom:12%;height:45%;background:repeating-linear-gradient(168deg,rgba(70,85,61,.45) 0 3px,transparent 3px 17px);transform:skewY(-7deg);transition:all .45s ease}.pulse-copy{padding:clamp(28px,5vw,65px);display:flex;flex-direction:column;justify-content:center}.pulse-index{font:700 68px/.8 "DM Mono";color:rgba(70,85,61,.12);margin-bottom:25px}.pulse-copy h3{font:500 clamp(35px,5vw,58px)/.98 "Playfair Display";letter-spacing:-.05em;margin:10px 0 18px}.pulse-copy p{color:var(--muted);max-width:440px}.pulse-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px}.pulse-tags span{font:8px "DM Mono";padding:6px 8px;border:1px solid var(--line)}.pulse-nav{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-top:0}.pulse-tab{min-height:88px;text-align:left;padding:14px 16px;border:0;border-right:1px solid var(--line);background:var(--paper);color:inherit;position:relative}.pulse-tab:last-child{border-right:0}.pulse-tab span,.pulse-tab small{display:block;font:8px "DM Mono";color:var(--muted)}.pulse-tab b{display:block;margin:9px 0 2px;font:500 17px "Playfair Display"}.pulse-tab.is-active{background:var(--ink);color:var(--paper)}.pulse-tab.is-active span,.pulse-tab.is-active small{color:#c9c6ba}.pulse-tab:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--chanar-sun);transform:scaleX(0);transition:transform .25s;transform-origin:left}.pulse-tab.is-active:after{transform:scaleX(1)}
-@media(max-width:900px){.identity-grid{grid-template-columns:repeat(2,1fr)}.pulse-stage{grid-template-columns:1fr}.pulse-image{min-height:340px}.pulse-nav{grid-template-columns:repeat(2,1fr)}.pulse-tab:nth-child(2){border-right:0}.pulse-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media(max-width:620px){.hero:before{top:9vh;font-size:92px}.identity-grid{grid-template-columns:1fr}.identity-grid article,.identity-grid article:last-child{border-right:0;border-left:0;border-bottom:1px solid var(--line);min-height:190px}.identity-grid article h3{margin-top:28px}.pulse-head{grid-template-columns:1fr;gap:18px}.pulse-stage{min-height:0}.pulse-image{min-height:270px}.pulse-copy{padding:28px 22px}.pulse-copy h3{font-size:38px}.pulse-index{font-size:48px}.pulse-nav{grid-template-columns:1fr}.pulse-tab{border-right:0!important;border-bottom:1px solid var(--line)!important}.pulse-tab:last-child{border-bottom:0!important}}
-@media(prefers-reduced-motion:reduce){.hero-art:after{animation:none}.door i,.identity-grid article:after,.pulse-river,.pulse-rows,.pulse-tab:after{transition:none}}
+
+/* MUSEO CHANAR · 3.18 CLEAN / VISUAL SYSTEM */
+:root{
+ --chanar-green:#46553d;--chanar-sage:#aeb9a3;--chanar-river:#739493;
+ --chanar-sun:#d19b68;--chanar-sand:#c7b693;--chanar-vine:#687653;
+ --focus:#426e70;--radius:3px;
+}
+html{background:var(--paper);overflow-x:hidden}body{overflow-x:hidden}
+.bar{z-index:80}.hero{position:relative;isolation:isolate}.hero:before{content:"CHAÑAR";position:absolute;z-index:-1;right:-1vw;top:7vh;font:700 clamp(90px,18vw,270px)/.7 "DM Mono";letter-spacing:-.12em;color:rgba(70,85,61,.045);pointer-events:none}
+.hero-art{isolation:isolate;border-radius:var(--radius);box-shadow:0 25px 80px rgba(24,32,25,.10)}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.15),transparent 65%);transform:translateX(-120%);animation:landLight 11s ease-in-out infinite;pointer-events:none}
+.hero-art .sun{box-shadow:0 0 0 18px rgba(209,155,104,.10),0 0 80px rgba(209,155,104,.35)}
+@keyframes landLight{0%,68%{transform:translateX(-120%)}86%,100%{transform:translateX(120%)}}
+.door,.collection-card,.piece,.archive-card{border-radius:var(--radius)}
+.door{min-height:210px;overflow:hidden}.door i{font-size:28px;transition:transform .25s ease}.door:hover i,.door:focus-visible i{transform:translate(5px,-5px) rotate(8deg)}
+.door:focus-visible,.pulse-tab:focus-visible,.piece:focus-visible,.collection-card:focus-visible,.territory-rail button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.territory-rail{max-width:var(--max);margin:0 auto;padding:0 5vw;display:flex;align-items:center;gap:8px;overflow:auto;scrollbar-width:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.territory-rail::-webkit-scrollbar{display:none}.territory-rail>span{flex:1 0 auto;padding:11px 0;font:8px "DM Mono";color:var(--muted);letter-spacing:.1em}
+.territory-rail button{flex:0 0 auto;border:0;border-left:1px solid var(--line);background:transparent;padding:11px 13px;color:inherit;font:8px "DM Mono";letter-spacing:.06em}
+.territory-rail button:hover{background:var(--ink);color:var(--paper)}
+.chanar-pulse{max-width:var(--max);margin:auto;padding:clamp(70px,8vw,115px) 5vw;border-top:1px solid var(--line)}
+.pulse-head{display:grid;grid-template-columns:1.15fr .85fr;gap:6vw;align-items:end;margin-bottom:28px}
+.pulse-head h2{font:500 clamp(42px,6vw,76px)/.93 "Playfair Display";letter-spacing:-.055em;margin:8px 0 0}
+.pulse-head>p{max-width:440px;color:var(--muted)}
+.pulse-stage{display:grid;grid-template-columns:1.02fr .98fr;min-height:410px;border:1px solid var(--line);background:var(--paper2);overflow:hidden}
+.pulse-image{position:relative;min-height:410px;overflow:hidden;background:linear-gradient(180deg,#d9d0bd 0 38%,#9aa48e 38% 59%,#727766 59% 100%);isolation:isolate}
+.pulse-image:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 40%),repeating-linear-gradient(90deg,transparent 0 24px,rgba(24,32,25,.07) 25px 26px);mix-blend-mode:multiply}
+.pulse-orbit{position:absolute;width:58%;aspect-ratio:1;border:1px solid rgba(24,32,25,.16);border-radius:50%;left:12%;top:15%;transform:rotate(-18deg)}
+.pulse-sun{position:absolute;width:90px;height:90px;border-radius:50%;right:15%;top:13%;background:var(--chanar-sun);box-shadow:0 0 70px rgba(209,155,104,.30)}
+.pulse-river{position:absolute;width:23%;height:125%;right:22%;top:-10%;background:linear-gradient(90deg,rgba(115,148,147,.15),rgba(115,148,147,.86),rgba(115,148,147,.15));transform:rotate(15deg);transition:all .45s ease}
+.pulse-rows{position:absolute;left:-10%;right:-10%;bottom:12%;height:45%;background:repeating-linear-gradient(168deg,rgba(70,85,61,.42) 0 3px,transparent 3px 17px);transform:skewY(-7deg);transition:all .45s ease}
+.pulse-copy{padding:clamp(28px,5vw,62px);display:flex;flex-direction:column;justify-content:center}
+.pulse-index{font:700 62px/.8 "DM Mono";color:rgba(70,85,61,.12);margin-bottom:22px}
+.pulse-copy h3{font:500 clamp(34px,5vw,56px)/.98 "Playfair Display";letter-spacing:-.05em;margin:10px 0 18px}
+.pulse-copy p{color:var(--muted);max-width:440px}.pulse-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px}
+.pulse-tags span{font:8px "DM Mono";padding:6px 8px;border:1px solid var(--line)}
+.pulse-nav{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-top:0}
+.pulse-tab{min-height:82px;text-align:left;padding:13px 15px;border:0;border-right:1px solid var(--line);background:var(--paper);color:inherit;position:relative}
+.pulse-tab:last-child{border-right:0}.pulse-tab span,.pulse-tab small{display:block;font:8px "DM Mono";color:var(--muted)}
+.pulse-tab b{display:block;margin:8px 0 2px;font:500 17px "Playfair Display"}.pulse-tab.is-active{background:var(--ink);color:var(--paper)}
+.pulse-tab.is-active span,.pulse-tab.is-active small{color:#c9c6ba}.pulse-tab:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--chanar-sun);transform:scaleX(0);transition:transform .25s;transform-origin:left}.pulse-tab.is-active:after{transform:scaleX(1)}
+.piece:hover,.collection-card:hover,.door:hover{transform:translateY(-2px)}
+.piece,.collection-card,.door{will-change:transform}
+.drawer,.overlay-panel{z-index:100}.drawer-panel,.search-card,.law-card,.how-card{border-radius:var(--radius)}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;min-height:auto;padding-top:12vw}.hero-art{min-height:360px}
+ .discover-head,.pulse-head{grid-template-columns:1fr;gap:18px}.door-grid{grid-template-columns:repeat(2,1fr)}
+ .piece-grid{grid-template-columns:repeat(2,1fr)}.collection-grid{grid-template-columns:repeat(3,1fr)}
+ .pulse-stage{grid-template-columns:1fr}.pulse-image{min-height:330px}.pulse-nav{grid-template-columns:repeat(2,1fr)}
+ .pulse-tab:nth-child(2){border-right:0}.pulse-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:620px){
+ .bar{padding:9px 14px}.bar nav{display:none}.brand small{max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .hero{padding:13vw 5vw 11vw}.hero:before{top:8vh;font-size:86px}.hero-art{min-height:280px}
+ .hero-facts{gap:18px;margin-top:32px}.hero-facts b{font-size:21px}
+ .door-grid,.piece-grid,.collection-grid,.archive-grid{grid-template-columns:1fr}.door{min-height:155px}.door b{margin-top:35px}
+ .territory-rail{padding:0 5vw}.territory-rail>span{display:none}
+ .chanar-pulse{padding:65px 5vw}.pulse-stage{min-height:0}.pulse-image{min-height:245px}.pulse-copy{padding:28px 21px}.pulse-copy h3{font-size:38px}.pulse-index{font-size:48px}
+ .pulse-nav{grid-template-columns:1fr}.pulse-tab{border-right:0!important;border-bottom:1px solid var(--line)!important}.pulse-tab:last-child{border-bottom:0!important}
+ .section-head{align-items:start;flex-direction:column;gap:12px}.actions{width:100%}.actions>*{flex:1}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.hero-art:after{animation:none}.door i,.piece,.collection-card,.pulse-river,.pulse-rows,.pulse-tab:after{transition:none}.piece,.collection-card,.door{will-change:auto}
+}
