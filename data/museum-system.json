@@ -1,6 +1,6 @@
 {
-  "systemVersion": "3.17.0",
-  "status": "VISUAL_INTERACTION_LAW_LOCKED",
+  "systemVersion": "3.18.0",
+  "status": "CLEAN_REPAIR_LOCKED",
   "mission": "Preservar para enseñar. Enseñar para cuidar.",
   "experiencePrinciple": "Poco recorrido. Mucha profundidad.",
   "architecture": {
@@ -60,7 +60,12 @@
     "mantiene procedencia y trazabilidad",
     "es accesible",
     "funciona en móvil y escritorio",
-    "no agrega complejidad visible innecesaria"
+    "no agrega complejidad visible innecesaria",
+    "sin secciones redundantes",
+    "sin controles huérfanos",
+    "sin interacciones desconectadas",
+    "sin superposición visual crítica",
+    "carga de datos con cache-busting de versión"
   ],
   "visualInteractionLaw": {
     "status": "LOCKED",
@@ -87,6 +92,19 @@
       "teclado",
       "reduced motion",
       "sin scroll horizontal accidental"
+    ]
+  },
+  "releaseLaw": {
+    "version": "3.18",
+    "status": "LOCKED",
+    "principle": "Eliminar superposición, rotura y desconexión antes de sumar complejidad.",
+    "rules": [
+      "Una función visible debe tener un propósito claro y una ruta de salida.",
+      "No duplicar secciones que expresan la misma idea.",
+      "No mantener componentes decorativos si compiten con una pieza, fuente o interacción.",
+      "Toda interacción nueva debe conectar con el sistema documental existente.",
+      "La vista debe ser corta; la profundidad vive detrás de cada apertura.",
+      "Toda capa visual debe adaptarse sin romper jerarquía en móvil, tablet o escritorio."
     ]
   }
 }
