@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.2.0",
+  "schemaVersion": "0.3.0",
   "title": "Mapa de profundidad histórica del territorio",
   "scope": {
     "primary": "territorio de San Patricio del Chañar",
@@ -129,7 +129,8 @@
       "relation": "LOCAL",
       "notes": "La información publicada por Familia Schroeder describe un saurópodo titanosáurido, herbívoro, de unos 10–12 metros, hallado en terrenos de la bodega. El sitio conserva los restos en una cava especial. La nomenclatura y datación deben contrastarse con bibliografía paleontológica especializada antes de convertirlas en ficha científica definitiva.",
       "sourceIds": [
-        "SRC-005"
+        "SRC-005",
+        "SRC-011"
       ],
       "visual": "fossil"
     },
@@ -165,7 +166,8 @@
       "relation": "LOCAL",
       "notes": "El río debe estudiarse simultáneamente como ambiente, recurso, vía de movilidad, límite, riesgo y soporte de transformación productiva.",
       "sourceIds": [
-        "SRC-001"
+        "SRC-001",
+        "SRC-010"
       ]
     },
     {
@@ -178,7 +180,8 @@
       "relation": "LOCAL_A_CONTRASTAR",
       "notes": "La ficha debe presentar esta información como fuente municipal y distinguir la documentación del contexto de la Campaña del Desierto de las interpretaciones posteriores.",
       "sourceIds": [
-        "SRC-001"
+        "SRC-001",
+        "SRC-012"
       ],
       "visual": "map"
     },
@@ -192,7 +195,8 @@
       "relation": "LOCAL_A_CONTRASTAR",
       "notes": "La misma fuente plantea como hipótesis que la colonia habría desaparecido tras una gran crecida del río Neuquén. Esa hipótesis debe conservarse como tal hasta localizar documentación adicional.",
       "sourceIds": [
-        "SRC-001"
+        "SRC-001",
+        "SRC-012"
       ],
       "visual": "map"
     },
@@ -206,7 +210,8 @@
       "relation": "LOCAL",
       "notes": "La fuente municipal describe estudios de Topoges que identificaron 8.400 hectáreas con riego gravitacional, obras de sistematización desde 1969 y una primera bocatoma en 1971 que permitió regar 3.068 hectáreas en la primera etapa.",
       "sourceIds": [
-        "SRC-001"
+        "SRC-001",
+        "SRC-010"
       ]
     },
     {
@@ -219,7 +224,8 @@
       "relation": "LOCAL",
       "notes": "La infraestructura hídrica es una pieza central para explicar cómo un paisaje árido se transformó en un territorio productivo. Debe conectarse con bocatomas, canales, parcelas, trabajadores y familias.",
       "sourceIds": [
-        "SRC-001"
+        "SRC-001",
+        "SRC-010"
       ]
     },
     {
@@ -233,7 +239,9 @@
       "notes": "La fecha marca el nacimiento de la localidad, no el comienzo de la historia del territorio. Las fuentes también vinculan el nombre San Patricio con Campo Filone, Italia, y Chañar con el nombre del árbol.",
       "sourceIds": [
         "SRC-003",
-        "SRC-006"
+        "SRC-006",
+        "SRC-014",
+        "SRC-019"
       ]
     },
     {
@@ -246,7 +254,8 @@
       "relation": "LOCAL",
       "notes": "La institución debe estudiarse como parte de la construcción cotidiana de la localidad: gobierno, seguridad, riego, educación, deporte y organización comunitaria.",
       "sourceIds": [
-        "SRC-004"
+        "SRC-004",
+        "SRC-020"
       ]
     },
     {
@@ -259,7 +268,8 @@
       "relation": "LOCAL",
       "notes": "Esta pieza permite conectar producción, escuela, deporte y comunidad en una misma etapa de formación local.",
       "sourceIds": [
-        "SRC-004"
+        "SRC-004",
+        "SRC-010"
       ]
     },
     {
@@ -272,7 +282,11 @@
       "relation": "LOCAL",
       "notes": "La fiesta puede crecer como colección de fotografías, afiches, programas, artistas, productores, anécdotas y recuerdos de distintas ediciones.",
       "sourceIds": [
-        "SRC-002"
+        "SRC-002",
+        "SRC-016",
+        "SRC-017",
+        "SRC-018",
+        "SRC-021"
       ]
     },
     {
@@ -311,7 +325,8 @@
       "relation": "LOCAL",
       "notes": "La pieza abre una línea de investigación sobre biodiversidad, aves, paisaje, agua y relación entre producción y conservación.",
       "sourceIds": [
-        "SRC-002"
+        "SRC-002",
+        "SRC-013"
       ]
     },
     {
@@ -324,7 +339,8 @@
       "relation": "LOCAL",
       "notes": "Es una excelente puerta para investigar producción familiar, autoconsumo, comercialización, trabajo y conocimientos agrícolas contemporáneos.",
       "sourceIds": [
-        "SRC-002"
+        "SRC-002",
+        "SRC-013"
       ]
     },
     {
@@ -337,7 +353,9 @@
       "relation": "LOCAL",
       "notes": "La vitivinicultura puede estudiarse como transformación productiva reciente y como nuevo patrimonio material, paisajístico, gastronómico y turístico.",
       "sourceIds": [
-        "SRC-005"
+        "SRC-005",
+        "SRC-011",
+        "SRC-021"
       ]
     },
     {
@@ -350,7 +368,8 @@
       "relation": "LOCAL",
       "notes": "Este sitio permite unir paisaje, turismo, religiosidad, caminos y transformación productiva.",
       "sourceIds": [
-        "SRC-002"
+        "SRC-002",
+        "SRC-013"
       ],
       "visual": "landscape"
     },
@@ -364,7 +383,8 @@
       "relation": "LOCAL",
       "notes": "La celebración funciona como documento de memoria pública: permite estudiar qué pasado se eligió recordar y qué imagen de futuro se construyó en el aniversario.",
       "sourceIds": [
-        "SRC-008"
+        "SRC-008",
+        "SRC-015"
       ],
       "visual": "date"
     },
@@ -437,6 +457,123 @@
       "title": "Neuquén Informa — 53.º aniversario de San Patricio del Chañar",
       "type": "FUENTE_INSTITUCIONAL",
       "url": "https://www.neuqueninforma.gob.ar/noticias/2026/05/22/258231-ministro-koenig-erradicar-todos-los-trailers-es-un-acto-de-justicia-para-los-estudiantes-neuquinos"
+    },
+    {
+      "id": "SRC-010",
+      "title": "Finessi, Florencia; Groch, Damián — Dinámica del paisaje agrario de San Patricio del Chañar",
+      "type": "FUENTE_ACADEMICA",
+      "url": "https://dialnet.unirioja.es/servlet/articulo?codigo=5017798",
+      "publisher": "Boletín Geográfico",
+      "date": "2012",
+      "accessDate": "2026-09-30",
+      "scope": "paisaje agrario; organización territorial; imágenes satelitales"
+    },
+    {
+      "id": "SRC-011",
+      "title": "Calvo, Jorge O.; Porfiri, Juan D. — Panamericansaurus schroederi",
+      "type": "FUENTE_ACADEMICA",
+      "url": "https://www.researchgate.net/publication/233742047_Panamericansaurus_schroederi_gen_nov_sp_nov_Unnuevo_Sauropoda_Titanosauridae-Aeolosaurini_de_laProvincia_del_Neuquen_Cretacico_Superior_de_PatagoniaArgentina",
+      "publisher": "Universidad Nacional del Comahue / Museo Provincial Carlos Ameghino",
+      "date": "2010",
+      "accessDate": "2026-09-30",
+      "scope": "paleontología; taxonomía; localidad tipo"
+    },
+    {
+      "id": "SRC-012",
+      "title": "Municipalidad de San Patricio del Chañar — Identidad histórica local",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.sanpatricio.gob.ar/identidad",
+      "publisher": "Municipalidad de San Patricio del Chañar",
+      "accessDate": "2026-09-30",
+      "scope": "historia local; Tratayen; mensuras; riego; transformación productiva"
+    },
+    {
+      "id": "SRC-013",
+      "title": "Municipalidad de San Patricio del Chañar — Nuestra Ciudad",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://sanpatricio.gob.ar/nuestra",
+      "publisher": "Municipalidad de San Patricio del Chañar",
+      "accessDate": "2026-09-30",
+      "scope": "patrimonio contemporáneo; dique; chacra municipal; espacios comunitarios"
+    },
+    {
+      "id": "SRC-014",
+      "title": "Neuquén Informa — 41.º aniversario de San Patricio del Chañar",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2014/05/22/48785-jorge-sapag-asistira-al-41-aniversario-de-san-patricio-del-chanar",
+      "publisher": "Gobierno de la Provincia del Neuquén",
+      "date": "2014-05-22",
+      "accessDate": "2026-09-30",
+      "scope": "fundación; Comisión de Fomento; primeras producciones"
+    },
+    {
+      "id": "SRC-015",
+      "title": "Neuquén Informa — 50.º aniversario de San Patricio del Chañar",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2023/05/21/215945-gutierrez-acompano-los-festejos-por-el-50-aniversario-de-san-patricio-del-chanar",
+      "publisher": "Gobierno de la Provincia del Neuquén",
+      "date": "2023-05-21",
+      "accessDate": "2026-09-30",
+      "scope": "memoria pública; aniversario; patrimonio institucional"
+    },
+    {
+      "id": "SRC-016",
+      "title": "Neuquén Informa — 36.ª Fiesta Provincial del Pelón",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2026/02/10/255111-san-patricio-del-chanar-se-prepara-para-la-fiesta-del-pelon",
+      "publisher": "Gobierno de la Provincia del Neuquén",
+      "date": "2026-02-10",
+      "accessDate": "2026-09-30",
+      "scope": "fiesta; trabajador rural; memoria productiva"
+    },
+    {
+      "id": "SRC-017",
+      "title": "Cámara de Diputados de la Nación — Proyecto sobre Fiesta del Pelón",
+      "type": "FUENTE_LEGISLATIVA",
+      "url": "https://www.hcdn.gob.ar/comisiones/permanentes/cdhygarantias/proyecto.html?exp=9105-D-2014",
+      "publisher": "Honorable Cámara de Diputados de la Nación",
+      "date": "2014-11-17",
+      "accessDate": "2026-09-30",
+      "scope": "historia de la fiesta; producción frutal; trabajador rural"
+    },
+    {
+      "id": "SRC-018",
+      "title": "Boletín Oficial de Neuquén — Decreto 668/2018",
+      "type": "FUENTE_NORMATIVA",
+      "url": "https://infoleg.neuquen.gov.ar/LeyesDecretosDetalle?Id=387597",
+      "publisher": "Provincia del Neuquén",
+      "date": "2018-05-23",
+      "accessDate": "2026-09-30",
+      "scope": "Fiesta Provincial y Regional del Pelón; documentación administrativa"
+    },
+    {
+      "id": "SRC-019",
+      "title": "Neuquén Informa — 2013: aniversario y antecedentes históricos",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://www.neuqueninforma.gob.ar/noticias/2013/05/17/29151-ana-pechen-preside-la-ceremonia-aniversario-de-san-patricio-del-chanar",
+      "publisher": "Gobierno de la Provincia del Neuquén",
+      "date": "2013-05-17",
+      "accessDate": "2026-09-30",
+      "scope": "toponimia; Gasparri; categorías municipales; producción"
+    },
+    {
+      "id": "SRC-020",
+      "title": "Discurso del 8 de abril de 1974 — primeras autoridades de la Comisión de Fomento",
+      "type": "FUENTE_PRIMARIA_REPRODUCIDA",
+      "url": "https://www.neuqueneldesafio.com.ar/blog/62-san-patricio-del-chanar/",
+      "publisher": "Archivo/reproducción documental consultada",
+      "date": "1974-04-08",
+      "accessDate": "2026-09-30",
+      "scope": "Comisión de Fomento; urbanización; discurso institucional"
+    },
+    {
+      "id": "SRC-021",
+      "title": "Municipalidad de San Patricio del Chañar — Fiesta Provincial del Pelón",
+      "type": "FUENTE_INSTITUCIONAL",
+      "url": "https://sanpatricio.gob.ar/quehacer",
+      "publisher": "Municipalidad de San Patricio del Chañar",
+      "accessDate": "2026-09-30",
+      "scope": "fiesta; producción frutícola; vitivinicultura; patrimonio local"
     }
   ],
   "pieces": [
@@ -605,5 +742,18 @@
       "status": "MEMORIA_ORAL",
       "recordId": "TD-013"
     }
-  ]
+  ],
+  "sourcePolicy": {
+    "minimum": "identificador + título + tipo + procedencia/URL cuando corresponda + fecha de consulta",
+    "note": "La presencia de una fuente no convierte automáticamente su contenido en hecho definitivo; cada registro conserva su estado documental."
+  },
+  "lastCuratorialReview": "2026-09-30",
+  "sourceStats": {
+    "total": 21,
+    "academic": 2,
+    "institutional": 16,
+    "legislative": 1,
+    "normative": 1,
+    "primaryReproduced": 1
+  }
 }
