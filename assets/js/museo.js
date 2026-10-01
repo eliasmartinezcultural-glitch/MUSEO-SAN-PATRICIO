@@ -186,3 +186,5 @@ function openRecordData(r){
    if(result){setTimeout(()=>document.querySelector('.search-panel')?.setAttribute('aria-hidden','true'),80)}
  });
 })();
+
+// Estatuto rector 1.0
