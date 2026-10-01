@@ -1,1 +1,76 @@
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];const state={collections:[],records:[],storyIndex:0};const stories=[{tag:"PALEONTOLOGÍA · EVIDENCIA LOCAL",title:"Panamericansaurus schroederi",text:"Una pieza documentada del territorio. La ficha completa conserva evidencia, fuentes y el grado de certeza de cada afirmación.",mode:"tierra"},{tag:"TERRITORIO · EVIDENCIA LOCAL",title:"El río Neuquén",text:"Una puerta para entender ambiente, agua, riego y transformación del paisaje.",mode:"agua"},{tag:"MAPAS · FUENTE HISTÓRICA",title:"Mensuras y territorio",text:"Mapas, caminos, parajes y transformaciones espaciales aparecen como documentos para explorar.",mode:"presente"},{tag:"MEMORIA · INVESTIGACIÓN",title:"Historias que todavía faltan",text:"Fotografías familiares, voces, objetos y relatos pueden incorporarse al museo distinguiendo recuerdo y evidencia.",mode:"memoria"}];const modes={agua:["AGUA · RÍO · RIEGO","Agua","Entrá por el río y seguí sus relaciones con paisaje, riego, producción e historia.",["Río Neuquén","Obras y riego","Paisaje productivo"]],tierra:["TIERRA · CHACRAS · PAISAJE","Tierra","La tierra es parte de la historia: chacras, bardas, caminos, cultivos y transformaciones forman una trama.",["Paisaje","Producción y trabajo","Tiempo profundo"]],memoria:["PERSONAS · OBJETOS · VOCES","Memoria","El museo también se construye con fotografías, documentos, objetos y testimonios.",["Familias","Vida comunitaria","Archivo por construir"]],presente:["PUEBLO · VIDA · PRESENTE","Hoy","La historia no termina en una fecha. El pueblo actual también es una pieza del museo.",["Espacios comunes","Arquitectura","Historias actuales"]]};function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}$$("[data-scroll]").forEach(b=>b.onclick=()=>scrollToId(b.dataset.scroll));function openMode(m){const d=modes[m];$("#drawerKicker").textContent=d[0];$("#drawerTitle").textContent=d[1];$("#drawerText").textContent=d[2];$("#drawerList").innerHTML=d[3].map(x=>"<div><b>"+x+"</b><br><small>Explorar esta línea del museo →</small></div>").join("");$("#drawer").classList.add("open")}$$("[data-mode]").forEach(b=>b.onclick=()=>openMode(b.dataset.mode));$("#closeDrawer").onclick=()=>$("#drawer").classList.remove("open");function renderStory(){const s=stories[state.storyIndex];$("#storyTag").textContent=s.tag;$("#storyTitle").textContent=s.title;$("#storyText").textContent=s.text;$("#storyVisual").style.background=s.mode==="agua"?"linear-gradient(145deg,#477b80,#142d2a 62%,#b3a06e)":s.mode==="memoria"?"linear-gradient(145deg,#8d6958,#342d2a 65%,#c2aa8c)":"linear-gradient(145deg,#314e49,#172a25 60%,#7e4937)";$$(".story-tabs button").forEach((b,i)=>b.classList.toggle("active",i===state.storyIndex))}$("#storyTabs").innerHTML=stories.map((s,i)=>'<button data-story="'+i+'">'+String(i+1).padStart(2,"0")+" · "+s.title+"</button>").join("");$$("[data-story]").forEach(b=>b.onclick=()=>{state.storyIndex=+b.dataset.story;renderStory()});renderStory();$("#storyOpen").onclick=()=>openMode(stories[state.storyIndex].mode);$("#surprise").onclick=()=>{state.storyIndex=Math.floor(Math.random()*stories.length);renderStory();scrollToId("historias");$("#toast").textContent="Te llevamos a una historia del Chañar";$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),1800)};$$("[data-deep]").forEach(b=>b.onclick=()=>{const m=b.dataset.deep;$("#drawerKicker").textContent="PROFUNDIDAD";$("#drawerTitle").textContent=m==="colecciones"?"Explorar temas":m==="tiempo"?"Viajar en el tiempo":"Fuentes";$("#drawerText").textContent=m==="colecciones"?"Las colecciones viven detrás de la experiencia, como profundidad, no como menú principal.":m==="tiempo"?"Una cronología para quien quiera profundizar, sin obligar a nadie a recorrerla.":"Cada historia muestra de dónde sale la información y qué continúa en investigación.";$("#drawerList").innerHTML="<div><b>La profundidad aparece bajo demanda.</b><br><small>La interfaz pública no obliga a navegar el sistema interno.</small></div>";$("#drawer").classList.add("open")});async function loadData(){try{const[c,t]=await Promise.all([fetch("data/collections.json").then(r=>r.json()),fetch("data/territory-depth.json").then(r=>r.json())]);state.collections=c.collections||[];state.records=t.records||[]}catch(e){console.warn("Datos profundos no disponibles",e)}}loadData();const panel=$("#searchPanel");$("#openSearch").onclick=()=>{panel.classList.add("open");setTimeout(()=>$("#searchInput").focus(),80)};$("#closeSearch").onclick=()=>panel.classList.remove("open");$("#searchInput").oninput=e=>{const q=e.target.value.trim().toLowerCase();if(!q){$("#searchResults").innerHTML="";return}const all=[...state.records.map(r=>({t:r.title,d:r.period||r.layer})),...state.collections.map(c=>({t:c.title,d:c.subtitle}))];const found=all.filter(x=>(x.t+" "+x.d).toLowerCase().includes(q)).slice(0,8);$("#searchResults").innerHTML=found.length?found.map(x=>'<div class="result"><b>'+x.t+'</b><small>'+x.d+"</small></div>").join(""):"<p>No encontramos esa palabra todavía. Probá otra forma de entrar.</p>"};document.onkeydown=e=>{if(e.key==="Escape"){$("#drawer").classList.remove("open");panel.classList.remove("open")}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const state={collections:[],records:[],mode:"",active:0};
+const modes={
+ agua:{tag:"AGUA · RÍO · RIEGO",title:"Agua",text:"El agua permite leer el territorio desde el río Neuquén, el riego, el paisaje y las formas de vida que se desarrollaron alrededor de ellos.",visual:"linear-gradient(145deg,#3e7e87 0%,#163d3b 62%,#b6a66d 100%)",items:[
+  ["Río Neuquén","El curso de agua como referencia territorial.","agua"],
+  ["Riego","Canales, obras y transformación del paisaje.","agua"],
+  ["Paisaje","El encuentro entre agua, tierra y producción.","agua"],
+  ["Fuentes","Documentos, mapas y evidencia disponible.","fuentes"]
+ ]},
+ tierra:{tag:"TIERRA · CHACRAS · NATURALEZA",title:"Tierra",text:"Chacras, bardas, caminos, cultivos y naturaleza forman una trama visible. Cada imagen puede abrir una historia más extensa.",visual:"linear-gradient(145deg,#b78e58 0%,#5d4931 62%,#d8c18c 100%)",items:[
+  ["Chacras","El paisaje agrario y sus transformaciones.","chacras"],
+  ["Bardas","El límite entre valle, meseta y paisaje.","bardas"],
+  ["Fauna y flora","Lo vivo que comparte este territorio.","naturaleza"],
+  ["Tiempo profundo","Geología, fósiles y paleontología.","tiempo"]
+ ]},
+ memoria:{tag:"PERSONAS · OBJETOS · VOCES",title:"Memoria",text:"El museo crece con fotografías familiares, documentos, objetos y testimonios. Recuerdo y evidencia se presentan como cosas distintas.",visual:"linear-gradient(145deg,#936e5d 0%,#3d302c 62%,#cdb08d 100%)",items:[
+  ["Personas","Historias de quienes hicieron y hacen el lugar.","personas"],
+  ["Fotografías","Imágenes fechadas, atribuidas y contextualizadas.","fotografias"],
+  ["Documentos","Mensuras, mapas y registros para investigar.","documentos"],
+  ["Voces","Testimonios identificados como testimonios.","testimonios"]
+ ]},
+ presente:{tag:"PUEBLO · VIDA · PRESENTE",title:"Hoy",text:"El museo también observa el presente: calles, espacios comunes, arquitectura, naturaleza y vida cotidiana. Lo actual también será memoria.",visual:"linear-gradient(145deg,#6c9892 0%,#1c3835 62%,#c7b477 100%)",items:[
+  ["Pueblo","Calles, barrios y espacios compartidos.","pueblo"],
+  ["Lugares","Puntos que ayudan a orientarse en el territorio.","lugares"],
+  ["Naturaleza","Río, aves, vegetación y paisajes actuales.","naturaleza"],
+  ["Mapa","El territorio como forma de comprender.","mapa"]
+ ]}
+};
+const detail={
+"Río Neuquén":["Una entrada para entender agua, paisaje y vida.","La profundidad documental se construye con fotografías, mapas y fuentes verificables."],
+"Riego":["El paisaje productivo no aparece separado del agua.","La investigación puede conectar obras, canales, parcelas y transformaciones sin llenar la portada de texto."],
+"Chacras":["Las parcelas, caminos y alamedas forman una estructura reconocible del paisaje agrario.","Las fuentes ambientales y territoriales permiten ampliar esta mirada."],
+"Fauna y flora":["La naturaleza se presenta con identificación, fotografía y contexto.","No se incorporan especies ni afirmaciones sin fuente."],
+"Tiempo profundo":["La geología y la paleontología permiten mirar mucho más atrás que la historia reciente.","Panamericansaurus schroederi es una de las piezas documentales que puede abrir esta línea."],
+"Personas":["Una historia personal puede ser una puerta, no una tarjeta más.","Cada registro debe distinguir fuente, fecha, autoría y tipo de testimonio."],
+"Fotografías":["La fotografía funciona como documento cuando se conoce su procedencia y contexto.","Autoría, fecha y permisos forman parte de la pieza."],
+"Documentos":["Mapas, mensuras y registros ayudan a reconstruir cambios territoriales.","La fuente queda visible cuando se profundiza."],
+"Voces":["El testimonio tiene valor como memoria y debe presentarse como testimonio.","No se transforma una versión personal en hecho histórico sin evidencia independiente."],
+"Pueblo":["El presente se observa desde lugares concretos y experiencias cotidianas.","La portada muestra poco; la puerta permite investigar mucho."],
+"Lugares":["Un punto del mapa puede reunir fotografías, documentos, historias y cambios en el tiempo.","La navegación mantiene el territorio como hilo conductor."],
+"Naturaleza":["Río, aves, vegetación y paisaje forman parte del presente local.","La información sensible o incierta se marca como tal."],
+"Mapa":["El mapa no es decoración: organiza relaciones entre lugares, caminos, agua y memoria.","La profundidad puede sumar capas sin complicar la entrada."]
+};
+function openMode(mode){
+ const d=modes[mode]; if(!d)return;
+ state.mode=mode; state.active=0;
+ $("#drawerKicker").textContent=d.tag;$("#drawerTitle").textContent=d.title;$("#drawerText").textContent=d.text;
+ $("#drawerVisual").style.background=d.visual;
+ $("#drawerList").innerHTML=d.items.map((x,i)=>'<button data-depth="'+i+'" class="'+(i===0?"active":"")+'"><b>'+x[0]+'</b><small>'+x[1]+'</small></button>').join("");
+ renderDepth();
+ $("#drawer").classList.add("open");$("#drawer").setAttribute("aria-hidden","false");
+}
+function renderDepth(){
+ const item=modes[state.mode].items[state.active], title=item[0], d=detail[title]||["Esta línea queda abierta para investigación y documentación.","La experiencia pública prioriza claridad; la profundidad conserva el material."];
+ $("#depthPanel").innerHTML='<h3>'+title+'</h3><p>'+d[0]+'</p><p>'+d[1]+'</p><div class="source"><b>CAPA PROFUNDA</b><br>Fuentes, imágenes, documentos y relaciones aparecen aquí, no en la portada.</div>';
+ $$("[data-depth]").forEach((b,i)=>b.classList.toggle("active",i===state.active));
+}
+$$("[data-mode]").forEach(b=>b.addEventListener("click",()=>openMode(b.dataset.mode)));
+$("#enter").addEventListener("click",()=>$("#explorar").scrollIntoView({behavior:"smooth"}));
+$("#closeDrawer").addEventListener("click",()=>{$("#drawer").classList.remove("open");$("#drawer").setAttribute("aria-hidden","true")});
+$("#drawer").addEventListener("click",e=>{const b=e.target.closest("[data-depth]");if(b){state.active=+b.dataset.depth;renderDepth()}});
+const panel=$("#searchPanel");
+$("#openSearch").addEventListener("click",()=>{panel.classList.add("open");setTimeout(()=>$("#searchInput").focus(),80)});
+$("#closeSearch").addEventListener("click",()=>panel.classList.remove("open"));
+async function loadData(){
+ try{const[c,t]=await Promise.all([fetch("data/collections.json").then(r=>r.json()),fetch("data/territory-depth.json").then(r=>r.json())]);state.collections=c.collections||[];state.records=t.records||[]}catch(e){console.warn("Datos profundos no disponibles",e)}
+}
+loadData();
+$("#searchInput").addEventListener("input",e=>{
+ const q=e.target.value.trim().toLowerCase();
+ if(!q){$("#searchResults").innerHTML="";return}
+ const all=[...state.records.map(r=>({t:r.title||"",d:r.period||r.layer||""})),...state.collections.map(c=>({t:c.title||"",d:c.subtitle||""}))];
+ const found=all.filter(x=>(x.t+" "+x.d).toLowerCase().includes(q)).slice(0,8);
+ $("#searchResults").innerHTML=found.length?found.map(x=>'<div class="result"><b>'+x.t+'</b><small>'+x.d+'</small></div>').join(""):"<p>No encontramos esa palabra todavía. Probá otra puerta.</p>";
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("#drawer").classList.remove("open");panel.classList.remove("open")}});
