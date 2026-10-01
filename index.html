@@ -9,7 +9,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23101612'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='58' fill='%23f3eadb' font-family='serif'%3EM%3C/text%3E%3C/svg%3E">
 <title>Museo Digital de San Patricio del Chañar</title>
-<link rel="stylesheet" href="assets/css/museum-core.css">
+<link rel="stylesheet" href="assets/css/museum-core.css?v=3.22.0">
 </head>
 <body>
 <a class="skip" href="#content">Ir al contenido</a>
@@ -26,7 +26,7 @@
   <div class="hero-copy">
     <p class="eyebrow">MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</p>
     <h1>Preservar para enseñar.<br><em>Enseñar para cuidar.</em></h1>
-    <p class="lead">Entrá por una pieza, una fecha, una imagen o una pregunta. El sistema conecta las historias sin convertir el museo en una página interminable.</p>
+    <p class="lead">Una entrada breve al territorio. Elegí qué querés descubrir y profundizá solo cuando lo necesites.</p>
     <div class="actions"><a class="primary" href="#descubrir">Entrar al museo <span>↓</span></a><button type="button" class="secondary" id="howBtn">Cómo funciona</button></div>
     <div class="hero-facts"><span><b id="pieceCount">—</b><small>piezas</small></span><span><b id="collectionCount">—</b><small>colecciones</small></span><span><b id="sourceCount">—</b><small>fuentes</small></span></div>
   </div>
@@ -37,10 +37,12 @@
   <div class="section-label"><span>01</span><p class="eyebrow">DESCUBRIR</p></div>
   <div class="discover-head"><div><h2>Elegí una puerta.<br><em>El museo hace el resto.</em></h2></div><p>No necesitás conocer la historia antes de entrar. Podés explorar libremente o dejar que el museo te proponga una pieza.</p></div>
   <div class="door-grid">
-    <button type="button" class="door" data-action="surprise"><span>01</span><b>Pieza sorpresa</b><small>Una historia elegida del catálogo.</small><i>✦</i></button>
-    <button type="button" class="door" data-action="local"><span>02</span><b>Solo evidencia local</b><small>Lo que el archivo identifica específicamente con Chañar.</small><i>→</i></button>
-    <button type="button" class="door" data-action="time"><span>03</span><b>Viajar en el tiempo</b><small>Del territorio profundo a la historia viva.</small><i>↗</i></button>
-    <button type="button" class="door" data-action="question"><span>04</span><b>Investigar</b><small>Lo documentado y lo que todavía está abierto.</small><i>?</i></button>
+    <button type="button" class="door" data-action="surprise"><span>01</span><b>Una pieza</b><small>Entrá por una historia elegida del catálogo.</small><i>✦</i></button>
+    <button type="button" class="door" data-action="local"><span>02</span><b>Lo local</b><small>Solo registros identificados específicamente con Chañar.</small><i>→</i></button>
+    <button type="button" class="door" data-action="time"><span>03</span><b>El tiempo</b><small>Del territorio profundo a la historia viva.</small><i>↗</i></button>
+    <button type="button" class="door" data-action="question"><span>04</span><b>Investigar</b><small>Preguntas abiertas y líneas documentales.</small><i>?</i></button>
+    <button type="button" class="door" data-action="collections"><span>05</span><b>Colecciones</b><small>Historias agrupadas por una misma mirada.</small><i>⌁</i></button>
+    <button type="button" class="door" data-action="archive"><span>06</span><b>Archivo</b><small>Fuentes, materiales y aquello que todavía falta.</small><i>□</i></button>
   </div>
 </section>
 
@@ -52,8 +54,8 @@
 </section>
 <div class="territory-rail" aria-label="Accesos rápidos del museo"><span>CHAÑAR · 39° SUR</span><button type="button" data-action="local">EVIDENCIA LOCAL</button><button type="button" data-action="time">LÍNEA DE TIEMPO</button><button type="button" data-action="question">INVESTIGAR</button></div><section class="museum-console" id="experiencia" aria-labelledby="consoleTitle">
   <div class="console-top">
-    <div><p class="eyebrow">04 · EXPERIENCIA DOCUMENTAL</p><h2 id="consoleTitle">El Chañar, <em>en movimiento.</em></h2></div>
-    <p>Una sola pantalla para cruzar tiempo, territorio, evidencia y preguntas. Tocá una señal y el museo reorganiza la experiencia.</p>
+    <div><p class="eyebrow">CONTROL DEL MUSEO</p><h2 id="consoleTitle">Entrar más profundo, <em>sin perderse.</em></h2></div>
+    <p>Atajos para cambiar de modo sin recorrer páginas innecesarias.</p>
   </div>
   <div class="signal-grid">
     <button type="button" class="signal signal-main" data-console="timeline"><span class="signal-number" id="timelineCount">—</span><small>CRONOLOGÍA</small><b>Seguir el tiempo</b><i>↗</i></button>
