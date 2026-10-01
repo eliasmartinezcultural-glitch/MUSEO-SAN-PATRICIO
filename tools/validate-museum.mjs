@@ -31,6 +31,9 @@ const questions = territory.questions ?? [];
 const layers = territory.layers ?? [];
 const expansionSources = expansion.sources ?? [];
 const expansionMedia = expansion.media ?? [];
+const system = read("data/museum-system.json");
+if (system.systemVersion !== "3.21.0") fail.push(`Sistema fuera de versión 3.21.0: ${system.systemVersion ?? "(sin versión)"}`);
+if (system.worldLaw?.formula !== "60 % CONTENIDO · 40 % VISUAL · 100 % INTERACCIÓN SIMPLE") fail.push("Ley mundial 3.21 no está correctamente registrada.");
 
 
 function unique(items, label) {
@@ -104,7 +107,7 @@ for (const s of [...sources, ...expansionSources]) {
 if (!territory.schemaVersion) warn.push("territory-depth.json no declara schemaVersion.");
 if (!relationsFile.version) warn.push("relations.json no declara version.");
 
-console.log(`Museo 3.20 — validación: ${records.length} registros, ${pieces.length} piezas, ${sources.length + expansionSources.length} fuentes internas, ${collections.length} colecciones, ${relations.length} relaciones, ${multimedia.length + expansionMedia.length} objetos multimedia.`);
+console.log(`Museo 3.21 — validación: ${records.length} registros, ${pieces.length} piezas, ${sources.length + expansionSources.length} fuentes internas, ${collections.length} colecciones, ${relations.length} relaciones, ${multimedia.length + expansionMedia.length} objetos multimedia.`);
 
 if (warn.length) {
   console.log("\nADVERTENCIAS:");
@@ -117,4 +120,4 @@ if (fail.length) {
   process.exit(1);
 }
 
-console.log("\nOK — integridad estructural PL1 verificada.");
+console.log("\nOK — integridad estructural 3.21 verificada.");
