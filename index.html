@@ -1,17 +1,56 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14241f"><meta name="description" content="Museo Digital de San Patricio del Chañar. Territorio, memoria, personas y tiempo."><title>Museo Digital · San Patricio del Chañar</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/museo-v4.css?v=4.0.0"></head><body>
-<header class="top"><a class="brand" href="#"><span class="brand-mark">CH</span><span>MUSEO DIGITAL<small>SAN PATRICIO DEL CHAÑAR</small></span></a><nav><button data-scroll="explorar">Explorar</button><button data-scroll="historias">Historias</button><button data-scroll="mapa">Territorio</button></nav><button class="search-btn" id="openSearch" aria-label="Buscar">⌕ <span>Buscar</span></button></header>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14241f">
+<meta name="description" content="Museo Digital de San Patricio del Chañar. Un territorio para descubrir.">
+<title>San Patricio del Chañar · Museo Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/museo-v4.css?v=4.1.0">
+</head>
+<body>
+<header class="top">
+<a class="brand" href="#"><span class="brand-mark">CH</span><span>MUSEO DIGITAL<small>SAN PATRICIO DEL CHAÑAR</small></span></a>
+<div class="law">60% VISUAL · 40% TEXTO</div>
+<button class="search-btn" id="openSearch" aria-label="Buscar">⌕ <span>Buscar</span></button>
+</header>
+
 <main>
-<section class="hero"><div class="hero-photo" role="img" aria-label="Entrada a San Patricio del Chañar"><div class="hero-photo-overlay"></div><div class="photo-credit">IMAGEN DE ARCHIVO · SAN PATRICIO DEL CHAÑAR · 2021 · CC BY 3.0</div></div><div class="hero-copy"><p class="kicker">UN MUSEO PARA ENTRAR, NO PARA LEER UN MENÚ</p><h1>San Patricio<br><em>del Chañar.</em></h1><p class="hero-text">El territorio contado desde sus paisajes, sus personas, sus objetos, sus documentos y sus memorias.</p><div class="hero-actions"><button class="primary" data-scroll="explorar">Entrar al Chañar <span>↓</span></button><button class="ghost" id="surprise">Sorprendeme <span>✦</span></button></div></div><div class="hero-stamp"><b>04</b><span>PUERTAS<br>PARA EMPEZAR</span></div></section>
-<section class="explore" id="explorar"><div class="section-intro"><div><span class="index">01</span><h2>¿Qué querés<br><em>ver?</em></h2></div><p>No hay que entender el museo antes de entrar. Elegí una puerta. El resto aparece mientras explorás.</p></div><div class="door-grid">
-<button class="door door-water" data-mode="agua"><span class="door-number">01</span><div class="door-art"><img src="assets/media/chanar-agua.svg" alt=""></div><div class="door-copy"><small>PAISAJE · RÍO · RIEGO</small><strong>Agua</strong><span>El río que transforma el territorio →</span></div></button>
-<button class="door door-land" data-mode="tierra"><span class="door-number">02</span><div class="door-art"><img src="assets/media/chanar-tierra.svg" alt=""></div><div class="door-copy"><small>TIERRA · CHACRAS · PAISAJE</small><strong>Tierra</strong><span>Del desierto a las chacras →</span></div></button>
-<button class="door door-memory" data-mode="memoria"><span class="door-number">03</span><div class="door-art"><img src="assets/media/chanar-memoria.svg" alt=""></div><div class="door-copy"><small>PERSONAS · OBJETOS · VOCES</small><strong>Memoria</strong><span>Lo que todavía se puede contar →</span></div></button>
-<button class="door door-now" data-mode="presente"><span class="door-number">04</span><div class="door-art"><img src="assets/media/chanar-presente.svg" alt=""></div><div class="door-copy"><small>PUEBLO · VIDA · PRESENTE</small><strong>Hoy</strong><span>El Chañar que seguimos viviendo →</span></div></button>
-</div></section>
-<section class="story" id="historias"><div class="section-intro compact"><div><span class="index">02</span><h2>Historias que<br><em>se abren.</em></h2></div><p>Una pantalla. Una imagen. Una pregunta. Si querés más, entrás.</p></div><div class="story-stage"><div class="story-visual" id="storyVisual"></div><div class="story-info"><span id="storyTag"></span><h3 id="storyTitle"></h3><p id="storyText"></p><button class="line-btn" id="storyOpen">Abrir historia <span>→</span></button></div></div><div class="story-tabs" id="storyTabs"></div></section>
-<section class="territory" id="mapa"><div class="territory-copy"><span class="index">03</span><h2>El Chañar<br><em>se entiende caminándolo.</em></h2><p>El territorio funciona como mapa de entrada. Tocá un punto y cambiá de mirada.</p></div><div class="territory-map"><div class="map-river"></div><div class="map-road"></div><button class="map-pin pin-a" data-mode="agua"><i></i><span>RÍO</span></button><button class="map-pin pin-b" data-mode="tierra"><i></i><span>CHACRAS</span></button><button class="map-pin pin-c" data-mode="memoria"><i></i><span>PUEBLO</span></button><button class="map-pin pin-d" data-mode="presente"><i></i><span>BARDAS</span></button><div class="map-label">SAN PATRICIO<br>DEL CHAÑAR</div></div></section>
-<section class="deep"><div class="deep-head"><span class="index">04</span><h2>Y si querés<br><em>meterte más...</em></h2></div><div class="deep-grid"><button data-deep="colecciones"><b>Explorar temas</b><span>Tiempo · fósiles · pueblos · mapas · agua · producción · comunidad</span><i>↗</i></button><button data-deep="tiempo"><b>Viajar en el tiempo</b><span>De la geología a la historia viva, sin perder el hilo.</span><i>↗</i></button><button data-deep="fuentes"><b>Ver las fuentes</b><span>Qué sabemos, de dónde sale y qué todavía falta investigar.</span><i>↗</i></button></div></section>
+<section class="hero">
+<div class="hero-photo" role="img" aria-label="Entrada a San Patricio del Chañar"><div class="hero-photo-overlay"></div><div class="photo-credit">ARCHIVO · 2021 · CARTAGO TV · CC BY 3.0</div></div>
+<div class="hero-copy">
+<span class="kicker">MUSEO DIGITAL · TERRITORIO VIVO</span>
+<h1>San Patricio<br><em>del Chañar.</em></h1>
+<p>Una puerta breve. Un territorio enorme.</p>
+<button class="primary" id="enter">Entrar al Chañar <span>↓</span></button>
+</div>
+</section>
+
+<section class="doors" id="explorar">
+<div class="doors-head"><span class="index">01</span><div><h2>Elegí una <em>puerta.</em></h2><p>La profundidad aparece después.</p></div></div>
+<div class="door-grid">
+<button class="door door-water" data-mode="agua"><span class="door-number">01</span><div class="door-art"><img src="assets/media/chanar-agua.svg" alt=""></div><div class="door-copy"><small>RÍO · RIEGO · VIDA</small><strong>Agua</strong><span>Seguí el agua →</span></div></button>
+<button class="door door-land" data-mode="tierra"><span class="door-number">02</span><div class="door-art"><img src="assets/media/chanar-tierra.svg" alt=""></div><div class="door-copy"><small>CHACRAS · BARDA · NATURALEZA</small><strong>Tierra</strong><span>Entrá al paisaje →</span></div></button>
+<button class="door door-memory" data-mode="memoria"><span class="door-number">03</span><div class="door-art"><img src="assets/media/chanar-memoria.svg" alt=""></div><div class="door-copy"><small>PERSONAS · OBJETOS · VOCES</small><strong>Memoria</strong><span>Seguí las huellas →</span></div></button>
+<button class="door door-now" data-mode="presente"><span class="door-number">04</span><div class="door-art"><img src="assets/media/chanar-presente.svg" alt=""></div><div class="door-copy"><small>PUEBLO · VIDA · PRESENTE</small><strong>Hoy</strong><span>Miralo de cerca →</span></div></button>
+</div>
+</section>
 </main>
-<div class="drawer" id="drawer" aria-hidden="true"><button class="drawer-close" id="closeDrawer">×</button><div class="drawer-inner"><span id="drawerKicker"></span><h2 id="drawerTitle"></h2><p id="drawerText"></p><div id="drawerList"></div></div></div>
-<div class="search-panel" id="searchPanel" aria-hidden="true"><button class="drawer-close" id="closeSearch">×</button><div class="search-inner"><span class="kicker">BUSCAR EN EL MUSEO</span><h2>¿Qué querés encontrar?</h2><input id="searchInput" autocomplete="off" placeholder="río, dinosaurio, 1973, mapas..."><div id="searchResults"></div></div></div><div class="toast" id="toast"></div>
-<footer><span>MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</span><span>Una construcción documental en evolución.</span></footer><script src="assets/js/museo-v4.js?v=4.0.0"></script></body></html>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+<button class="drawer-close" id="closeDrawer">×</button>
+<div class="drawer-inner">
+<div class="drawer-visual" id="drawerVisual"></div>
+<div class="drawer-content">
+<span id="drawerKicker"></span><h2 id="drawerTitle"></h2><p id="drawerText"></p>
+<div class="depth-nav" id="drawerList"></div>
+<div class="depth-panel" id="depthPanel"></div>
+</div>
+</div>
+</div>
+
+<div class="search-panel" id="searchPanel" aria-hidden="true"><button class="drawer-close" id="closeSearch">×</button><div class="search-inner"><span class="kicker">BUSCAR</span><h2>Encontrar en el museo</h2><input id="searchInput" autocomplete="off" placeholder="río, chacras, memoria..."><div id="searchResults"></div></div></div>
+<footer><span>MUSEO DIGITAL · SAN PATRICIO DEL CHAÑAR</span><span>POCO PARA VER · MUCHO PARA DESCUBRIR</span></footer>
+<script src="assets/js/museo-v4.js?v=4.1.0"></script>
+</body></html>
