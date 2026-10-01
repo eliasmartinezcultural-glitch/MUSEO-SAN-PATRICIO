@@ -33,3 +33,11 @@ Esta ley no autoriza a romper PL1, cambiar estados documentales, perder trazabil
 Desde 3.17 esta ley queda congelada como criterio mundial de diseño del proyecto. Las futuras versiones pueden profundizarla mediante evidencia, contenido, relaciones y mejores interacciones, pero no pueden contradecirla sin una reforma explícita del estatuto técnico-curatorial.
 
 **Fórmula rectora:** **MUCHA PROFUNDIDAD DETRÁS · MUCHA CLARIDAD DELANTE · TODO EL TIEMPO MULTIDISPOSITIVO.**
+
+## ADENDA 3.21 — 60 / 40 / 100
+
+**60 % CONTENIDO · 40 % VISUAL · 100 % INTERACCIÓN SIMPLE.**
+
+La página visible permanece corta. La profundidad vive en capas progresivas: pieza → historia → evidencia → fuente → relaciones → colección/cronología → investigación.
+
+Dos modos deben convivir: **ENCONTRAR → ABRIR → RESOLVER** para consultas específicas y **DESCUBRIR → SEGUIR EL HILO → PROFUNDIZAR** para inmersión. La complejidad documental y técnica queda detrás; delante hay pocas decisiones claras.
