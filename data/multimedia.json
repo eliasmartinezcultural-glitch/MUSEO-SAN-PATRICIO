@@ -276,6 +276,130 @@
       "status": "FUENTE_EXTERNA",
       "description": "Material de investigación para estudiar la transformación del paisaje productivo y la expansión de la vitivinicultura.",
       "rights": "Referencia académica; consultar condiciones de reproducción."
+    },
+    {
+      "id": "MED-021",
+      "type": "hoja-geologica-pdf",
+      "title": "Hoja Geológica 3969-II Neuquén",
+      "date": "2007",
+      "recordIds": [
+        "TD-001",
+        "TD-002"
+      ],
+      "sourceId": "SRC-022",
+      "sourceUrl": "https://repositorio.segemar.gov.ar/handle/308849217/164?locale-attribute=es",
+      "status": "FUENTE_EXTERNA",
+      "description": "Cartografía y memoria geológica oficial para contextualizar la Cuenca Neuquina, estratigrafía y geomorfología. No debe usarse para afirmar por sí sola una micro-localización no demostrada.",
+      "rights": "El registro indica acceso abierto; verificar condiciones del archivo antes de redistribuir."
+    },
+    {
+      "id": "MED-022",
+      "type": "cartografia-web",
+      "title": "SIG del Instituto Geográfico Nacional",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-005",
+        "TD-006",
+        "TD-007"
+      ],
+      "sourceId": "SRC-023",
+      "sourceUrl": "https://www.ign.gob.ar/NuestrasActividades/SIG",
+      "status": "FUENTE_EXTERNA",
+      "description": "Fuente cartográfica oficial para consultar cursos de agua, localidades y capas geoespaciales.",
+      "rights": "Usar conforme a las condiciones del IGN."
+    },
+    {
+      "id": "MED-023",
+      "type": "cartografia-web",
+      "title": "Argenmap — mapa base oficial",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-005",
+        "TD-016",
+        "TD-019"
+      ],
+      "sourceId": "SRC-024",
+      "sourceUrl": "https://www.ign.gob.ar/content/actualizaci%C3%B3n-de-informaci%C3%B3n-geoespacial-en-argenmap",
+      "status": "FUENTE_EXTERNA",
+      "description": "Servicio de cartografía web oficial del IGN, útil como futura base para representar el territorio sin dibujar mapas manualmente.",
+      "rights": "Consultar términos del servicio cartográfico."
+    },
+    {
+      "id": "MED-024",
+      "type": "cartografia-historica-web",
+      "title": "Cartografía antecedente del IGN a escala 1:50.000",
+      "date": "histórica",
+      "recordIds": [
+        "TD-006",
+        "TD-007",
+        "TD-005"
+      ],
+      "sourceId": "SRC-025",
+      "sourceUrl": "https://www.ign.gob.ar/content/la-cartograf%C3%ADa-antecedente-a-escala-150000-disponible-para-toda-la-comunidad",
+      "status": "FUENTE_EXTERNA",
+      "description": "Colección de cartas topográficas históricas digitalizadas y georreferenciadas por el IGN, potencialmente útil para comparar cambios territoriales.",
+      "rights": "Consultar condiciones de publicación y uso del material cartográfico."
+    },
+    {
+      "id": "MED-025",
+      "type": "ficha-tecnica-presa",
+      "title": "Presa El Chañar — ficha técnica oficial",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-016"
+      ],
+      "sourceId": "SRC-026",
+      "sourceUrl": "https://www.argentina.gob.ar/orsep/registro-de-presas-fiscalizadas/regional-comahue/el-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "Ficha oficial con ubicación, cuenca, usos predominantes, dimensiones y puesta en operación de la presa El Chañar.",
+      "rights": "Fuente pública; mantener atribución oficial."
+    },
+    {
+      "id": "MED-026",
+      "type": "informe-territorial",
+      "title": "Plan de Ordenamiento Territorial de San Patricio del Chañar",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-021",
+        "TD-005"
+      ],
+      "sourceId": "SRC-027",
+      "sourceUrl": "https://bicyt.conicet.gov.ar/fichas/produccion/en/7765561",
+      "status": "FUENTE_EXTERNA",
+      "description": "Registro académico/técnico sobre ordenamiento territorial y actualización del código urbano/rural y de edificación.",
+      "rights": "Consultar el repositorio para condiciones del documento."
+    },
+    {
+      "id": "MED-027",
+      "type": "informe-territorial-pdf",
+      "title": "Plan de Ordenamiento Territorial y Ambiental de Añelo, San Patricio del Chañar y Sauzal Bonito",
+      "date": "contemporánea",
+      "recordIds": [
+        "TD-005",
+        "TD-016",
+        "TD-018",
+        "TD-021"
+      ],
+      "sourceId": "SRC-028",
+      "sourceUrl": "https://www.argentina.gob.ar/sites/default/files/plan_de_ordenamiento_territorial_y_ambiental_para_las_localidades_des_anelo_san_patricio_del_chanar_y_sauzal_bonito_0.pdf",
+      "status": "FUENTE_EXTERNA",
+      "description": "Documento de planificación regional con recursos paisajísticos, naturales y culturales y relaciones territoriales.",
+      "rights": "Documento externo; enlazar y atribuir."
+    },
+    {
+      "id": "MED-028",
+      "type": "publicacion-arquitectura",
+      "title": "Centro Cultural San Patricio del Chañar — concurso de anteproyectos",
+      "date": "2003",
+      "recordIds": [
+        "TD-015",
+        "TD-021"
+      ],
+      "sourceId": "SRC-029",
+      "sourceUrl": "https://sedici.unlp.edu.ar/handle/10915/88551",
+      "status": "FUENTE_EXTERNA",
+      "description": "Registro académico de un concurso de anteproyectos para el Centro Cultural del Chañar; puede alimentar una futura historia de arquitectura y espacios culturales locales.",
+      "rights": "El registro indica licencia CC BY 4.0 salvo indicación explícita en el documento."
     }
   ],
   "lastCuratorialReview": "2026-09-30"
