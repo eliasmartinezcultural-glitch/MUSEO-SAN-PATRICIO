@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "0.1.0",
+  "purpose": "Capa aditiva de investigación PL2. No modifica ni reemplaza PL1.",
+  "lastCuratorialReview": "2026-09-30",
+  "rule": "Las fuentes nuevas se mantienen separadas hasta su integración documental en piezas. No se presentan como hechos del museo por el solo hecho de existir.",
+  "sources": [
+    {
+      "id": "SRC-030",
+      "title": "Dirección Provincial de Estadística y Censos de Neuquén — Censo 2010 por área geográfica",
+      "type": "FUENTE_ESTADISTICA_OFICIAL",
+      "url": "https://www.estadisticaneuquen.gob.ar/static/archivos/Publicaciones/censo_2010_por_area.pdf",
+      "date": "2010",
+      "scope": "Población y viviendas del ejido municipal San Patricio del Chañar; separación urbana/rural.",
+      "recommendedFor": [
+        "TD-005",
+        "TD-021"
+      ]
+    },
+    {
+      "id": "SRC-031",
+      "title": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+      "type": "FUENTE_ESTADISTICA_OFICIAL",
+      "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es",
+      "date": "2022",
+      "scope": "Resultados definitivos y cuadros estadísticos por jurisdicción y gobierno local.",
+      "recommendedFor": [
+        "TD-021"
+      ]
+    },
+    {
+      "id": "SRC-032",
+      "title": "Universidad Nacional del Comahue / CEHEPyC — Pulsos, historia de San Patricio del Chañar",
+      "type": "FUENTE_ACADEMICA_REPRODUCIDA",
+      "url": "https://cehepyc.uncoma.edu.ar/wp-content/uploads/2001-Pulsos16.pdf",
+      "date": "2001",
+      "scope": "Reseña histórica reproducida desde una publicación periodística de 1994; pista secundaria.",
+      "recommendedFor": [
+        "TD-008",
+        "TD-010",
+        "TD-011",
+        "TD-012"
+      ]
+    },
+    {
+      "id": "SRC-033",
+      "title": "Universidad Nacional del Comahue — Experiencias colectivas y luchas de mujeres rurales",
+      "type": "FUENTE_ACADEMICA",
+      "url": "https://rdi.uncoma.edu.ar/bitstream/handle/uncomaid/19070/CUA_10_mujeres_rurales_final.pdf?isAllowed=y&sequence=1",
+      "date": "2025",
+      "scope": "Trabajo rural, agroalimentos y transformaciones productivas contemporáneas.",
+      "recommendedFor": [
+        "TD-012",
+        "TD-017",
+        "TD-018"
+      ]
+    },
+    {
+      "id": "SRC-034",
+      "title": "Universidad Nacional del Comahue / CONICET — La (re)producción de las desigualdades en la Patagonia norte",
+      "type": "FUENTE_ACADEMICA",
+      "url": "https://rdi.uncoma.edu.ar/bitstream/handle/uncomaid/19117/SIN_socioespacial_final.pdf?isAllowed=y&sequence=1",
+      "date": "2026",
+      "scope": "Transformaciones socioespaciales, población, urbanización, trabajo y producción en San Patricio del Chañar y Añelo.",
+      "recommendedFor": [
+        "TD-017",
+        "TD-021"
+      ]
+    },
+    {
+      "id": "SRC-035",
+      "title": "Ministerio de Economía, Producción e Industria de Neuquén — Informe municipal de San Patricio del Chañar",
+      "type": "FUENTE_ESTADISTICA_OFICIAL",
+      "url": "https://www.economianqn.gob.ar/municipios/contenido/san-patricio-del-chanar",
+      "date": "2026",
+      "scope": "Serie de informes municipales 2024–2026 para contexto económico-territorial contemporáneo.",
+      "recommendedFor": [
+        "TD-018",
+        "TD-021"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "id": "MED-029",
+      "type": "estadistica-pdf",
+      "title": "Censo 2010 — población y viviendas del ejido municipal",
+      "date": "2010",
+      "recordIds": [
+        "TD-005",
+        "TD-021"
+      ],
+      "sourceId": "SRC-030",
+      "sourceUrl": "https://www.estadisticaneuquen.gob.ar/static/archivos/Publicaciones/censo_2010_por_area.pdf",
+      "status": "FUENTE_EXTERNA",
+      "description": "Cuadro oficial con población y viviendas, separando área urbana y rural.",
+      "rights": "Documento público; atribuir a la Dirección Provincial de Estadística y Censos de Neuquén e INDEC."
+    },
+    {
+      "id": "MED-030",
+      "type": "estadistica-web",
+      "title": "Censo 2022 — resultados oficiales",
+      "date": "2022",
+      "recordIds": [
+        "TD-021"
+      ],
+      "sourceId": "SRC-031",
+      "sourceUrl": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es",
+      "status": "FUENTE_EXTERNA",
+      "description": "Portal oficial de resultados definitivos del Censo 2022.",
+      "rights": "Usar el cuadro exacto al incorporar una cifra."
+    },
+    {
+      "id": "MED-031",
+      "type": "publicacion-historica-academica",
+      "title": "Pulsos — reseña histórica de San Patricio del Chañar",
+      "date": "2001",
+      "recordIds": [
+        "TD-008",
+        "TD-010",
+        "TD-011",
+        "TD-012"
+      ],
+      "sourceId": "SRC-032",
+      "sourceUrl": "https://cehepyc.uncoma.edu.ar/wp-content/uploads/2001-Pulsos16.pdf",
+      "status": "FUENTE_EXTERNA",
+      "description": "Reseña histórica secundaria que reproduce una referencia periodística de 1994.",
+      "rights": "No presentar la reproducción como documento primario."
+    },
+    {
+      "id": "MED-032",
+      "type": "investigacion-rural",
+      "title": "Experiencias colectivas y luchas de mujeres rurales",
+      "date": "2025",
+      "recordIds": [
+        "TD-012",
+        "TD-017",
+        "TD-018"
+      ],
+      "sourceId": "SRC-033",
+      "sourceUrl": "https://rdi.uncoma.edu.ar/bitstream/handle/uncomaid/19070/CUA_10_mujeres_rurales_final.pdf?isAllowed=y&sequence=1",
+      "status": "FUENTE_EXTERNA",
+      "description": "Investigación universitaria sobre trabajo rural, agroalimentos y transformaciones productivas.",
+      "rights": "Consultar condiciones del repositorio y citar autores."
+    },
+    {
+      "id": "MED-033",
+      "type": "investigacion-socioespacial",
+      "title": "La (re)producción de las desigualdades en la Patagonia norte",
+      "date": "2026",
+      "recordIds": [
+        "TD-017",
+        "TD-021"
+      ],
+      "sourceId": "SRC-034",
+      "sourceUrl": "https://rdi.uncoma.edu.ar/bitstream/handle/uncomaid/19117/SIN_socioespacial_final.pdf?isAllowed=y&sequence=1",
+      "status": "FUENTE_EXTERNA",
+      "description": "Investigación reciente con datos censales y análisis socioespacial.",
+      "rights": "Consultar licencia y condiciones del repositorio."
+    },
+    {
+      "id": "MED-034",
+      "type": "informe-municipal",
+      "title": "Informe municipal de San Patricio del Chañar — serie económica",
+      "date": "2026",
+      "recordIds": [
+        "TD-018",
+        "TD-021"
+      ],
+      "sourceId": "SRC-035",
+      "sourceUrl": "https://www.economianqn.gob.ar/municipios/contenido/san-patricio-del-chanar",
+      "status": "FUENTE_EXTERNA",
+      "description": "Portal oficial que reúne informes municipales 2024, 2025 y 2026.",
+      "rights": "Usar el informe y período exactos al incorporar cifras."
+    }
+  ]
+}
