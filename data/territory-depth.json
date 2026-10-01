@@ -117,7 +117,9 @@
       "evidence": "La base geológica del territorio debe reconstruirse con cartografía y bibliografía específica del área.",
       "relation": "LOCAL_A_DETERMINAR",
       "notes": "Esta pieza funciona como puerta de entrada al tiempo profundo. No se incorporan afirmaciones locales no verificadas.",
-      "sourceIds": []
+      "sourceIds": [
+        "SRC-022"
+      ]
     },
     {
       "id": "TD-002",
@@ -167,7 +169,9 @@
       "notes": "El río debe estudiarse simultáneamente como ambiente, recurso, vía de movilidad, límite, riesgo y soporte de transformación productiva.",
       "sourceIds": [
         "SRC-001",
-        "SRC-010"
+        "SRC-010",
+        "SRC-023",
+        "SRC-024"
       ]
     },
     {
@@ -326,7 +330,9 @@
       "notes": "La pieza abre una línea de investigación sobre biodiversidad, aves, paisaje, agua y relación entre producción y conservación.",
       "sourceIds": [
         "SRC-002",
-        "SRC-013"
+        "SRC-013",
+        "SRC-026",
+        "SRC-028"
       ]
     },
     {
@@ -398,7 +404,9 @@
       "relation": "LOCAL",
       "notes": "Esta pieza debe leerse como fotografía documental de una etapa contemporánea, no como cierre de la historia. Puede crecer con fotografías, planos y testimonios vecinales.",
       "sourceIds": [
-        "SRC-009"
+        "SRC-009",
+        "SRC-027",
+        "SRC-028"
       ],
       "visual": "land"
     }
@@ -574,6 +582,81 @@
       "publisher": "Municipalidad de San Patricio del Chañar",
       "accessDate": "2026-09-30",
       "scope": "fiesta; producción frutícola; vitivinicultura; patrimonio local"
+    },
+    {
+      "id": "SRC-022",
+      "title": "SEGEMAR — Hoja Geológica 3969-II Neuquén",
+      "type": "FUENTE_GEOLOGICA",
+      "url": "https://repositorio.segemar.gov.ar/handle/308849217/164?locale-attribute=es",
+      "publisher": "Servicio Geológico Minero Argentino",
+      "date": "2007",
+      "accessDate": "2026-09-30",
+      "scope": "geología; geomorfología; estratigrafía; Cuenca Neuquina",
+      "rights": "Repositorio con ficha de acceso abierto según metadatos del registro."
+    },
+    {
+      "id": "SRC-023",
+      "title": "Instituto Geográfico Nacional — SIG",
+      "type": "FUENTE_CARTOGRAFICA",
+      "url": "https://www.ign.gob.ar/NuestrasActividades/SIG",
+      "publisher": "Instituto Geográfico Nacional",
+      "accessDate": "2026-09-30",
+      "scope": "cartografía oficial; hidrografía; localidades; información geoespacial"
+    },
+    {
+      "id": "SRC-024",
+      "title": "Instituto Geográfico Nacional — Argenmap",
+      "type": "FUENTE_CARTOGRAFICA",
+      "url": "https://www.ign.gob.ar/content/actualizaci%C3%B3n-de-informaci%C3%B3n-geoespacial-en-argenmap",
+      "publisher": "Instituto Geográfico Nacional",
+      "accessDate": "2026-09-30",
+      "scope": "cartografía web; toponimia; red vial; hidrografía; datos geoespaciales"
+    },
+    {
+      "id": "SRC-025",
+      "title": "Instituto Geográfico Nacional — Cartografía antecedente 1:50.000",
+      "type": "FUENTE_CARTOGRAFICA_HISTORICA",
+      "url": "https://www.ign.gob.ar/content/la-cartograf%C3%ADa-antecedente-a-escala-150000-disponible-para-toda-la-comunidad",
+      "publisher": "Instituto Geográfico Nacional",
+      "accessDate": "2026-09-30",
+      "scope": "cartografía histórica; comparación temporal; georreferenciación"
+    },
+    {
+      "id": "SRC-026",
+      "title": "Argentina.gob.ar — Presa El Chañar",
+      "type": "FUENTE_TECNICA_OFICIAL",
+      "url": "https://www.argentina.gob.ar/orsep/registro-de-presas-fiscalizadas/regional-comahue/el-chanar",
+      "publisher": "Estado argentino / ORSEP",
+      "accessDate": "2026-09-30",
+      "scope": "presa; río Neuquén; riego; infraestructura; puesta en operación 1979"
+    },
+    {
+      "id": "SRC-027",
+      "title": "CONICET — Plan de Ordenamiento Territorial de San Patricio del Chañar",
+      "type": "FUENTE_TECNICA_ACADEMICA",
+      "url": "https://bicyt.conicet.gov.ar/fichas/produccion/en/7765561",
+      "publisher": "CONICET / equipos académicos",
+      "accessDate": "2026-09-30",
+      "scope": "ordenamiento territorial; urbanismo; estructura urbana y rural"
+    },
+    {
+      "id": "SRC-028",
+      "title": "Argentina.gob.ar — Plan de Ordenamiento Territorial y Ambiental: Añelo, San Patricio del Chañar y Sauzal Bonito",
+      "type": "FUENTE_TERRITORIAL_OFICIAL",
+      "url": "https://www.argentina.gob.ar/sites/default/files/plan_de_ordenamiento_territorial_y_ambiental_para_las_localidades_des_anelo_san_patricio_del_chanar_y_sauzal_bonito_0.pdf",
+      "publisher": "Consejo Federal de Inversiones / Estado argentino",
+      "accessDate": "2026-09-30",
+      "scope": "paisaje; recursos naturales y culturales; territorio; planificación regional"
+    },
+    {
+      "id": "SRC-029",
+      "title": "SEDICI — Centro Cultural San Patricio del Chañar",
+      "type": "FUENTE_ARQUITECTONICA",
+      "url": "https://sedici.unlp.edu.ar/handle/10915/88551",
+      "publisher": "Universidad Nacional de La Plata / SEDICI",
+      "date": "2003",
+      "accessDate": "2026-09-30",
+      "scope": "arquitectura; centro cultural; patrimonio construido; diseño local"
     }
   ],
   "pieces": [
@@ -749,11 +832,20 @@
   },
   "lastCuratorialReview": "2026-09-30",
   "sourceStats": {
-    "total": 21,
-    "academic": 2,
-    "institutional": 16,
-    "legislative": 1,
-    "normative": 1,
-    "primaryReproduced": 1
+    "total": 29,
+    "byType": {
+      "FUENTE_INSTITUCIONAL": 16,
+      "FUENTE_ACADEMICA": 2,
+      "FUENTE_LEGISLATIVA": 1,
+      "FUENTE_NORMATIVA": 1,
+      "FUENTE_PRIMARIA_REPRODUCIDA": 1,
+      "FUENTE_GEOLOGICA": 1,
+      "FUENTE_CARTOGRAFICA": 2,
+      "FUENTE_CARTOGRAFICA_HISTORICA": 1,
+      "FUENTE_TECNICA_OFICIAL": 1,
+      "FUENTE_TECNICA_ACADEMICA": 1,
+      "FUENTE_TERRITORIAL_OFICIAL": 1,
+      "FUENTE_ARQUITECTONICA": 1
+    }
   }
 }
