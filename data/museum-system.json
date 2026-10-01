@@ -1,6 +1,6 @@
 {
-  "systemVersion": "3.20.4",
-  "status": "DEEP_REPAIR_DESIGN_LOCKED",
+  "systemVersion": "3.21.0",
+  "status": "DEEP_REPAIR_60_40_LOCKED",
   "mission": "Preservar para enseñar. Enseñar para cuidar.",
   "experiencePrinciple": "Poco recorrido. Mucha profundidad.",
   "architecture": {
@@ -80,7 +80,11 @@
     "sin rutas duplicadas o controles huérfanos",
     "validador PL2 activo",
     "sintaxis JS validada automáticamente en cada push",
-    "experiencia visual con consola, cronología y mazo de historias"
+    "experiencia visual con consola, cronología y mazo de historias",
+    "3.21: búsqueda con normalización de acentos",
+    "3.21: capas territoriales conectadas a selectores reales",
+    "3.21: caché de datos actualizado",
+    "3.21: profundidad progresiva específica e inmersiva"
   ],
   "visualInteractionLaw": {
     "status": "LOCKED",
@@ -160,6 +164,23 @@
       "mazo de historias",
       "señales de evidencia",
       "placas visuales territoriales"
+    ]
+  },
+  "worldLaw": {
+    "version": "3.21",
+    "formula": "60 % CONTENIDO · 40 % VISUAL · 100 % INTERACCIÓN SIMPLE",
+    "principle": "Página corta y simple; profundidad documental bajo demanda.",
+    "visitorModes": {
+      "specific": "ENCONTRAR → ABRIR → RESOLVER",
+      "immersion": "DESCUBRIR → SEGUIR EL HILO → PROFUNDIZAR"
+    },
+    "rules": [
+      "La búsqueda específica no obliga a recorrer todo el museo.",
+      "La inmersión puede continuar desde pieza hacia evidencia, fuentes, relaciones, colecciones, cronología e investigación.",
+      "La complejidad técnica queda detrás de una interfaz simple.",
+      "No inventar contenido para completar el diseño.",
+      "La misma experiencia funciona en móvil, tablet y escritorio.",
+      "Reparar, conectar y verificar antes de ampliar."
     ]
   }
 }
