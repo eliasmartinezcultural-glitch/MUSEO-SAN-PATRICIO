@@ -50,7 +50,22 @@
   <div class="pulse-stage" data-pulse-stage><div class="pulse-image" data-pulse-image><img id="pulseVisual" src="assets/media/chanar-agua.svg" alt="Placa visual curada sobre agua y riego en San Patricio del Chañar" loading="eager"><span class="pulse-orbit"></span><span class="pulse-sun"></span><span class="pulse-river"></span><span class="pulse-rows"></span><span class="pulse-credit">RECURSO VISUAL LOCAL · MUSEO 3.20</span></div><div class="pulse-copy"><span class="pulse-index" data-pulse-index>01</span><span class="micro" data-pulse-kicker>AGUA</span><h3 data-pulse-title>El Neuquén como estructura.</h3><p data-pulse-text>Río, bocatomas, canales y drenajes: el agua no es un decorado del Chañar. Es una de las claves para leer su transformación territorial.</p><div class="pulse-tags" data-pulse-tags><span>RÍO NEUQUÉN</span><span>RIEGO</span><span>TERRITORIO</span></div></div></div>
   <div class="pulse-nav" role="tablist" aria-label="Capas del territorio"><button type="button" class="pulse-tab is-active" role="tab" aria-selected="true" data-pulse="0"><span>01</span><b>AGUA</b><small>Río · riego</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="1"><span>02</span><b>TIERRA</b><small>Chacras · paisaje</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="2"><span>03</span><b>MEMORIA</b><small>Personas · instituciones</small></button><button type="button" class="pulse-tab" role="tab" aria-selected="false" data-pulse="3"><span>04</span><b>PRESENTE</b><small>Transformación · continuidad</small></button></div>
 </section>
-<div class="territory-rail" aria-label="Accesos rápidos del museo"><span>CHAÑAR · 39° SUR</span><button type="button" data-action="local">EVIDENCIA LOCAL</button><button type="button" data-action="time">LÍNEA DE TIEMPO</button><button type="button" data-action="question">INVESTIGAR</button></div><section class="catalog" id="piezas" aria-labelledby="catalogTitle">
+<div class="territory-rail" aria-label="Accesos rápidos del museo"><span>CHAÑAR · 39° SUR</span><button type="button" data-action="local">EVIDENCIA LOCAL</button><button type="button" data-action="time">LÍNEA DE TIEMPO</button><button type="button" data-action="question">INVESTIGAR</button></div><section class="museum-console" id="experiencia" aria-labelledby="consoleTitle">
+  <div class="console-top">
+    <div><p class="eyebrow">04 · EXPERIENCIA DOCUMENTAL</p><h2 id="consoleTitle">El Chañar, <em>en movimiento.</em></h2></div>
+    <p>Una sola pantalla para cruzar tiempo, territorio, evidencia y preguntas. Tocá una señal y el museo reorganiza la experiencia.</p>
+  </div>
+  <div class="signal-grid">
+    <button type="button" class="signal signal-main" data-console="timeline"><span class="signal-number" id="timelineCount">—</span><small>CRONOLOGÍA</small><b>Seguir el tiempo</b><i>↗</i></button>
+    <button type="button" class="signal" data-console="evidence"><span class="signal-number" id="localCount">—</span><small>EVIDENCIA</small><b>Ver lo local</b><i>→</i></button>
+    <button type="button" class="signal" data-console="research"><span class="signal-number" id="researchCount">—</span><small>ABIERTAS</small><b>Preguntas vivas</b><i>?</i></button>
+    <button type="button" class="signal" data-console="sources"><span class="signal-number" id="sourceLiveCount">—</span><small>FUENTES</small><b>Dentro del museo</b><i>⌘</i></button>
+  </div>
+  <div class="story-deck" id="storyDeck" aria-live="polite"></div>
+  <div class="timeline-strip" id="timelineStrip" aria-label="Línea de tiempo interactiva"></div>
+</section>
+
+<section class="catalog" id="piezas" aria-labelledby="catalogTitle">
   <div class="section-head"><div><p class="eyebrow">CATÁLOGO VIVO</p><h2 id="catalogTitle">Piezas del museo</h2></div><button type="button" class="text-btn" id="resetCatalog">Ver todas →</button></div>
   <div class="filter-row" id="filters" role="toolbar" aria-label="Filtros del catálogo"></div>
   <div class="catalog-meta" id="catalogMeta" aria-live="polite"></div>
