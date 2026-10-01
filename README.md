@@ -3,7 +3,7 @@
 Museo virtual y archivo histórico digital vivo de San Patricio del Chañar, Neuquén.
 
 ## Estado
-**1.3.0 — Sistema integral de museo, experiencia multidispositivo y relaciones conectadas**
+**3.22.0 — Reparación visual del hub, experiencia multidispositivo y relaciones conectadas**
 
 La arquitectura 0.3 permanece bloqueada. Esta etapa amplía el contenido sin alterar las entidades nucleares.
 
@@ -52,6 +52,12 @@ Esta versión convierte el proyecto en un sistema mantenible de extremo a extrem
 - entrada directa al museo;
 - protección para móvil, tablet y escritorio;
 - rutas educativas conectadas al mismo motor.
+
+### Reparación 3.22
+
+La interfaz pública fue reorganizada como una central de seis puertas. La portada es más corta y la profundidad queda bajo demanda. La reparación no modifica el modelo documental 3.21.
+
+Detalle: `docs/V3.22-VISUAL-REPAIR.md`
 
 ### Documentación técnica
 
