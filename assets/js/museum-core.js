@@ -1,7 +1,7 @@
 const MuseumApp=(()=>{const S={data:null,collections:[],media:[],relations:[],sources:[],filter:"all",bound:false,lastFocus:null};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");
+const norm=v=>String(v??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const record=id=>S.data?.records?.find(r=>r.id===id);
 const source=id=>S.sources.find(r=>r.id===id);
 const layer=key=>S.data?.layers?.find(r=>r.key===key);
