@@ -1,50 +1,58 @@
 {
-  "systemVersion":"2.0.0",
-  "status":"TRONCAL_REFORMULATED",
-  "mission":"Preservar para enseñar. Enseñar para cuidar.",
-  "experiencePrinciple":"Poco recorrido. Mucha profundidad.",
-  "architecture":{
-    "frontend":"HTML semántico + CSS responsive + JavaScript modular sin dependencias externas",
-    "hosting":"GitHub Pages / sitio estático",
-    "data":"JSON versionado como fondo documental",
-    "offline":"Service Worker con caché del núcleo y datos",
-    "installable":"Web App Manifest",
-    "interaction":"catálogo + filtros + buscador + ficha lateral + relaciones + colecciones + estados documentales",
-    "routing":"hash routes para piezas y secciones, compatibles con GitHub Pages"
+  "systemVersion": "3.17.0",
+  "status": "VISUAL_INTERACTION_LAW_LOCKED",
+  "mission": "Preservar para enseñar. Enseñar para cuidar.",
+  "experiencePrinciple": "Poco recorrido. Mucha profundidad.",
+  "architecture": {
+    "frontend": "HTML semántico + CSS responsive + JavaScript modular sin dependencias externas",
+    "hosting": "GitHub Pages / sitio estático",
+    "data": "JSON versionado como fondo documental",
+    "offline": "Service Worker con caché del núcleo y datos",
+    "installable": "Web App Manifest",
+    "interaction": "catálogo + filtros + buscador + ficha lateral + relaciones + colecciones + estados documentales",
+    "routing": "hash routes para piezas y secciones, compatibles con GitHub Pages"
   },
-  "documentaryModel":{
-    "record":"unidad mínima de conocimiento",
-    "piece":"representación pública de un record",
-    "source":"evidencia o referencia que sustenta un record",
-    "collection":"conjunto curatorial de records",
-    "relation":"vínculo explícito entre records con fundamento",
-    "status":["EVIDENCIA_LOCAL","FUENTE_HISTORICA","FUENTE_INSTITUCIONAL","CONTEXTO_REGIONAL","EN_INVESTIGACION"],
-    "rule":"No afirmar como local lo que solo está documentado a escala regional."
+  "documentaryModel": {
+    "record": "unidad mínima de conocimiento",
+    "piece": "representación pública de un record",
+    "source": "evidencia o referencia que sustenta un record",
+    "collection": "conjunto curatorial de records",
+    "relation": "vínculo explícito entre records con fundamento",
+    "status": [
+      "EVIDENCIA_LOCAL",
+      "FUENTE_HISTORICA",
+      "FUENTE_INSTITUCIONAL",
+      "CONTEXTO_REGIONAL",
+      "EN_INVESTIGACION"
+    ],
+    "rule": "No afirmar como local lo que solo está documentado a escala regional."
   },
-  "ux":{
-    "primaryFlow":"VER → ELEGIR → ABRIR → SEGUIR EL HILO",
-    "depthLocation":"dentro de la pieza y sus relaciones, no en páginas interminables",
-    "mobileFirst":true,
-    "keyboardAccessible":true,
-    "reducedMotion":true,
-    "touchFriendly":true
+  "ux": {
+    "primaryFlow": "VER → ELEGIR → ABRIR → SEGUIR EL HILO",
+    "depthLocation": "dentro de la pieza y sus relaciones, no en páginas interminables",
+    "mobileFirst": true,
+    "keyboardAccessible": true,
+    "reducedMotion": true,
+    "touchFriendly": true
   },
-  "professionalReferences":{
-    "museum":"ICOM Museum Definition 2022",
-    "heritage":"UNESCO Recommendation 2015 on museums and collections",
-    "webAccessibility":"W3C WCAG 2.2",
-    "digitalCollections":"IIIF-ready architectural direction"
+  "professionalReferences": {
+    "museum": "ICOM Museum Definition 2022",
+    "heritage": "UNESCO Recommendation 2015 on museums and collections",
+    "webAccessibility": "W3C WCAG 2.2",
+    "digitalCollections": "IIIF-ready architectural direction"
   },
-  "nonGoals":[
+  "nonGoals": [
     "portal turístico",
     "blog",
     "agenda",
     "diario de noticias",
     "repositorio sin criterio",
     "galería decorativa",
-    "acumulación de funciones"
+    "acumulación de funciones",
+    "interfaz genérica sin identidad territorial",
+    "efectos que no mejoren comprensión o descubrimiento"
   ],
-  "qualityGate":[
+  "qualityGate": [
     "preserva",
     "enseña",
     "investiga",
@@ -53,5 +61,32 @@
     "es accesible",
     "funciona en móvil y escritorio",
     "no agrega complejidad visible innecesaria"
-  ]
+  ],
+  "visualInteractionLaw": {
+    "status": "LOCKED",
+    "scope": "Toda interfaz, pieza, colección, archivo, herramienta y futura capa del Museo Digital de San Patricio del Chañar.",
+    "principle": "Salto visual e interactivo fuerte, pero siempre simple de usar y siempre multidispositivo.",
+    "rules": [
+      "Diseñar mobile-first y validar celular, tablet y escritorio como una misma experiencia adaptativa.",
+      "La identidad visual debe nacer del territorio de San Patricio del Chañar: río, agua, riego, tierra, chacras, paisaje, memoria y transformación; no de una plantilla genérica.",
+      "La interacción debe producir descubrimiento, orientación o comprensión; nunca decoración técnica vacía.",
+      "La profundidad debe vivir dentro de las piezas y sus relaciones, no en recorridos interminables.",
+      "Toda animación debe respetar reduced motion y nunca bloquear lectura, navegación o accesibilidad.",
+      "Cada acción táctil debe tener equivalente de teclado y foco visible.",
+      "No crear una versión móvil recortada: el contenido y la lógica son únicos y la composición se adapta.",
+      "Priorizar rendimiento, legibilidad, contraste, áreas táctiles y conexiones lentas.",
+      "No romper PL1: las mejoras visuales e interactivas son aditivas y conservan rutas, datos, estados y trazabilidad.",
+      "Ningún recurso visual puede inventar patrimonio ni hacer pasar una reconstrucción por evidencia."
+    ],
+    "acceptance": [
+      "320px",
+      "390px",
+      "680px",
+      "1024px",
+      "1440px",
+      "teclado",
+      "reduced motion",
+      "sin scroll horizontal accidental"
+    ]
+  }
 }
