@@ -10,6 +10,8 @@ const territory = read("data/territory-depth.json");
 const collections = read("data/collections.json").collections ?? [];
 const multimedia = read("data/multimedia.json").media ?? [];
 const relationsFile = read("data/relations.json");
+const expansion = read("data/source-expansion-2026-09.json");
+
 const relations = relationsFile.relations ?? [];
 
 const allowedStatuses = new Set([
@@ -27,6 +29,9 @@ const sources = territory.sources ?? [];
 const pieces = territory.pieces ?? [];
 const questions = territory.questions ?? [];
 const layers = territory.layers ?? [];
+const expansionSources = expansion.sources ?? [];
+const expansionMedia = expansion.media ?? [];
+
 
 function unique(items, label) {
   const seen = new Set();
@@ -83,14 +88,23 @@ for (const q of questions) {
   if (q.recordId && !recordIds.has(q.recordId)) fail.push(`Pregunta ${q.id} apunta a registro inexistente: ${q.recordId}`);
 }
 
-for (const s of sources) {
+for (const s of [...sources, ...expansionSources]) {
+  if (!s.id || !s.title || !s.type) fail.push(`Fuente incompleta: ${s.id ?? "(sin id)"}`);
+}
+for (const m of expansionMedia) {
+  for (const rid of m.recordIds ?? []) {
+    if (!recordIds.has(rid)) fail.push(`Multimedia PL2 ${m.id} apunta a registro inexistente: ${rid}`);
+  }
+  if (m.sourceId && !new Set(expansionSources.map(x=>x.id)).has(m.sourceId) && !sourceIds.has(m.sourceId)) fail.push(`Multimedia PL2 ${m.id} apunta a fuente inexistente: ${m.sourceId}`);
+}
+for (const s of [...sources, ...expansionSources]) {
   if (s.url && !/^https?:\/\//i.test(s.url)) warn.push(`URL no HTTP(S) en ${s.id}: ${s.url}`);
 }
 
 if (!territory.schemaVersion) warn.push("territory-depth.json no declara schemaVersion.");
 if (!relationsFile.version) warn.push("relations.json no declara version.");
 
-console.log(`Museo PL1 — validación: ${records.length} registros, ${pieces.length} piezas, ${sources.length} fuentes, ${collections.length} colecciones, ${relations.length} relaciones, ${multimedia.length} objetos multimedia.`);
+console.log(`Museo 3.20 — validación: ${records.length} registros, ${pieces.length} piezas, ${sources.length + expansionSources.length} fuentes internas, ${collections.length} colecciones, ${relations.length} relaciones, ${multimedia.length + expansionMedia.length} objetos multimedia.`);
 
 if (warn.length) {
   console.log("\nADVERTENCIAS:");
