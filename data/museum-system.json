@@ -1,6 +1,6 @@
 {
-  "systemVersion": "3.18.0",
-  "status": "CLEAN_REPAIR_LOCKED",
+  "systemVersion": "3.20.0",
+  "status": "CURATED_INTERNAL_EXPERIENCE_LOCKED",
   "mission": "Preservar para enseñar. Enseñar para cuidar.",
   "experiencePrinciple": "Poco recorrido. Mucha profundidad.",
   "architecture": {
@@ -65,7 +65,14 @@
     "sin controles huérfanos",
     "sin interacciones desconectadas",
     "sin superposición visual crítica",
-    "carga de datos con cache-busting de versión"
+    "carga de datos con cache-busting de versión",
+    "toda fuente se comprende dentro del museo",
+    "ninguna interacción pública necesita abandonar el museo",
+    "pieza → fuente → pieza funciona",
+    "capa territorial cambia texto y recurso visual",
+    "hash de pieza y fuente es navegable internamente",
+    "diseño adaptativo sin pérdida de jerarquía",
+    "no webgrafía como experiencia"
   ],
   "visualInteractionLaw": {
     "status": "LOCKED",
@@ -105,6 +112,40 @@
       "Toda interacción nueva debe conectar con el sistema documental existente.",
       "La vista debe ser corta; la profundidad vive detrás de cada apertura.",
       "Toda capa visual debe adaptarse sin romper jerarquía en móvil, tablet o escritorio."
+    ]
+  },
+  "northRule": {
+    "version": "3.20",
+    "name": "TODO CONECTA · NADA SE PIERDE",
+    "principle": "El museo es una casa documental completa: pieza, fuente, imagen, contexto, relación, pregunta, crédito y procedencia se entienden dentro de la experiencia.",
+    "rules": [
+      "No usar una fuente externa como destino de navegación pública.",
+      "Toda fuente visible debe tener ficha interna de procedencia, función, atribución y vínculos.",
+      "Toda imagen debe tener función museográfica y condición de procedencia clara.",
+      "La profundidad vive dentro de piezas, relaciones, fuentes y colecciones; no en páginas interminables.",
+      "Toda interacción debe tener entrada, propósito y salida.",
+      "Móvil, tablet y escritorio comparten el mismo sistema y adaptan la composición.",
+      "Primero reparar, conectar y verificar; después ampliar.",
+      "La estética nunca puede fabricar evidencia histórica."
+    ]
+  },
+  "sourceExperience": {
+    "mode": "INTERNAL_FIRST",
+    "visitorNeverLeavesMuseum": true,
+    "externalUrlsAreTechnicalTraceabilityOnly": true
+  },
+  "visualSystem": {
+    "version": "3.20",
+    "priority": "DISEÑO PROFUNDO",
+    "resources": [
+      "placas visuales locales",
+      "capas territoriales",
+      "tipografía editorial",
+      "microtipografía documental",
+      "fichas internas de fuentes",
+      "red de relaciones",
+      "interacción táctil y teclado",
+      "reduced-motion"
     ]
   }
 }
