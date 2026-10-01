@@ -1,6 +1,6 @@
 {
-  "systemVersion": "3.20.0",
-  "status": "CURATED_INTERNAL_EXPERIENCE_LOCKED",
+  "systemVersion": "3.20.2",
+  "status": "DEEP_REPAIR_DESIGN_LOCKED",
   "mission": "Preservar para enseñar. Enseñar para cuidar.",
   "experiencePrinciple": "Poco recorrido. Mucha profundidad.",
   "architecture": {
@@ -72,7 +72,12 @@
     "capa territorial cambia texto y recurso visual",
     "hash de pieza y fuente es navegable internamente",
     "diseño adaptativo sin pérdida de jerarquía",
-    "no webgrafía como experiencia"
+    "no webgrafía como experiencia",
+    "fuentes PL2 integradas al fondo sin convertirse en enlaces públicos",
+    "consola documental visible y conectada al catálogo",
+    "cronología y preguntas producen vistas reales",
+    "búsqueda cruza piezas y fuentes",
+    "sin rutas duplicadas o controles huérfanos"
   ],
   "visualInteractionLaw": {
     "status": "LOCKED",
@@ -120,13 +125,14 @@
     "principle": "El museo es una casa documental completa: pieza, fuente, imagen, contexto, relación, pregunta, crédito y procedencia se entienden dentro de la experiencia.",
     "rules": [
       "No usar una fuente externa como destino de navegación pública.",
-      "Toda fuente visible debe tener ficha interna de procedencia, función, atribución y vínculos.",
-      "Toda imagen debe tener función museográfica y condición de procedencia clara.",
-      "La profundidad vive dentro de piezas, relaciones, fuentes y colecciones; no en páginas interminables.",
-      "Toda interacción debe tener entrada, propósito y salida.",
-      "Móvil, tablet y escritorio comparten el mismo sistema y adaptan la composición.",
+      "Toda fuente visible tiene ficha interna de procedencia, función, atribución y vínculos.",
+      "Toda imagen o placa visual tiene función museográfica; no se presenta una reconstrucción como evidencia.",
+      "Las fuentes nuevas se integran al fondo interno y se distinguen por estado documental.",
+      "La profundidad vive en piezas, relaciones, fuentes, colecciones, cronología y preguntas; no en páginas interminables.",
+      "Toda interacción tiene entrada, propósito y salida y funciona con toque, teclado y reduced-motion.",
+      "Móvil, tablet y escritorio comparten un único sistema adaptativo.",
       "Primero reparar, conectar y verificar; después ampliar.",
-      "La estética nunca puede fabricar evidencia histórica."
+      "El museo no es una webgrafía: la referencia se entiende dentro de la experiencia."
     ]
   },
   "sourceExperience": {
@@ -136,7 +142,7 @@
   },
   "visualSystem": {
     "version": "3.20",
-    "priority": "DISEÑO PROFUNDO",
+    "priority": "DISEÑO PROFUNDO · EXPERIENCIA CURADA",
     "resources": [
       "placas visuales locales",
       "capas territoriales",
@@ -145,7 +151,12 @@
       "fichas internas de fuentes",
       "red de relaciones",
       "interacción táctil y teclado",
-      "reduced-motion"
+      "reduced-motion",
+      "consola documental interactiva",
+      "cronología táctil",
+      "mazo de historias",
+      "señales de evidencia",
+      "placas visuales territoriales"
     ]
   }
 }
